@@ -53,4 +53,6 @@ def query(engine: Engine, sql: str) -> pd.DataFrame:
 
 def write_table(engine: Engine, df: pd.DataFrame, name: str) -> None:
     """Replace a table with the DataFrame contents."""
-    df.to_sql(name, engine, if_exists="replace", index=False, chunksize=1000, method="multi")
+    # multi-row INSERTs are fastest on PostgreSQL; SQLite is fastest with plain executemany
+    method = "multi" if engine.dialect.name == "postgresql" else None
+    df.to_sql(name, engine, if_exists="replace", index=False, chunksize=1000, method=method)
