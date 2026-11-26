@@ -1,0 +1,742 @@
+{
+  "data_label": "SYNTHETIC DATA - seeded generator, SAP S/4HANA SD table structures",
+  "generated_at": "2026-11-26T18:33:30Z",
+  "seed": 42,
+  "database": "sqlite",
+  "date_range": {
+    "first_order": "2023-01-01",
+    "last_order": "2024-12-31"
+  },
+  "raw_row_counts": {
+    "kna1": 400,
+    "mara": 1500,
+    "makt": 1500,
+    "vbak": 12503,
+    "vbap": 32196,
+    "likp": 14705,
+    "lips": 34575,
+    "vbrk": 14705,
+    "vbrp": 34560,
+    "bsad": 14245,
+    "returns": 3908
+  },
+  "dq_injected": {
+    "vbak_missing_erdat": 12,
+    "vbap_negative_kwmeng": 25,
+    "vbap_orphan_items": 20,
+    "likp_missing_wadat_ist": 10,
+    "lips_orphan_items": 15
+  },
+  "dq": {
+    "run_id": "e7044dca",
+    "rows_in": 164797,
+    "rows_passed": 164661,
+    "rows_quarantined": 136,
+    "quarantine_by_table": {
+      "vbak": 12,
+      "vbap": 74,
+      "likp": 10,
+      "lips": 40
+    },
+    "violations_by_rule": {
+      "likp.mandatory": 10,
+      "lips.reference": 40,
+      "vbak.mandatory": 12,
+      "vbap.non_negative": 25,
+      "vbap.reference": 49
+    }
+  },
+  "star_schema_row_counts": {
+    "dim_customer": 400,
+    "dim_material": 1500,
+    "dim_date": 852,
+    "fact_order_item": 32122,
+    "fact_delivery": 34535,
+    "fact_billing": 34560
+  },
+  "headline": {
+    "total_revenue": 17320660.58,
+    "sales_orders": 12488,
+    "order_items": 32122,
+    "otif_rate": 0.7396,
+    "on_time_rate": 0.7674,
+    "in_full_rate": 0.9661,
+    "avg_lead_time_days": 5.6411,
+    "fill_rate": 0.9885,
+    "return_rate": 0.0492,
+    "avg_invoice_to_cash_days": 38.074,
+    "open_receivables_share": 0.0305
+  },
+  "revenue_by_year": {
+    "2023": 7805259.77,
+    "2024": 9363783.88
+  },
+  "yoy_revenue_growth": 0.1997,
+  "kpis": {
+    "otif_by_country": [
+      {
+        "country": "IT",
+        "order_items": 5934,
+        "otif_rate": 0.578,
+        "on_time_rate": 0.6008,
+        "in_full_rate": 0.9656,
+        "avg_lead_time_days": 7.5229,
+        "worst_otif_rank": 1
+      },
+      {
+        "country": "ES",
+        "order_items": 4839,
+        "otif_rate": 0.6439,
+        "on_time_rate": 0.666,
+        "in_full_rate": 0.9669,
+        "avg_lead_time_days": 6.6572,
+        "worst_otif_rank": 2
+      },
+      {
+        "country": "FR",
+        "order_items": 6473,
+        "otif_rate": 0.7517,
+        "on_time_rate": 0.7799,
+        "in_full_rate": 0.9672,
+        "avg_lead_time_days": 5.607,
+        "worst_otif_rank": 3
+      },
+      {
+        "country": "NL",
+        "order_items": 3872,
+        "otif_rate": 0.8254,
+        "on_time_rate": 0.853,
+        "in_full_rate": 0.9693,
+        "avg_lead_time_days": 4.632,
+        "worst_otif_rank": 4
+      },
+      {
+        "country": "DE",
+        "order_items": 10981,
+        "otif_rate": 0.8316,
+        "on_time_rate": 0.8646,
+        "in_full_rate": 0.9643,
+        "avg_lead_time_days": 4.5525,
+        "worst_otif_rank": 5
+      }
+    ],
+    "invoice_to_cash_by_country": [
+      {
+        "country": "IT",
+        "invoices": 2668,
+        "avg_invoice_to_cash_days": 44.266,
+        "share_paid_after_45d": 0.3375,
+        "open_receivables_value": 145060.99,
+        "slowest_rank": 1
+      },
+      {
+        "country": "ES",
+        "invoices": 2251,
+        "avg_invoice_to_cash_days": 40.0418,
+        "share_paid_after_45d": 0.2717,
+        "open_receivables_value": 72982.34,
+        "slowest_rank": 2
+      },
+      {
+        "country": "FR",
+        "invoices": 2985,
+        "avg_invoice_to_cash_days": 37.5879,
+        "share_paid_after_45d": 0.1992,
+        "open_receivables_value": 96273.62,
+        "slowest_rank": 3
+      },
+      {
+        "country": "NL",
+        "invoices": 1749,
+        "avg_invoice_to_cash_days": 36.5549,
+        "share_paid_after_45d": 0.2084,
+        "open_receivables_value": 58681.77,
+        "slowest_rank": 4
+      },
+      {
+        "country": "DE",
+        "invoices": 5052,
+        "avg_invoice_to_cash_days": 34.814,
+        "share_paid_after_45d": 0.1844,
+        "open_receivables_value": 155727.13,
+        "slowest_rank": 5
+      }
+    ],
+    "fill_rate_by_category": [
+      {
+        "category": "FOOTWEAR",
+        "ordered_qty": 56302,
+        "delivered_qty": 55294,
+        "fill_rate": 0.9821,
+        "split_delivery_share": 0.1285
+      },
+      {
+        "category": "DENIM",
+        "ordered_qty": 70376,
+        "delivered_qty": 69214,
+        "fill_rate": 0.9835,
+        "split_delivery_share": 0.0942
+      },
+      {
+        "category": "DRESSES",
+        "ordered_qty": 54045,
+        "delivered_qty": 53507,
+        "fill_rate": 0.99,
+        "split_delivery_share": 0.0579
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "ordered_qty": 27246,
+        "delivered_qty": 26977,
+        "fill_rate": 0.9901,
+        "split_delivery_share": 0.0611
+      },
+      {
+        "category": "TOPS",
+        "ordered_qty": 81758,
+        "delivered_qty": 80965,
+        "fill_rate": 0.9903,
+        "split_delivery_share": 0.0619
+      },
+      {
+        "category": "KNITWEAR",
+        "ordered_qty": 40017,
+        "delivered_qty": 39683,
+        "fill_rate": 0.9917,
+        "split_delivery_share": 0.0553
+      },
+      {
+        "category": "ACCESSORIES",
+        "ordered_qty": 36270,
+        "delivered_qty": 35970,
+        "fill_rate": 0.9917,
+        "split_delivery_share": 0.0538
+      },
+      {
+        "category": "OUTERWEAR",
+        "ordered_qty": 52033,
+        "delivered_qty": 51641,
+        "fill_rate": 0.9925,
+        "split_delivery_share": 0.0592
+      }
+    ],
+    "return_rate_by_category": [
+      {
+        "category": "DRESSES",
+        "billed_qty": 53608,
+        "returned_qty": 5077,
+        "return_rate": 0.0947,
+        "net_revenue": 2553579.43,
+        "returned_value": 244600.91,
+        "return_rank": 1
+      },
+      {
+        "category": "FOOTWEAR",
+        "billed_qty": 55533,
+        "returned_qty": 4048,
+        "return_rate": 0.0729,
+        "net_revenue": 3429140.27,
+        "returned_value": 248457.85,
+        "return_rank": 2
+      },
+      {
+        "category": "DENIM",
+        "billed_qty": 69391,
+        "returned_qty": 3608,
+        "return_rate": 0.052,
+        "net_revenue": 2677509.33,
+        "returned_value": 141281.71,
+        "return_rank": 3
+      },
+      {
+        "category": "OUTERWEAR",
+        "billed_qty": 51766,
+        "returned_qty": 2174,
+        "return_rate": 0.042,
+        "net_revenue": 4472817.34,
+        "returned_value": 188350.99,
+        "return_rank": 4
+      },
+      {
+        "category": "KNITWEAR",
+        "billed_qty": 39788,
+        "returned_qty": 1508,
+        "return_rate": 0.0379,
+        "net_revenue": 1483800.96,
+        "returned_value": 56874.99,
+        "return_rank": 5
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "billed_qty": 27001,
+        "returned_qty": 836,
+        "return_rate": 0.031,
+        "net_revenue": 761074.72,
+        "returned_value": 23102.47,
+        "return_rank": 6
+      },
+      {
+        "category": "TOPS",
+        "billed_qty": 81143,
+        "returned_qty": 2449,
+        "return_rate": 0.0302,
+        "net_revenue": 1407912.55,
+        "returned_value": 42492.77,
+        "return_rank": 7
+      },
+      {
+        "category": "ACCESSORIES",
+        "billed_qty": 36004,
+        "returned_qty": 683,
+        "return_rate": 0.019,
+        "net_revenue": 534825.98,
+        "returned_value": 10143.59,
+        "return_rank": 8
+      }
+    ],
+    "return_reasons": [
+      {
+        "category": "ACCESSORIES",
+        "reason_code": "R01",
+        "reason_text": "Size / fit",
+        "returned_qty": 281,
+        "share_in_category": 0.4114
+      },
+      {
+        "category": "ACCESSORIES",
+        "reason_code": "R04",
+        "reason_text": "Delivered too late",
+        "returned_qty": 164,
+        "share_in_category": 0.2401
+      },
+      {
+        "category": "ACCESSORIES",
+        "reason_code": "R02",
+        "reason_text": "Quality defect",
+        "returned_qty": 123,
+        "share_in_category": 0.1801
+      },
+      {
+        "category": "ACCESSORIES",
+        "reason_code": "R03",
+        "reason_text": "Not as described",
+        "returned_qty": 115,
+        "share_in_category": 0.1684
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "reason_code": "R01",
+        "reason_text": "Size / fit",
+        "returned_qty": 409,
+        "share_in_category": 0.4892
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "reason_code": "R03",
+        "reason_text": "Not as described",
+        "returned_qty": 179,
+        "share_in_category": 0.2141
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "reason_code": "R02",
+        "reason_text": "Quality defect",
+        "returned_qty": 162,
+        "share_in_category": 0.1938
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "reason_code": "R04",
+        "reason_text": "Delivered too late",
+        "returned_qty": 86,
+        "share_in_category": 0.1029
+      },
+      {
+        "category": "DENIM",
+        "reason_code": "R01",
+        "reason_text": "Size / fit",
+        "returned_qty": 1705,
+        "share_in_category": 0.4726
+      },
+      {
+        "category": "DENIM",
+        "reason_code": "R02",
+        "reason_text": "Quality defect",
+        "returned_qty": 745,
+        "share_in_category": 0.2065
+      },
+      {
+        "category": "DENIM",
+        "reason_code": "R03",
+        "reason_text": "Not as described",
+        "returned_qty": 674,
+        "share_in_category": 0.1868
+      },
+      {
+        "category": "DENIM",
+        "reason_code": "R04",
+        "reason_text": "Delivered too late",
+        "returned_qty": 484,
+        "share_in_category": 0.1341
+      },
+      {
+        "category": "DRESSES",
+        "reason_code": "R01",
+        "reason_text": "Size / fit",
+        "returned_qty": 2559,
+        "share_in_category": 0.504
+      },
+      {
+        "category": "DRESSES",
+        "reason_code": "R02",
+        "reason_text": "Quality defect",
+        "returned_qty": 1144,
+        "share_in_category": 0.2253
+      },
+      {
+        "category": "DRESSES",
+        "reason_code": "R03",
+        "reason_text": "Not as described",
+        "returned_qty": 816,
+        "share_in_category": 0.1607
+      },
+      {
+        "category": "DRESSES",
+        "reason_code": "R04",
+        "reason_text": "Delivered too late",
+        "returned_qty": 558,
+        "share_in_category": 0.1099
+      },
+      {
+        "category": "FOOTWEAR",
+        "reason_code": "R01",
+        "reason_text": "Size / fit",
+        "returned_qty": 2001,
+        "share_in_category": 0.4943
+      },
+      {
+        "category": "FOOTWEAR",
+        "reason_code": "R02",
+        "reason_text": "Quality defect",
+        "returned_qty": 750,
+        "share_in_category": 0.1853
+      },
+      {
+        "category": "FOOTWEAR",
+        "reason_code": "R03",
+        "reason_text": "Not as described",
+        "returned_qty": 740,
+        "share_in_category": 0.1828
+      },
+      {
+        "category": "FOOTWEAR",
+        "reason_code": "R04",
+        "reason_text": "Delivered too late",
+        "returned_qty": 557,
+        "share_in_category": 0.1376
+      },
+      {
+        "category": "KNITWEAR",
+        "reason_code": "R01",
+        "reason_text": "Size / fit",
+        "returned_qty": 727,
+        "share_in_category": 0.4821
+      },
+      {
+        "category": "KNITWEAR",
+        "reason_code": "R02",
+        "reason_text": "Quality defect",
+        "returned_qty": 277,
+        "share_in_category": 0.1837
+      },
+      {
+        "category": "KNITWEAR",
+        "reason_code": "R04",
+        "reason_text": "Delivered too late",
+        "returned_qty": 258,
+        "share_in_category": 0.1711
+      },
+      {
+        "category": "KNITWEAR",
+        "reason_code": "R03",
+        "reason_text": "Not as described",
+        "returned_qty": 246,
+        "share_in_category": 0.1631
+      },
+      {
+        "category": "OUTERWEAR",
+        "reason_code": "R01",
+        "reason_text": "Size / fit",
+        "returned_qty": 1020,
+        "share_in_category": 0.4692
+      },
+      {
+        "category": "OUTERWEAR",
+        "reason_code": "R02",
+        "reason_text": "Quality defect",
+        "returned_qty": 456,
+        "share_in_category": 0.2098
+      },
+      {
+        "category": "OUTERWEAR",
+        "reason_code": "R03",
+        "reason_text": "Not as described",
+        "returned_qty": 387,
+        "share_in_category": 0.178
+      },
+      {
+        "category": "OUTERWEAR",
+        "reason_code": "R04",
+        "reason_text": "Delivered too late",
+        "returned_qty": 311,
+        "share_in_category": 0.1431
+      },
+      {
+        "category": "TOPS",
+        "reason_code": "R01",
+        "reason_text": "Size / fit",
+        "returned_qty": 1181,
+        "share_in_category": 0.4822
+      },
+      {
+        "category": "TOPS",
+        "reason_code": "R02",
+        "reason_text": "Quality defect",
+        "returned_qty": 550,
+        "share_in_category": 0.2246
+      },
+      {
+        "category": "TOPS",
+        "reason_code": "R04",
+        "reason_text": "Delivered too late",
+        "returned_qty": 383,
+        "share_in_category": 0.1564
+      },
+      {
+        "category": "TOPS",
+        "reason_code": "R03",
+        "reason_text": "Not as described",
+        "returned_qty": 335,
+        "share_in_category": 0.1368
+      }
+    ],
+    "top_materials": [
+      {
+        "category": "ACCESSORIES",
+        "material_id": "F1001147",
+        "material_name": "Slim Rust Cap",
+        "net_revenue": 24394.36,
+        "billed_qty": 1823,
+        "rank_in_category": 1,
+        "overall_rank": 123
+      },
+      {
+        "category": "ACCESSORIES",
+        "material_id": "F1000958",
+        "material_name": "Essential Black Cap",
+        "net_revenue": 20668.4,
+        "billed_qty": 1020,
+        "rank_in_category": 2,
+        "overall_rank": 151
+      },
+      {
+        "category": "ACCESSORIES",
+        "material_id": "F1000352",
+        "material_name": "Classic Ecru Tote Bag",
+        "net_revenue": 19620.07,
+        "billed_qty": 1137,
+        "rank_in_category": 3,
+        "overall_rank": 165
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "material_id": "F1000957",
+        "material_name": "Slim Ecru Leggings",
+        "net_revenue": 59896.9,
+        "billed_qty": 1862,
+        "rank_in_category": 1,
+        "overall_rank": 48
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "material_id": "F1001497",
+        "material_name": "Vintage White Running Shorts",
+        "net_revenue": 47366.7,
+        "billed_qty": 1077,
+        "rank_in_category": 2,
+        "overall_rank": 66
+      },
+      {
+        "category": "ACTIVEWEAR",
+        "material_id": "F1000668",
+        "material_name": "Relaxed Navy Track Jacket",
+        "net_revenue": 35601.83,
+        "billed_qty": 999,
+        "rank_in_category": 3,
+        "overall_rank": 83
+      },
+      {
+        "category": "DENIM",
+        "material_id": "F1000309",
+        "material_name": "Premium Burgundy Denim Skirt",
+        "net_revenue": 368469.46,
+        "billed_qty": 12316,
+        "rank_in_category": 1,
+        "overall_rank": 5
+      },
+      {
+        "category": "DENIM",
+        "material_id": "F1001453",
+        "material_name": "Premium Olive Straight Jeans",
+        "net_revenue": 200690.44,
+        "billed_qty": 4746,
+        "rank_in_category": 2,
+        "overall_rank": 9
+      },
+      {
+        "category": "DENIM",
+        "material_id": "F1000873",
+        "material_name": "Premium White Denim Jacket",
+        "net_revenue": 190231.18,
+        "billed_qty": 6033,
+        "rank_in_category": 3,
+        "overall_rank": 10
+      },
+      {
+        "category": "DRESSES",
+        "material_id": "F1000927",
+        "material_name": "Essential Rust Shirt Dress",
+        "net_revenue": 278507.17,
+        "billed_qty": 5603,
+        "rank_in_category": 1,
+        "overall_rank": 6
+      },
+      {
+        "category": "DRESSES",
+        "material_id": "F1001466",
+        "material_name": "Cropped Ecru Midi Dress",
+        "net_revenue": 210188.2,
+        "billed_qty": 3865,
+        "rank_in_category": 2,
+        "overall_rank": 8
+      },
+      {
+        "category": "DRESSES",
+        "material_id": "F1000497",
+        "material_name": "Vintage Olive Midi Dress",
+        "net_revenue": 153328.35,
+        "billed_qty": 2186,
+        "rank_in_category": 3,
+        "overall_rank": 14
+      },
+      {
+        "category": "FOOTWEAR",
+        "material_id": "F1000646",
+        "material_name": "Vintage Ecru Sneaker",
+        "net_revenue": 592269.69,
+        "billed_qty": 9067,
+        "rank_in_category": 1,
+        "overall_rank": 2
+      },
+      {
+        "category": "FOOTWEAR",
+        "material_id": "F1000669",
+        "material_name": "Relaxed Black Ankle Boot",
+        "net_revenue": 266481.31,
+        "billed_qty": 6004,
+        "rank_in_category": 2,
+        "overall_rank": 7
+      },
+      {
+        "category": "FOOTWEAR",
+        "material_id": "F1000884",
+        "material_name": "Classic Burgundy Sandal",
+        "net_revenue": 164936.85,
+        "billed_qty": 4450,
+        "rank_in_category": 3,
+        "overall_rank": 12
+      },
+      {
+        "category": "KNITWEAR",
+        "material_id": "F1001323",
+        "material_name": "Premium Black Cardigan",
+        "net_revenue": 111906.97,
+        "billed_qty": 2777,
+        "rank_in_category": 1,
+        "overall_rank": 24
+      },
+      {
+        "category": "KNITWEAR",
+        "material_id": "F1000287",
+        "material_name": "Slim Sand Crew Sweater",
+        "net_revenue": 70569.17,
+        "billed_qty": 1643,
+        "rank_in_category": 2,
+        "overall_rank": 39
+      },
+      {
+        "category": "KNITWEAR",
+        "material_id": "F1001426",
+        "material_name": "Relaxed Black Crew Sweater",
+        "net_revenue": 51738.65,
+        "billed_qty": 1286,
+        "rank_in_category": 3,
+        "overall_rank": 55
+      },
+      {
+        "category": "OUTERWEAR",
+        "material_id": "F1000271",
+        "material_name": "Oversized Grey Trench Coat",
+        "net_revenue": 1363857.3,
+        "billed_qty": 15209,
+        "rank_in_category": 1,
+        "overall_rank": 1
+      },
+      {
+        "category": "OUTERWEAR",
+        "material_id": "F1000720",
+        "material_name": "Cropped Sky Wool Coat",
+        "net_revenue": 504817.89,
+        "billed_qty": 4866,
+        "rank_in_category": 2,
+        "overall_rank": 3
+      },
+      {
+        "category": "OUTERWEAR",
+        "material_id": "F1001066",
+        "material_name": "Vintage Rust Wool Coat",
+        "net_revenue": 375169.13,
+        "billed_qty": 4811,
+        "rank_in_category": 3,
+        "overall_rank": 4
+      },
+      {
+        "category": "TOPS",
+        "material_id": "F1000361",
+        "material_name": "Vintage Olive Tank Top",
+        "net_revenue": 122040.72,
+        "billed_qty": 4746,
+        "rank_in_category": 1,
+        "overall_rank": 20
+      },
+      {
+        "category": "TOPS",
+        "material_id": "F1000263",
+        "material_name": "Slim White Shirt",
+        "net_revenue": 117399.58,
+        "billed_qty": 7519,
+        "rank_in_category": 2,
+        "overall_rank": 21
+      },
+      {
+        "category": "TOPS",
+        "material_id": "F1000316",
+        "material_name": "Vintage Sky Tank Top",
+        "net_revenue": 97017.71,
+        "billed_qty": 4293,
+        "rank_in_category": 3,
+        "overall_rank": 30
+      }
+    ]
+  }
+}

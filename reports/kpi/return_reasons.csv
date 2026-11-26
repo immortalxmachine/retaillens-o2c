@@ -1,0 +1,33 @@
+category,reason_code,reason_text,returned_qty,share_in_category
+ACCESSORIES,R01,Size / fit,281,0.4114
+ACCESSORIES,R04,Delivered too late,164,0.2401
+ACCESSORIES,R02,Quality defect,123,0.1801
+ACCESSORIES,R03,Not as described,115,0.1684
+ACTIVEWEAR,R01,Size / fit,409,0.4892
+ACTIVEWEAR,R03,Not as described,179,0.2141
+ACTIVEWEAR,R02,Quality defect,162,0.1938
+ACTIVEWEAR,R04,Delivered too late,86,0.1029
+DENIM,R01,Size / fit,1705,0.4726
+DENIM,R02,Quality defect,745,0.2065
+DENIM,R03,Not as described,674,0.1868
+DENIM,R04,Delivered too late,484,0.1341
+DRESSES,R01,Size / fit,2559,0.504
+DRESSES,R02,Quality defect,1144,0.2253
+DRESSES,R03,Not as described,816,0.1607
+DRESSES,R04,Delivered too late,558,0.1099
+FOOTWEAR,R01,Size / fit,2001,0.4943
+FOOTWEAR,R02,Quality defect,750,0.1853
+FOOTWEAR,R03,Not as described,740,0.1828
+FOOTWEAR,R04,Delivered too late,557,0.1376
+KNITWEAR,R01,Size / fit,727,0.4821
+KNITWEAR,R02,Quality defect,277,0.1837
+KNITWEAR,R04,Delivered too late,258,0.1711
+KNITWEAR,R03,Not as described,246,0.1631
+OUTERWEAR,R01,Size / fit,1020,0.4692
+OUTERWEAR,R02,Quality defect,456,0.2098
+OUTERWEAR,R03,Not as described,387,0.178
+OUTERWEAR,R04,Delivered too late,311,0.1431
+TOPS,R01,Size / fit,1181,0.4822
+TOPS,R02,Quality defect,550,0.2246
+TOPS,R04,Delivered too late,383,0.1564
+TOPS,R03,Not as described,335,0.1368
