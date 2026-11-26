@@ -1,15 +1,16 @@
-# Build the Power BI report - step by step (SYNTHETIC DATA)
+# Build the Power BI report - step by step (case study, real Olist data)
 
-The pipeline (`python -m src.pipeline`) exports the star schema to `powerbi/data/` as CSV and
-Parquet. The Parquet files are committed; the larger CSV copies are created when you run the
-pipeline. Power BI Desktop (free, Windows) is needed to build the `.pbix`.
+Run the pipeline on the full dataset first (`python -m src.pipeline`). It downloads Olist from
+Kaggle if needed and exports the star schema to `powerbi/data/` as CSV and Parquet. The export is
+about 50 MB, so it is not committed. You need Power BI Desktop (free, Windows) to build the
+`.pbix`.
 
 ## 1. Import the data
 1. Open Power BI Desktop > **Get data > Parquet** (or **Text/CSV**).
-2. Load the six files from `powerbi/data/`: `dim_customer`, `dim_material`, `dim_date`,
-   `fact_order_item`, `fact_delivery`, `fact_billing`.
-3. In Power Query make sure the date columns are type **Date** and `*_id` columns are **Text**
-   (IDs like `0000100001` must keep their leading zeros). Close & Apply.
+2. Load the seven files from `powerbi/data/`: `dim_customer`, `dim_seller`, `dim_material`,
+   `dim_date`, `fact_order_item`, `fact_delivery`, `fact_payment`.
+3. In Power Query, check the column types: `*_ts` and `promised_date` as **Date/Time**,
+   `calendar_date` as **Date**, and `*_id` and `date_key` columns as **Text**. Then Close & Apply.
 
 ## 2. Model (Model view) - a star schema
 Create single-direction, many-to-one relationships:
@@ -18,32 +19,33 @@ Create single-direction, many-to-one relationships:
 |---|---|
 | fact_order_item[customer_id] | dim_customer[customer_id] |
 | fact_order_item[material_id] | dim_material[material_id] |
-| fact_order_item[order_date] | dim_date[calendar_date] |
-| fact_billing[customer_id] | dim_customer[customer_id] |
-| fact_billing[material_id] | dim_material[material_id] |
-| fact_billing[billing_date] | dim_date[calendar_date] |
-| fact_delivery[customer_id] | dim_customer[customer_id] |
+| fact_order_item[seller_id] | dim_seller[seller_id] |
+| fact_order_item[order_date_key] | dim_date[date_key] |
+| fact_delivery[seller_id] | dim_seller[seller_id] |
 | fact_delivery[material_id] | dim_material[material_id] |
-| fact_delivery[goods_issue_date] | dim_date[calendar_date] (inactive is fine) |
+| fact_delivery[gi_date_key] | dim_date[date_key] (inactive is fine) |
+| fact_payment[customer_id] | dim_customer[customer_id] |
+| fact_payment[order_date_key] | dim_date[date_key] (inactive if ambiguous) |
 
 Then select `dim_date` > **Table tools > Mark as date table** > `calendar_date`.
+Add a report-level filter `dim_date[in_analysis_window] = 1`.
 
 ## 3. Measures
-Create the measures in `DAX_measures.md` (Total Revenue, OTIF %, Avg Lead Time, Return Rate %,
-YoY Revenue %). Format: percentages as %, revenue as currency EUR.
+Create the measures in `DAX_measures.md`: Total Revenue, OTIF %, Avg Lead Time (days),
+Cancellation Rate %, Complaint Rate %, Avg Approval Hours, YoY Revenue %.
 
-## 4. Report page "O2C Overview - SYNTHETIC DATA"
-1. Title text box: **RetailLens - Order-to-Cash Overview (SYNTHETIC DATA)**.
-2. Cards: Total Revenue, OTIF %, Avg Lead Time (days), Return Rate %, YoY Revenue %.
-3. Line chart: dim_date[month_key] on X, Total Revenue on Y.
-4. Bar chart: dim_customer[country] by OTIF % (sort ascending - worst first).
-5. Bar chart: dim_material[category] by Return Rate % (sort descending).
-6. Slicers: dim_material[season], dim_customer[country], dim_date[year_num].
+## 4. Report page "O2C Overview - Olist case study"
+1. Title: **RetailLens - Order-to-Cash Overview (case study, Olist data CC BY-NC-SA 4.0)**.
+2. Cards: Total Revenue, OTIF %, Avg Lead Time (days), Complaint Rate %, Avg Approval Hours.
+3. Line chart: dim_date[month_key] on the X axis, Total Revenue on the Y axis.
+4. Bar chart: dim_customer[state] by OTIF %, sorted ascending (worst first).
+5. Bar chart: dim_material[category] by Complaint Rate %, top 10.
+6. Slicers: dim_material[segment], dim_customer[macro_region], dim_date[year_num].
 
-Check: the cards should match `metrics.json > headline` (same definitions as the SQL).
+Check: the cards should match `metrics.json > headline`.
 
 ## 5. Save and screenshot
 1. Save as `powerbi/RetailLens_O2C.pbix`.
 2. Take a screenshot of the report page and save it as **`docs/screenshots/04-powerbi.png`**
-   (keep it under 1 MB, e.g. 1600 px wide PNG).
+   (keep it under 1 MB, for example a 1600 px wide PNG).
 3. Commit both files (`docs: add Power BI report and screenshot`).
