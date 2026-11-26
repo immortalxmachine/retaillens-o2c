@@ -48,7 +48,7 @@ def resume_bullets(m: dict) -> str:
     top_ret = m["kpis"]["return_rate_by_category"][0]
     bullets = [
         f"Built SAP S/4HANA order-to-cash analytics on {h['order_items']:,} synthetic SD order "
-        f"items (VBAK/VBAP/LIKP/VBRK) with a PostgreSQL star schema of CDS-style views.",
+        f"items (VBAK/VBAP/LIKP/VBRK) with a star schema of CDS-style SQL views on PostgreSQL.",
         f"Engineered data-quality gates checking {dq['rows_in']:,} rows for referential "
         f"integrity, mandatory fields and negatives, quarantining {dq['rows_quarantined']} with "
         f"reasons.",
