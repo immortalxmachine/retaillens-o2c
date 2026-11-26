@@ -1,0 +1,21 @@
+segment,category,material_id,items_sold,net_revenue,rank_in_segment,overall_rank
+Fashion & accessories,watches_gifts,53b36df67ebb7c41585e8d54d6772e08,323,37683.42,1,9
+Fashion & accessories,watches_gifts,e0d64dcfaa3b6db5c54ca298ae101d05,194,31786.82,2,11
+Fashion & accessories,watches_gifts,d285360f29ac7fd97640bf0baef03de0,123,31623.81,3,12
+Fashion & accessories,watches_gifts,7a10781637204d8d10485c71a6108a2e,143,30467.5,4,13
+Fashion & accessories,watches_gifts,f819f0c84a64f02d3a5606ca95edd272,45,29024.48,5,15
+Fashion & accessories,watches_gifts,a62e25e09e05e6faf31d90c6ec1aa3d1,225,23943.0,6,20
+Fashion & accessories,watches_gifts,461f43be3bdf8844e65b62d9ac2c7a5a,146,20593.22,7,26
+Fashion & accessories,watches_gifts,6f3b5b605d91b7439c5e3f5a8dffeea7,117,19009.4,8,31
+Fashion & accessories,watches_gifts,1a080577618e7fe4d9ddd8fb2b47a964,32,18262.96,9,33
+Fashion & accessories,luggage_accessories,af51d485dc5255ba2e18b21b550156e6,55,14483.31,10,49
+Other,health_beauty,bb50f2e236e5eea0100680137654686c,195,63885.0,1,1
+Other,health_beauty,6cdd53843498f92890544667809f1595,156,54730.2,2,2
+Other,computers,d6160fb7873f184099d9bc95e30376af,35,48899.34,3,3
+Other,computers_accessories,d1c427060a0f73f6b889a5c7c61f2ac4,341,46916.51,4,4
+Other,bed_bath_table,99a4788cb24856965c36a24e339b6058,487,42938.66,5,5
+Other,computers_accessories,3dd2a17168ec895c781a9191c1e95ad7,274,41082.6,6,6
+Other,baby,25c38557cf793876c5abdd5931f922db,38,38907.32,7,7
+Other,cool_stuff,5f504b3a1c75b73d6151be81eb05bdc9,63,37733.9,8,8
+Other,furniture_decor,aca2eb7d00ea1a7b8ebd4e68314663af,527,37608.9,9,10
+Other,bed_bath_table,f1c7f353075ce59d8a6f3cf58f419c9c,154,29997.36,10,14

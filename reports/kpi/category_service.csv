@@ -1,0 +1,75 @@
+category,segment,order_items,net_revenue,cancellation_rate,low_review_rate,avg_review_score,otif_rate,freight_to_price,complaint_rank
+office_furniture,Other,1662,266683.49,0.0006,0.2541,3.5161,0.9194,0.2743,1.0
+uncategorized,Other,1547,170505.84,0.009,0.2007,3.9147,0.9166,0.3372,2.0
+furniture_decor,Other,8107,703798.46,0.0044,0.1861,3.9371,0.9249,0.3464,3.0
+bed_bath_table,Other,10939,1021081.82,0.0016,0.1842,3.9153,0.928,0.284,4.0
+computers_accessories,Other,7665,886881.09,0.006,0.1757,3.9672,0.9294,0.294,5.0
+home_construction,Other,596,81337.76,0.0017,0.1743,3.9577,0.9396,0.2673,6.0
+telephony,Other,4433,309484.08,0.0036,0.1573,3.9873,0.9269,0.5074,7.0
+baby,Other,2985,398832.23,0.0064,0.1538,4.0607,0.9169,0.2935,8.0
+garden_tools,Other,4273,468241.43,0.0044,0.1527,4.0718,0.9303,0.332,9.0
+watches_gifts,Fashion & accessories,5863,1161051.75,0.0036,0.1513,4.0605,0.9244,0.1713,10.0
+electronics,Other,2734,154574.07,0.004,0.1506,4.0608,0.9203,0.6832,11.0
+housewares,Other,6810,613028.99,0.0072,0.147,4.0912,0.9429,0.4027,12.0
+auto,Other,4140,576361.7,0.0068,0.1427,4.103,0.9232,0.3311,13.0
+construction_tools_construction,Other,918,142108.49,0.0022,0.1424,4.0821,0.9346,0.3695,14.0
+sports_leisure,Other,8446,950921.46,0.0058,0.1348,4.1482,0.9312,0.2933,15.0
+perfumery,Other,3324,385315.55,0.0039,0.1331,4.2074,0.9308,0.2726,16.0
+musical_instruments,Other,661,183686.74,0.0166,0.1313,4.1786,0.9107,0.2528,17.0
+consoles_games,Other,1088,144119.12,0.0092,0.1308,4.1067,0.932,0.3848,18.0
+small_appliances,Other,664,181855.12,0.012,0.1307,4.196,0.9428,0.2559,19.0
+health_beauty,Other,9438,1227935.94,0.0036,0.1265,4.1829,0.921,0.3022,20.0
+toys,Other,4029,466504.24,0.0077,0.1265,4.191,0.9288,0.2647,21.0
+pet_shop,Other,1921,210536.36,0.0026,0.1224,4.2103,0.9479,0.2969,22.0
+cool_stuff,Other,3723,608845.13,0.0043,0.1214,4.1842,0.9374,0.22,23.0
+stationery,Other,2471,223005.2,0.0049,0.1193,4.2342,0.9276,0.3255,24.0
+fashion_bags_accessories,Fashion & accessories,1978,148796.3,0.0025,0.1159,4.185,0.9444,0.3354,25.0
+home_appliances,Other,755,78793.48,0.0026,0.1117,4.2021,0.9523,0.3942,26.0
+luggage_accessories,Fashion & accessories,1075,137985.44,0.0037,0.0896,4.3408,0.9544,0.2602,27.0
+books_general_interest,Other,543,45256.25,0.0129,0.0779,4.4731,0.9263,0.3559,28.0
+furniture_living_room,Other,496,67170.8,0.004,0.1731,3.9246,0.9254,0.3263,
+food,Other,496,28370.76,0.002,0.1198,4.25,0.9274,0.3465,
+home_confort,Other,426,57556.55,0.0,0.1958,3.8585,0.9061,0.2116,
+audio,Other,361,50413.61,0.0028,0.2185,3.8207,0.8809,0.3319,
+drinks,Other,358,21101.55,0.0028,0.1257,4.1061,0.9525,0.4161,
+construction_tools_lights,Other,303,39957.0,0.0066,0.1429,4.0612,0.9208,0.2554,
+market_place,Other,294,26805.58,0.0034,0.137,4.0308,0.9592,0.3251,
+air_conditioning,Other,283,51974.27,0.0071,0.1619,4.018,0.9541,0.2146,
+kitchen_dining_laundry_garden_furniture,Other,276,45531.98,0.0072,0.1423,4.0109,0.9493,0.3561,
+food_drink,Other,271,14942.88,0.0074,0.0704,4.3519,0.952,0.4905,
+books_technical,Other,261,18634.23,0.0,0.1,4.4,0.9195,0.3406,
+industry_commerce_and_business,Other,259,37712.21,0.0,0.1328,4.1211,0.9344,0.2883,
+fashion_shoes,Fashion & accessories,258,22971.47,0.0078,0.1181,4.252,0.9496,0.2896,
+fixed_telephony,Other,253,54610.33,0.0119,0.244,3.72,0.9486,0.3883,
+costruction_tools_garden,Other,235,25031.38,0.017,0.166,4.0809,0.9277,0.4286,
+home_appliances_2,Other,233,107783.95,0.0129,0.1212,4.1558,0.927,0.2012,
+agro_industry_and_commerce,Other,206,70566.1,0.0,0.1359,4.0874,0.966,0.276,
+computers,Other,199,218684.14,0.0,0.1173,4.2194,0.9497,0.0567,
+art,Other,198,23657.3,0.0051,0.148,4.0663,0.9343,0.2808,
+signaling_and_security,Other,197,21315.05,0.0,0.1173,4.0918,0.9594,0.55,
+construction_tools_safety,Other,188,38773.22,0.0266,0.1765,3.9305,0.9468,0.2403,
+christmas_supplies,Other,151,8737.84,0.0066,0.1389,4.0486,0.894,0.675,
+fashion_underwear_beach,Fashion & accessories,127,9305.95,0.0,0.1587,4.0476,0.9055,0.5512,
+fashion_male_clothing,Fashion & accessories,125,10427.43,0.008,0.25,3.7581,0.936,0.2633,
+furniture_bedroom,Other,103,19051.8,0.0,0.1262,4.2524,0.932,0.3346,
+costruction_tools_tools,Other,103,15903.95,0.0,0.0808,4.4444,0.9417,0.3742,
+tablets_printing_image,Other,83,7528.41,0.0,0.1358,4.1235,0.9398,0.2226,
+small_appliances_home_oven_and_coffee,Other,73,46589.56,0.0,0.0685,4.4384,0.9452,0.1666,
+cine_photo,Other,68,6474.92,0.0,0.1029,4.3824,0.9412,0.3948,
+dvds_blu_ray,Other,63,4542.59,0.0317,0.1746,4.0794,0.9048,0.8297,
+books_imported,Other,57,4418.86,0.0,0.0877,4.5088,0.9649,0.2455,
+fashio_female_clothing,Fashion & accessories,44,2580.04,0.0,0.1364,3.9091,0.9318,0.283,
+party_supplies,Other,42,4465.19,0.0,0.2143,3.8333,1.0,0.368,
+music,Other,38,6034.35,0.0,0.1053,4.2105,0.9474,0.4245,
+diapers_and_hygiene,Other,37,1365.89,0.027,0.2432,3.2703,0.973,0.4218,
+furniture_mattress_and_upholstery,Other,37,4323.38,0.0,0.1892,3.8919,0.8649,0.4723,
+flowers,Other,33,1110.04,0.0,0.0645,4.4194,0.9697,0.565,
+home_comfort_2,Other,30,760.27,0.0,0.2593,3.6296,0.8667,0.9339,
+fashion_sport,Fashion & accessories,29,2094.52,0.0,0.069,4.3448,0.9655,0.3122,
+arts_and_craftmanship,Other,24,1814.01,0.0,0.125,4.125,0.9583,0.3811,
+portateis_cozinha_e_preparadores_de_alimentos,Other,15,3933.63,0.0667,0.3333,3.2667,0.8667,0.3932,
+la_cuisine,Other,14,2054.99,0.0,0.2308,4.0,1.0,0.186,
+cds_dvds_musicals,Other,14,730.0,0.0,0.0,4.6429,1.0,0.312,
+pc_gamer,Other,9,1306.95,0.1111,0.3333,3.3333,0.8889,0.0966,
+fashion_childrens_clothes,Fashion & accessories,7,519.95,0.0,0.0,5.0,1.0,0.1791,
+security_and_services,Other,2,283.29,0.0,0.5,2.5,1.0,0.1475,

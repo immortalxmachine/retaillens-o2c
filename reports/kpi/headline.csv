@@ -1,0 +1,2 @@
+sales_orders,order_items,customers,sellers,net_revenue,freight_revenue,otif_rate,on_time_rate,in_full_rate,fill_rate,cancellation_rate,avg_lead_time_days,avg_promised_days,avg_transit_days,seller_handover_on_time_rate,avg_approval_hours,low_review_rate,avg_review_score,fashion_revenue_share
+98353,112279,95121,3068,13449529.68,2234177.06,0.9294,0.9338,0.9952,0.9952,0.0048,12.4007,24.3483,9.158,0.9077,10.2744,0.1419,4.1044,0.1141

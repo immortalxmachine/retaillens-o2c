@@ -1,0 +1,6 @@
+macro_region,delivered_items,avg_approval_days,avg_approval_to_gi_days,avg_transit_days,avg_lead_time_days,avg_promised_days,on_time_rate,transit_share
+North,2010,0.5113,2.7075,19.2353,22.5433,38.2164,0.9124,0.8533
+Northeast,10043,0.4919,2.833,16.4347,19.8349,31.2366,0.874,0.8286
+Center-West,6445,0.4892,2.5874,11.7277,14.8903,27.2726,0.9351,0.7876
+South,15771,0.4856,2.7096,10.6362,13.9402,27.0728,0.9422,0.763
+Southeast,75371,0.4141,2.7171,7.3906,10.6046,22.2405,0.9405,0.6969

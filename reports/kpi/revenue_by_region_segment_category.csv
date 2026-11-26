@@ -1,0 +1,1393 @@
+macro_region,state,segment,category,order_items,net_revenue,freight_revenue
+Southeast,SP,Other,bed_bath_table,5226,478149.19,77902.05
+Southeast,SP,Other,health_beauty,4169,459514.85,56922.37
+Southeast,SP,Fashion & accessories,watches_gifts,2267,430456.39,27423.52
+Southeast,SP,Other,sports_leisure,3634,382158.72,54155.88
+Southeast,SP,Other,computers_accessories,3142,346798.15,45820.43
+Southeast,SP,Other,furniture_decor,3486,284258.89,56490.2
+Southeast,SP,Other,housewares,3231,272864.54,54385.35
+Southeast,SP,Other,cool_stuff,1356,212018.16,22211.85
+Southeast,SP,Other,auto,1733,210983.81,26210.24
+Southeast,RJ,Fashion & accessories,watches_gifts,871,182532.5,13800.25
+Southeast,SP,Other,toys,1685,181819.69,24997.36
+Southeast,SP,Other,perfumery,1461,164819.38,18275.14
+Southeast,MG,Other,health_beauty,1075,156682.78,20843.79
+Southeast,SP,Other,baby,1253,155516.15,20643.55
+Southeast,SP,Other,garden_tools,1550,151391.22,27074.46
+Southeast,RJ,Other,bed_bath_table,1640,147703.54,32081.23
+Southeast,RJ,Other,health_beauty,1052,143555.34,19049.35
+Southeast,MG,Other,bed_bath_table,1328,129317.28,27830.06
+Southeast,MG,Fashion & accessories,watches_gifts,635,123473.54,10857.34
+Southeast,RJ,Other,sports_leisure,1035,123066.63,20799.47
+Southeast,RJ,Other,computers_accessories,998,119943.1,21192.01
+Southeast,MG,Other,sports_leisure,960,112036.3,20355.81
+Southeast,MG,Other,computers_accessories,987,109445.28,18141.11
+Southeast,SP,Other,office_furniture,659,107714.92,18067.89
+Southeast,SP,Other,telephony,1636,103753.92,17183.43
+Southeast,RJ,Other,furniture_decor,1076,97289.13,23488.03
+Southeast,SP,Other,stationery,1060,90014.93,15120.75
+Southeast,SP,Other,pet_shop,893,88636.48,14718.17
+Southeast,RJ,Other,cool_stuff,518,82453.16,11564.07
+Southeast,MG,Other,furniture_decor,938,78387.2,19897.84
+Southeast,RJ,Other,housewares,867,76709.89,19574.81
+Southeast,MG,Other,housewares,826,76175.44,18360.28
+Southeast,RJ,Other,garden_tools,653,72832.06,15999.23
+Southeast,RJ,Other,toys,569,72473.8,10139.7
+Southeast,MG,Other,auto,504,72017.79,11248.27
+Southeast,SP,Other,small_appliances,301,70177.39,5345.98
+Southeast,MG,Other,cool_stuff,456,70098.2,10009.82
+Southeast,SP,Other,musical_instruments,262,68138.41,5223.53
+Southeast,SP,Other,uncategorized,644,66612.78,8554.78
+Southeast,RJ,Other,auto,439,65554.79,9932.35
+Southeast,SP,Other,computers,59,61993.27,2378.44
+Southeast,SP,Other,consoles_games,484,60988.17,6422.74
+Southeast,SP,Other,construction_tools_construction,426,60767.33,6958.05
+South,RS,Other,bed_bath_table,614,60270.74,12442.76
+Southeast,MG,Other,garden_tools,606,60183.32,12830.78
+South,PR,Fashion & accessories,watches_gifts,306,59859.04,5212.56
+South,PR,Other,sports_leisure,483,58475.5,9138.92
+Southeast,MG,Other,toys,491,58069.26,9689.13
+Southeast,SP,Fashion & accessories,fashion_bags_accessories,856,56959.51,9688.44
+Southeast,SP,Fashion & accessories,luggage_accessories,453,56925.17,10238.91
+South,PR,Other,health_beauty,418,54551.8,7701.51
+South,RS,Other,furniture_decor,558,54475.6,12776.5
+South,RS,Other,sports_leisure,469,53358.23,9557.18
+South,RS,Other,computers_accessories,483,52558.73,9499.67
+Southeast,RJ,Other,perfumery,438,52001.09,6656.44
+Southeast,SP,Other,electronics,999,51732.25,11549.4
+Northeast,BA,Other,health_beauty,349,51217.91,8868.67
+South,RS,Other,health_beauty,434,51160.85,8906.98
+South,PR,Other,furniture_decor,510,48454.6,11389.97
+Northeast,BA,Fashion & accessories,watches_gifts,231,48171.42,4791.32
+South,RS,Fashion & accessories,watches_gifts,233,48152.53,3998.29
+Southeast,MG,Other,baby,369,47530.4,8622.19
+Southeast,MG,Other,perfumery,400,47203.38,6538.8
+Southeast,RJ,Other,office_furniture,305,46532.19,12784.76
+South,PR,Other,bed_bath_table,461,45281.29,9414.72
+South,RS,Other,cool_stuff,259,43778.39,5771.01
+South,PR,Other,computers_accessories,384,43533.2,6883.7
+South,SC,Other,sports_leisure,361,43466.9,7351.36
+Northeast,PE,Other,health_beauty,239,41528.88,8294.45
+Southeast,RJ,Other,baby,355,41348.65,8417.8
+South,SC,Other,health_beauty,302,39148.85,6182.83
+South,RS,Other,housewares,433,38897.63,9835.36
+Southeast,RJ,Other,telephony,437,38406.17,7170.41
+Northeast,BA,Other,sports_leisure,292,38244.85,7603.25
+South,SC,Other,computers_accessories,319,37607.23,6206.04
+South,PR,Other,cool_stuff,215,37539.12,4518.44
+Southeast,MG,Other,telephony,480,34965.01,7810.28
+South,RS,Other,garden_tools,284,34824.7,6757.23
+Southeast,SP,Other,home_construction,270,34368.38,4112.66
+Southeast,SP,Other,home_appliances,344,33632.04,4796.29
+Northeast,BA,Other,computers_accessories,258,33494.91,6020.58
+South,SC,Fashion & accessories,watches_gifts,185,33419.33,2987.24
+Center-West,GO,Fashion & accessories,watches_gifts,148,33209.72,2806.75
+Southeast,SP,Other,home_appliances_2,89,33073.76,3427.43
+Southeast,RJ,Other,stationery,327,32909.43,6677.33
+Northeast,CE,Other,health_beauty,165,32289.48,5608.87
+Southeast,MG,Other,pet_shop,250,31987.34,5360.5
+Center-West,DF,Fashion & accessories,watches_gifts,146,31471.2,2807.33
+South,SC,Other,furniture_decor,351,31441.56,7956.79
+South,PR,Other,housewares,336,31162.61,7454.37
+Northeast,PE,Fashion & accessories,watches_gifts,164,30994.78,4537.93
+South,SC,Other,bed_bath_table,329,30855.61,6535.67
+South,RS,Other,baby,210,30268.93,5217.19
+Northeast,BA,Other,auto,159,29845.91,4503.48
+Center-West,DF,Other,health_beauty,244,29743.02,4669.5
+Southeast,RJ,Other,small_appliances,88,29607.4,2294.41
+Southeast,ES,Fashion & accessories,watches_gifts,152,29461.0,2633.41
+Northeast,CE,Fashion & accessories,watches_gifts,136,29285.24,3533.76
+South,RS,Other,toys,211,28948.53,4530.8
+Southeast,RJ,Other,home_appliances_2,45,28822.51,1586.22
+South,SC,Other,cool_stuff,158,28299.8,3342.84
+Center-West,GO,Other,health_beauty,228,28262.4,4973.17
+Southeast,MG,Other,office_furniture,166,28020.27,7674.2
+South,SC,Other,auto,181,27511.58,4559.08
+Southeast,SP,Other,home_confort,204,27333.63,3287.59
+South,PR,Other,auto,231,27228.49,5656.58
+South,SC,Other,housewares,263,27012.84,6209.25
+Southeast,MG,Other,musical_instruments,78,26455.59,2232.91
+Southeast,RJ,Other,electronics,437,26364.61,8062.6
+South,RS,Other,auto,186,25943.12,4422.74
+Southeast,SP,Other,agro_industry_and_commerce,95,25884.05,1905.43
+Northeast,BA,Other,bed_bath_table,261,25695.19,6449.18
+Southeast,RJ,Other,pet_shop,215,25373.63,4249.79
+Southeast,MG,Other,stationery,271,24998.49,4721.44
+Northeast,BA,Other,garden_tools,178,24228.51,5596.83
+Center-West,DF,Other,computers_accessories,157,24094.33,3292.68
+South,PR,Other,toys,204,24035.21,3943.65
+South,SC,Other,garden_tools,184,23868.34,4222.08
+North,PA,Other,health_beauty,107,23755.83,4070.01
+Southeast,SP,Other,kitchen_dining_laundry_garden_furniture,141,23755.26,5021.95
+Southeast,RJ,Other,uncategorized,221,23540.71,3834.66
+Northeast,BA,Other,furniture_decor,252,23425.96,7271.96
+Southeast,SP,Other,furniture_living_room,202,23332.23,5587.52
+Southeast,RJ,Other,computers,23,23260.45,1252.53
+Southeast,MG,Fashion & accessories,fashion_bags_accessories,262,23110.41,3974.74
+Southeast,MG,Fashion & accessories,luggage_accessories,183,22686.65,4468.09
+Southeast,ES,Other,bed_bath_table,225,22678.65,4394.03
+Center-West,DF,Other,sports_leisure,221,22655.77,4515.89
+Center-West,GO,Other,bed_bath_table,235,22645.31,4871.39
+North,PA,Fashion & accessories,watches_gifts,76,22559.82,2287.48
+Southeast,SP,Other,air_conditioning,134,22010.34,2592.27
+South,PR,Other,baby,159,21684.65,3574.3
+Northeast,BA,Other,telephony,249,21124.42,4523.58
+Southeast,RJ,Other,construction_tools_construction,122,21078.25,3209.35
+Northeast,BA,Other,computers,25,21043.99,955.47
+Northeast,BA,Other,cool_stuff,144,21031.14,3890.74
+Southeast,MG,Other,computers,19,20973.0,870.24
+Southeast,MG,Other,electronics,295,20811.49,5458.95
+South,PR,Other,garden_tools,207,20506.36,4956.43
+Southeast,RJ,Other,musical_instruments,79,20484.82,2146.7
+South,RS,Other,perfumery,154,20304.35,2808.2
+Southeast,ES,Other,health_beauty,164,20114.59,3617.82
+Southeast,ES,Other,sports_leisure,173,20086.2,3811.11
+Southeast,MG,Other,consoles_games,133,19952.67,2231.02
+Center-West,GO,Other,sports_leisure,167,19552.25,3663.07
+Northeast,PE,Other,sports_leisure,146,19504.01,4822.67
+Southeast,SP,Other,books_general_interest,225,19132.86,2909.55
+South,RS,Other,telephony,287,18792.31,4911.53
+Southeast,SP,Other,industry_commerce_and_business,126,18340.9,2819.93
+Southeast,MG,Other,uncategorized,181,18234.35,3198.96
+Southeast,MG,Other,construction_tools_construction,121,18040.69,2597.05
+Center-West,GO,Other,cool_stuff,97,17928.19,2666.14
+Southeast,RJ,Other,fixed_telephony,33,17901.29,731.94
+Southeast,SP,Other,construction_tools_lights,141,17894.16,2430.21
+Southeast,SP,Other,audio,143,17493.6,1558.85
+Center-West,DF,Other,auto,110,17389.04,2656.34
+Southeast,MG,Other,small_appliances,66,17315.99,1532.29
+South,SC,Other,baby,113,16878.47,3001.94
+Northeast,BA,Other,housewares,159,16735.78,5155.72
+Southeast,RJ,Other,furniture_living_room,117,16697.34,4258.73
+Southeast,SP,Other,small_appliances_home_oven_and_coffee,35,16562.55,996.52
+Southeast,RJ,Other,air_conditioning,69,16446.2,1636.38
+Center-West,DF,Other,bed_bath_table,209,16390.51,4070.19
+Southeast,RJ,Fashion & accessories,fashion_bags_accessories,200,16288.3,3278.48
+Northeast,PB,Other,health_beauty,78,16286.98,3166.93
+South,PR,Other,perfumery,154,16157.32,2458.97
+Southeast,RJ,Other,consoles_games,139,15862.35,2309.5
+South,PR,Other,office_furniture,92,15717.12,4480.08
+South,SC,Other,toys,119,15634.32,2392.02
+Northeast,BA,Other,baby,97,15377.33,2976.32
+South,RS,Other,small_appliances,45,15317.7,1211.99
+Center-West,MT,Other,health_beauty,90,15301.79,2519.88
+Southeast,SP,Other,food,283,15248.77,2954.72
+Center-West,GO,Other,garden_tools,117,15033.47,2840.17
+Southeast,RJ,Fashion & accessories,luggage_accessories,122,15014.58,3635.02
+Center-West,MT,Fashion & accessories,watches_gifts,61,15006.91,1391.57
+Southeast,SP,Other,fixed_telephony,113,14982.55,1453.44
+Southeast,SP,Other,art,99,14937.84,1542.48
+Center-West,GO,Other,housewares,132,14836.1,3803.94
+Northeast,BA,Other,toys,116,14509.03,3022.92
+Southeast,ES,Other,computers_accessories,151,14491.18,3214.74
+Northeast,PE,Other,cool_stuff,80,14390.51,2825.86
+Northeast,BA,Other,office_furniture,92,14225.83,4563.55
+Southeast,SP,Other,construction_tools_safety,65,14127.57,936.18
+Northeast,RN,Other,health_beauty,58,13886.47,2332.04
+Center-West,GO,Other,computers_accessories,124,13856.23,2920.72
+Northeast,PB,Fashion & accessories,watches_gifts,43,13388.88,1499.88
+South,SC,Other,perfumery,116,13330.55,1964.94
+South,PR,Other,telephony,250,13273.28,3991.13
+Center-West,DF,Other,housewares,155,12988.35,3376.43
+Southeast,ES,Other,furniture_decor,145,12912.72,3407.65
+Northeast,PE,Other,computers_accessories,105,12907.91,2920.37
+Northeast,AL,Other,health_beauty,63,12780.26,2089.8
+South,RS,Other,stationery,148,12769.01,2847.91
+Northeast,MA,Other,health_beauty,89,12747.18,2831.42
+North,PA,Other,sports_leisure,85,12733.25,3078.36
+Northeast,MA,Other,computers_accessories,73,12581.43,2471.76
+Northeast,CE,Other,cool_stuff,52,12434.4,1982.68
+Center-West,DF,Other,cool_stuff,80,12413.29,1700.35
+Center-West,GO,Other,furniture_decor,126,12385.88,2917.15
+Northeast,CE,Other,computers_accessories,92,12217.65,2654.61
+Southeast,MG,Other,agro_industry_and_commerce,21,12126.49,534.99
+South,SC,Other,telephony,173,12027.49,2852.44
+Center-West,DF,Other,furniture_decor,150,11982.71,3252.58
+Southeast,ES,Other,auto,85,11859.36,1901.31
+Northeast,PE,Other,auto,84,11857.46,2766.31
+Center-West,DF,Other,toys,97,11729.45,2051.49
+North,PA,Other,computers_accessories,90,11694.09,2964.43
+Northeast,AL,Fashion & accessories,watches_gifts,36,11683.27,1079.49
+Southeast,ES,Other,housewares,113,11525.92,2902.52
+Northeast,CE,Other,auto,58,11485.51,2383.41
+Center-West,GO,Other,auto,99,11360.75,2198.11
+Center-West,DF,Other,small_appliances,22,11333.33,792.76
+South,PR,Other,stationery,128,11231.99,2571.71
+Center-West,MS,Other,health_beauty,64,11231.58,1507.57
+South,PR,Other,small_appliances,42,11217.34,940.6
+South,RS,Other,pet_shop,98,10945.71,2541.93
+Center-West,MS,Other,housewares,39,10861.74,1278.85
+Southeast,ES,Other,cool_stuff,65,10839.93,1558.05
+South,RS,Other,home_appliances_2,12,10800.18,799.53
+Center-West,DF,Other,computers,7,10786.99,307.43
+Southeast,ES,Other,garden_tools,104,10732.53,2800.22
+Northeast,PE,Other,telephony,129,10608.94,3130.48
+Northeast,CE,Other,sports_leisure,94,10584.42,2999.53
+South,RS,Other,office_furniture,68,10512.58,2904.88
+South,SC,Other,office_furniture,62,10439.13,2747.65
+Southeast,ES,Other,toys,95,10348.56,1842.2
+South,PR,Other,musical_instruments,37,10233.49,991.41
+Northeast,RN,Fashion & accessories,watches_gifts,49,10160.42,1595.39
+Northeast,PI,Other,auto,34,10134.68,1791.4
+Center-West,MT,Other,auto,54,10087.42,1631.97
+Northeast,BA,Other,musical_instruments,39,10033.3,1627.64
+Northeast,PI,Other,health_beauty,52,9995.2,2027.64
+Southeast,SP,Other,furniture_bedroom,52,9946.06,1788.15
+Center-West,DF,Other,perfumery,87,9908.14,1406.58
+North,PA,Other,baby,44,9882.75,1652.67
+Center-West,MS,Other,computers_accessories,63,9878.79,1397.85
+Northeast,BA,Other,perfumery,81,9723.01,1748.8
+Center-West,GO,Other,perfumery,90,9684.88,1568.56
+Center-West,GO,Other,baby,54,9631.87,1651.77
+Northeast,PE,Other,computers,10,9596.97,628.12
+Northeast,MA,Fashion & accessories,watches_gifts,59,9594.99,1977.37
+Southeast,SP,Other,market_place,114,9529.73,1454.34
+Northeast,PE,Other,bed_bath_table,93,9443.32,3303.05
+Center-West,MT,Other,sports_leisure,76,9433.02,1954.77
+Southeast,ES,Other,telephony,115,9323.35,1860.57
+Northeast,PE,Other,furniture_decor,95,9254.38,2772.13
+Center-West,DF,Other,garden_tools,60,9247.14,1421.28
+South,PR,Other,construction_tools_construction,51,9200.82,1310.35
+South,PR,Other,electronics,178,9196.61,2727.8
+North,PA,Other,uncategorized,19,9178.96,892.77
+Center-West,MS,Other,sports_leisure,75,9177.09,1623.03
+Southeast,SP,Other,drinks,210,9075.13,2412.4
+Southeast,RJ,Other,home_appliances,83,9064.48,1648.35
+Northeast,PE,Other,toys,65,9059.1,2083.72
+South,SC,Other,pet_shop,85,9018.0,1757.8
+Southeast,RJ,Other,audio,56,9009.35,936.7
+Northeast,SE,Other,health_beauty,41,8950.65,1349.86
+Center-West,MT,Other,computers_accessories,55,8873.15,1652.74
+Center-West,MT,Other,garden_tools,53,8850.13,1435.21
+South,SC,Other,stationery,94,8837.91,2091.35
+Northeast,CE,Other,furniture_decor,85,8816.15,2849.21
+Center-West,GO,Other,uncategorized,53,8659.88,1025.66
+North,PA,Other,furniture_decor,66,8626.05,2750.11
+Center-West,DF,Other,baby,69,8621.37,1589.23
+Southeast,RJ,Other,agro_industry_and_commerce,28,8598.86,786.46
+South,PR,Other,small_appliances_home_oven_and_coffee,8,8590.0,334.98
+South,SC,Other,small_appliances,28,8589.04,829.45
+South,RS,Other,computers,8,8546.89,501.35
+South,PR,Other,uncategorized,79,8497.23,1345.68
+South,PR,Other,pet_shop,91,8456.64,1720.77
+Northeast,CE,Other,perfumery,55,8437.93,1394.18
+Northeast,MA,Other,sports_leisure,64,8388.88,2426.53
+South,RS,Other,electronics,165,8378.81,2776.34
+South,RS,Other,uncategorized,98,8353.4,2122.25
+Southeast,ES,Other,baby,61,8346.05,1518.09
+South,SC,Other,electronics,124,8295.36,2181.88
+Southeast,MG,Other,home_construction,60,8223.6,1562.5
+Southeast,ES,Other,fixed_telephony,9,8213.78,210.12
+South,RS,Fashion & accessories,fashion_bags_accessories,79,8147.57,1361.29
+Southeast,MG,Other,home_confort,57,8097.59,1179.77
+Southeast,ES,Other,computers,3,8058.0,295.72
+North,PA,Other,telephony,77,8037.41,2028.98
+South,SC,Other,home_appliances_2,17,7989.38,720.58
+Southeast,RJ,Other,home_confort,61,7954.87,1271.66
+Southeast,SP,Other,signaling_and_security,95,7949.51,1732.71
+North,PA,Other,auto,51,7870.47,2016.67
+Northeast,CE,Other,toys,66,7869.8,2064.94
+South,PR,Fashion & accessories,fashion_bags_accessories,115,7845.68,1853.98
+Center-West,GO,Other,toys,81,7772.08,1609.05
+South,SC,Other,musical_instruments,30,7741.89,621.14
+Northeast,PI,Fashion & accessories,watches_gifts,41,7736.18,1307.36
+Northeast,AL,Other,computers_accessories,40,7681.86,1286.8
+Southeast,MG,Other,furniture_living_room,47,7678.38,1575.73
+South,RS,Other,consoles_games,59,7637.3,1106.19
+Northeast,CE,Other,housewares,58,7619.56,2244.64
+Northeast,MA,Other,cool_stuff,35,7560.38,1469.69
+South,RS,Other,home_construction,43,7497.72,1166.38
+Southeast,SP,Other,costruction_tools_garden,96,7448.94,1693.06
+South,RS,Other,musical_instruments,31,7436.73,819.69
+Center-West,MT,Other,cool_stuff,46,7408.52,1218.95
+North,PA,Other,cool_stuff,48,7378.0,1628.82
+Southeast,RJ,Other,kitchen_dining_laundry_garden_furniture,46,7358.34,2380.44
+Southeast,SP,Other,books_technical,112,7223.78,1259.04
+Northeast,PB,Other,computers_accessories,54,7218.07,1651.68
+South,SC,Other,uncategorized,62,7203.65,1092.62
+Northeast,BA,Other,stationery,75,7196.15,1629.03
+Center-West,MS,Other,auto,26,7142.65,814.49
+Northeast,CE,Other,telephony,98,7139.43,2266.87
+Northeast,PB,Other,computers,4,7128.0,241.29
+Center-West,MT,Other,bed_bath_table,70,7125.58,1660.95
+Northeast,CE,Other,computers,6,7096.79,342.79
+North,RO,Other,health_beauty,25,7085.76,882.1
+Southeast,RJ,Other,home_construction,72,7067.68,1534.06
+Northeast,CE,Other,bed_bath_table,83,7020.79,2570.29
+South,RS,Fashion & accessories,luggage_accessories,56,6959.95,1830.75
+Center-West,MT,Other,baby,35,6936.53,982.01
+Northeast,MA,Other,computers,5,6786.98,201.76
+Southeast,SP,Other,costruction_tools_tools,33,6786.25,526.79
+Northeast,BA,Fashion & accessories,fashion_bags_accessories,76,6740.89,1477.07
+Southeast,MG,Other,construction_tools_safety,25,6691.16,489.17
+South,PR,Other,computers,4,6676.98,280.84
+Southeast,SP,Fashion & accessories,fashion_shoes,88,6658.72,1264.84
+Center-West,MT,Other,furniture_decor,74,6641.14,2015.69
+Northeast,PE,Other,garden_tools,63,6595.53,2081.45
+Southeast,ES,Other,perfumery,68,6577.55,1153.58
+Southeast,RJ,Other,costruction_tools_garden,39,6503.25,838.16
+South,PR,Other,consoles_games,47,6483.52,799.15
+South,PR,Fashion & accessories,luggage_accessories,51,6418.05,1274.87
+Northeast,PE,Other,musical_instruments,11,6410.5,524.45
+Southeast,MG,Other,home_appliances_2,19,6376.78,818.32
+Southeast,SP,Other,food_drink,134,6342.16,1834.35
+Northeast,PE,Other,perfumery,49,6335.93,1403.5
+Northeast,BA,Other,uncategorized,60,6306.93,1621.11
+Southeast,MG,Other,construction_tools_lights,41,6267.15,1406.97
+Northeast,BA,Other,electronics,108,6252.13,2418.2
+Center-West,MS,Fashion & accessories,watches_gifts,37,6251.9,642.63
+Center-West,MS,Other,cool_stuff,26,6163.88,957.05
+Center-West,GO,Other,telephony,122,6153.95,2023.21
+South,RS,Other,home_appliances,44,6141.38,992.05
+Northeast,CE,Other,garden_tools,56,6135.84,1859.89
+Center-West,DF,Other,telephony,93,6123.52,1457.38
+South,SC,Fashion & accessories,fashion_bags_accessories,78,6100.96,1438.12
+South,SC,Other,computers,5,6069.98,255.93
+South,SC,Fashion & accessories,luggage_accessories,35,5926.77,1234.21
+South,PR,Other,home_appliances,45,5894.2,1043.69
+Center-West,MT,Other,toys,44,5857.16,1380.72
+Southeast,MG,Other,audio,36,5846.09,626.69
+Northeast,BA,Other,pet_shop,62,5823.67,1396.72
+Center-West,MS,Other,furniture_decor,65,5819.66,1350.89
+Southeast,MG,Other,home_appliances,86,5814.42,1653.76
+Center-West,MS,Other,bed_bath_table,64,5746.71,1272.29
+North,PA,Other,garden_tools,37,5718.42,1766.14
+Northeast,SE,Other,cool_stuff,17,5686.67,1016.11
+Northeast,PI,Other,sports_leisure,34,5675.69,1270.55
+Northeast,PE,Other,consoles_games,20,5651.24,682.91
+Northeast,PE,Other,agro_industry_and_commerce,5,5611.92,476.78
+Southeast,RJ,Other,drinks,55,5604.82,1035.37
+Northeast,PB,Other,garden_tools,15,5590.01,739.12
+South,RS,Other,construction_tools_construction,44,5578.65,988.2
+Southeast,ES,Other,stationery,50,5503.36,1038.69
+North,TO,Fashion & accessories,watches_gifts,30,5446.89,950.02
+Northeast,PE,Other,housewares,61,5418.42,2053.39
+Northeast,PB,Other,cool_stuff,24,5339.26,1026.68
+Northeast,RN,Other,telephony,25,5303.29,759.98
+Northeast,MA,Other,auto,39,5291.16,1726.55
+Northeast,PI,Other,computers_accessories,36,5276.15,1232.65
+Northeast,MA,Other,baby,27,5275.28,1103.2
+Southeast,ES,Other,musical_instruments,21,5247.38,427.2
+North,TO,Other,sports_leisure,25,5144.32,1309.99
+Center-West,MS,Other,garden_tools,22,5095.07,829.85
+Northeast,CE,Other,small_appliances,8,5043.29,385.3
+Center-West,DF,Other,pet_shop,40,5037.71,981.29
+South,PR,Other,home_appliances_2,15,5009.82,541.4
+Northeast,MA,Other,telephony,64,4977.03,1748.97
+South,SC,Other,construction_tools_construction,30,4976.8,687.62
+Northeast,PE,Other,baby,41,4939.41,1424.5
+South,PR,Other,agro_industry_and_commerce,12,4903.53,381.63
+Center-West,DF,Other,stationery,49,4902.09,922.26
+North,TO,Other,health_beauty,36,4798.99,1227.34
+South,SC,Other,small_appliances_home_oven_and_coffee,4,4754.9,139.3
+Northeast,CE,Other,office_furniture,28,4716.76,1749.32
+Center-West,GO,Other,pet_shop,28,4692.63,708.42
+Southeast,MG,Other,small_appliances_home_oven_and_coffee,10,4668.38,300.43
+North,PA,Other,housewares,38,4660.21,1569.54
+Center-West,MS,Other,baby,31,4610.22,694.45
+Northeast,PB,Other,sports_leisure,34,4604.54,1277.85
+Northeast,BA,Other,construction_tools_construction,36,4594.7,1244.35
+Center-West,GO,Other,stationery,50,4579.82,1031.16
+Northeast,MA,Other,furniture_decor,48,4570.36,1759.18
+North,RO,Fashion & accessories,watches_gifts,15,4553.27,483.07
+Northeast,CE,Other,baby,31,4548.24,1136.42
+Northeast,AL,Other,auto,21,4528.55,762.63
+Northeast,PE,Other,stationery,48,4526.59,1588.68
+Northeast,AL,Other,telephony,28,4508.15,759.76
+Southeast,ES,Other,office_furniture,29,4482.81,1552.3
+North,PA,Other,perfumery,35,4480.28,963.31
+Southeast,MG,Other,books_general_interest,54,4470.52,948.43
+Northeast,PB,Other,furniture_decor,42,4441.71,1819.91
+Northeast,MA,Other,perfumery,31,4436.58,960.35
+South,SC,Other,consoles_games,34,4387.53,656.14
+Northeast,PI,Other,baby,12,4293.09,748.25
+Northeast,BA,Other,consoles_games,36,4247.14,744.1
+Southeast,SP,Fashion & accessories,fashion_male_clothing,55,4220.38,686.26
+Northeast,SE,Other,furniture_decor,24,4165.49,1102.11
+North,TO,Other,computers_accessories,20,4147.22,663.26
+Southeast,RJ,Other,books_general_interest,54,4144.27,866.81
+Northeast,PB,Other,auto,22,4141.27,1321.92
+Northeast,PE,Other,uncategorized,23,4137.63,661.09
+Northeast,BA,Other,fixed_telephony,12,4131.82,252.53
+North,PA,Other,office_furniture,27,4115.24,1818.03
+Northeast,RN,Other,sports_leisure,22,4101.37,842.85
+Southeast,MG,Other,air_conditioning,19,4079.12,429.33
+Northeast,RN,Other,auto,18,4060.62,726.73
+Northeast,MA,Other,bed_bath_table,36,3964.63,1390.11
+Southeast,RJ,Other,small_appliances_home_oven_and_coffee,7,3911.09,321.66
+Northeast,SE,Other,computers_accessories,35,3891.35,920.15
+Southeast,MG,Other,kitchen_dining_laundry_garden_furniture,29,3886.46,1194.01
+South,SC,Other,home_construction,25,3878.12,598.37
+Northeast,BA,Other,small_appliances,18,3871.96,515.73
+Center-West,MT,Other,musical_instruments,6,3818.7,587.38
+Northeast,PI,Other,toys,28,3808.8,922.88
+Center-West,MS,Other,toys,35,3804.67,777.55
+Northeast,RN,Other,cool_stuff,21,3800.28,868.07
+Northeast,PI,Other,bed_bath_table,34,3777.75,1351.98
+Northeast,CE,Other,electronics,46,3768.9,1257.25
+Northeast,AL,Other,sports_leisure,33,3747.68,1093.25
+Northeast,PI,Other,garden_tools,17,3732.85,604.77
+Center-West,MT,Other,office_furniture,20,3720.77,1207.97
+Southeast,ES,Other,electronics,79,3716.14,1641.44
+Northeast,AL,Other,furniture_decor,34,3713.29,1497.01
+Southeast,SP,Fashion & accessories,fashion_underwear_beach,55,3670.75,642.23
+Center-West,MT,Other,housewares,52,3640.5,1344.39
+South,RS,Other,furniture_living_room,24,3582.95,1092.62
+Center-West,MS,Other,musical_instruments,7,3582.5,266.08
+Southeast,RJ,Other,furniture_bedroom,20,3577.96,986.69
+Southeast,ES,Fashion & accessories,fashion_bags_accessories,50,3569.94,853.76
+Northeast,SE,Other,garden_tools,29,3568.13,1126.11
+Center-West,GO,Other,computers,5,3559.97,246.79
+Northeast,CE,Other,uncategorized,18,3546.67,489.71
+Northeast,MA,Other,office_furniture,22,3538.67,1958.68
+Northeast,PE,Other,office_furniture,20,3519.57,1399.56
+North,PA,Other,bed_bath_table,38,3506.54,1091.3
+Center-West,MT,Other,small_appliances,8,3502.9,251.29
+Northeast,PB,Other,bed_bath_table,32,3494.59,1246.8
+Northeast,PI,Other,cool_stuff,20,3490.87,691.95
+Northeast,MA,Other,musical_instruments,10,3477.05,501.65
+Southeast,ES,Other,consoles_games,22,3467.02,403.66
+Center-West,MT,Other,telephony,66,3463.74,1269.33
+South,PR,Other,kitchen_dining_laundry_garden_furniture,14,3439.09,632.92
+North,TO,Other,cool_stuff,16,3429.41,551.79
+Northeast,CE,Fashion & accessories,luggage_accessories,24,3416.5,1005.13
+Northeast,RN,Other,stationery,13,3403.01,501.85
+Northeast,BA,Fashion & accessories,luggage_accessories,31,3384.93,1071.41
+North,PA,Other,small_appliances,9,3366.25,435.87
+Northeast,PB,Other,toys,15,3358.17,629.39
+South,PR,Other,air_conditioning,12,3353.81,292.69
+Northeast,PB,Other,industry_commerce_and_business,3,3321.97,437.76
+North,PA,Other,computers,4,3319.0,285.43
+Northeast,RN,Other,bed_bath_table,30,3311.44,1128.08
+Southeast,MG,Fashion & accessories,fashion_shoes,43,3304.28,768.5
+Northeast,CE,Other,musical_instruments,7,3261.67,340.2
+Southeast,RJ,Other,construction_tools_lights,21,3257.91,475.69
+Center-West,MT,Other,construction_tools_construction,7,3215.88,351.85
+North,RO,Other,sports_leisure,19,3212.88,762.23
+North,PA,Other,toys,28,3206.72,817.9
+Northeast,CE,Other,stationery,38,3173.43,1203.23
+Center-West,DF,Fashion & accessories,fashion_bags_accessories,45,3173.08,683.51
+Northeast,PB,Other,telephony,27,3172.42,818.75
+Center-West,GO,Other,office_furniture,22,3161.93,956.69
+Center-West,GO,Fashion & accessories,fashion_bags_accessories,45,3160.69,837.56
+South,RS,Other,agro_industry_and_commerce,9,3155.93,199.17
+Southeast,RJ,Other,industry_commerce_and_business,28,3126.6,820.25
+Northeast,SE,Other,sports_leisure,35,3116.92,1253.59
+Center-West,MT,Other,stationery,28,3113.16,722.65
+Northeast,RN,Other,furniture_decor,28,3093.48,1094.24
+Northeast,MA,Other,toys,21,3082.42,772.55
+North,RO,Other,toys,15,3079.05,514.33
+South,SC,Other,home_appliances,25,3048.51,577.89
+Northeast,CE,Other,consoles_games,15,3034.15,587.47
+Center-West,DF,Other,office_furniture,19,2997.74,886.66
+Northeast,PE,Other,pet_shop,24,2994.77,884.28
+South,RS,Other,home_confort,21,2991.89,446.75
+Southeast,RJ,Other,art,33,2982.9,671.6
+Northeast,RN,Other,perfumery,21,2970.59,762.13
+South,RS,Other,industry_commerce_and_business,21,2967.69,638.39
+Center-West,MT,Other,pet_shop,16,2936.2,602.87
+South,PR,Other,books_general_interest,36,2933.35,616.18
+Center-West,MT,Other,signaling_and_security,6,2919.4,323.44
+Northeast,SE,Fashion & accessories,watches_gifts,20,2896.0,595.07
+Center-West,MT,Other,computers,2,2889.99,105.05
+North,PA,Other,electronics,28,2875.88,950.24
+Northeast,PI,Other,telephony,38,2875.69,1111.61
+Northeast,RN,Other,garden_tools,19,2871.31,704.47
+Southeast,SP,Other,dvds_blu_ray,21,2852.76,356.57
+South,SC,Other,construction_tools_safety,13,2850.64,275.51
+South,PR,Other,audio,18,2841.27,323.18
+Center-West,MT,Other,perfumery,30,2837.13,602.55
+Southeast,RJ,Other,food_drink,52,2811.4,970.65
+Southeast,RJ,Other,food,47,2808.31,784.66
+Northeast,PB,Other,uncategorized,10,2791.34,360.6
+Northeast,RN,Other,computers_accessories,31,2782.37,1023.66
+Center-West,DF,Fashion & accessories,luggage_accessories,24,2776.85,626.01
+North,AM,Other,health_beauty,20,2776.03,592.65
+Southeast,MG,Other,market_place,32,2767.05,570.65
+South,PR,Other,home_construction,24,2748.11,531.46
+Northeast,BA,Other,home_appliances,39,2737.29,810.92
+Southeast,RJ,Other,construction_tools_safety,17,2736.43,313.78
+Center-West,DF,Other,home_appliances_2,5,2733.9,232.82
+Center-West,DF,Other,uncategorized,33,2701.81,554.37
+Southeast,ES,Other,construction_tools_construction,12,2696.38,436.97
+Northeast,AL,Other,consoles_games,7,2683.08,294.9
+Center-West,GO,Other,home_construction,13,2668.35,524.08
+Northeast,CE,Fashion & accessories,fashion_bags_accessories,30,2667.73,738.31
+Southeast,RJ,Other,market_place,35,2656.74,599.88
+Northeast,BA,Other,home_construction,14,2654.23,538.91
+Northeast,CE,Other,home_appliances_2,3,2653.9,328.39
+Center-West,GO,Other,small_appliances,10,2594.88,369.53
+Northeast,PE,Other,construction_tools_construction,12,2593.77,684.35
+Northeast,PB,Other,electronics,13,2573.43,496.28
+Center-West,MS,Other,pet_shop,25,2569.92,566.24
+North,RO,Other,cool_stuff,14,2559.04,740.3
+Southeast,ES,Fashion & accessories,luggage_accessories,16,2553.48,617.96
+South,RS,Other,books_general_interest,28,2540.85,512.19
+Center-West,DF,Other,musical_instruments,10,2532.6,469.64
+Center-West,GO,Other,costruction_tools_tools,7,2529.5,138.39
+Northeast,PI,Other,housewares,19,2506.09,1074.41
+Northeast,AL,Other,cool_stuff,16,2500.94,653.46
+Northeast,SE,Other,computers,2,2500.0,48.59
+North,RO,Other,computers,2,2499.9,105.22
+North,PA,Other,stationery,22,2496.81,655.4
+Northeast,BA,Other,furniture_living_room,20,2494.43,784.41
+Southeast,SP,Other,books_imported,37,2484.5,336.94
+Center-West,DF,Other,electronics,51,2458.04,839.98
+Southeast,SP,Other,tablets_printing_image,32,2449.76,302.71
+Southeast,RJ,Other,signaling_and_security,20,2445.54,433.65
+Northeast,PB,Other,housewares,23,2443.7,827.33
+North,TO,Other,auto,16,2418.84,529.77
+South,RS,Other,fixed_telephony,19,2402.76,312.18
+Northeast,PB,Other,perfumery,18,2402.07,557.33
+Center-West,GO,Other,consoles_games,22,2386.84,401.82
+Northeast,BA,Other,construction_tools_safety,7,2384.93,161.6
+Southeast,RJ,Fashion & accessories,fashion_shoes,29,2381.11,507.19
+Northeast,SE,Other,auto,21,2373.88,839.8
+Northeast,SE,Other,telephony,28,2365.89,665.85
+Northeast,MA,Other,housewares,23,2364.86,872.77
+Northeast,PI,Other,computers,3,2349.99,205.58
+Northeast,AL,Other,home_appliances_2,2,2345.0,170.7
+Northeast,PE,Fashion & accessories,fashion_bags_accessories,36,2336.93,928.55
+Northeast,RN,Other,baby,15,2334.39,452.57
+Northeast,PB,Other,home_appliances,2,2310.0,109.3
+Southeast,MG,Other,costruction_tools_garden,29,2302.13,658.01
+Northeast,RN,Other,pet_shop,13,2301.68,365.09
+Center-West,GO,Other,agro_industry_and_commerce,7,2298.39,194.41
+Northeast,BA,Other,agro_industry_and_commerce,5,2257.0,237.48
+South,RS,Other,construction_tools_lights,24,2252.53,584.62
+South,RS,Other,audio,16,2245.2,267.61
+Southeast,MG,Other,furniture_bedroom,7,2237.8,427.02
+North,RO,Other,baby,11,2214.39,460.13
+Northeast,AL,Other,pet_shop,3,2195.9,230.82
+Center-West,MS,Other,construction_tools_safety,2,2185.89,86.31
+South,PR,Other,construction_tools_safety,18,2184.51,371.4
+North,TO,Other,baby,7,2179.63,248.39
+Northeast,MA,Other,garden_tools,24,2175.47,990.85
+Southeast,ES,Other,pet_shop,26,2171.08,659.86
+North,AP,Other,computers_accessories,9,2149.52,293.66
+Southeast,ES,Other,home_construction,15,2148.7,318.74
+Southeast,SP,Other,christmas_supplies,50,2143.98,651.05
+Northeast,BA,Other,market_place,4,2135.69,208.68
+South,SC,Other,furniture_living_room,12,2131.37,637.96
+Northeast,PB,Other,stationery,18,2130.18,747.07
+Southeast,MG,Other,food,38,2115.59,639.4
+Center-West,DF,Other,consoles_games,28,2113.37,513.51
+North,PA,Fashion & accessories,fashion_bags_accessories,31,2102.54,800.11
+Southeast,SP,Other,music,12,2093.25,188.91
+Southeast,SP,Other,furniture_mattress_and_upholstery,22,2083.9,878.31
+North,RO,Other,computers_accessories,23,2081.57,816.71
+Northeast,PB,Other,small_appliances,4,2068.36,214.97
+South,PR,Other,construction_tools_lights,13,2061.88,453.14
+South,PR,Other,furniture_living_room,17,2052.51,562.15
+Northeast,AL,Other,computers,2,2049.99,56.38
+Center-West,DF,Other,audio,16,2048.23,274.21
+North,TO,Other,furniture_decor,18,2047.09,686.63
+Northeast,MA,Fashion & accessories,fashion_bags_accessories,27,2039.64,744.49
+Southeast,SP,Other,cine_photo,31,2033.91,387.62
+Northeast,AL,Other,bed_bath_table,20,2023.04,808.81
+North,PA,Other,consoles_games,14,2013.73,526.11
+Northeast,PB,Other,baby,13,2002.57,567.87
+North,RO,Other,small_appliances_home_oven_and_coffee,1,1999.0,115.63
+North,TO,Other,small_appliances_home_oven_and_coffee,1,1999.0,95.44
+Northeast,CE,Other,costruction_tools_garden,8,1988.0,307.54
+Northeast,PI,Other,perfumery,16,1985.57,558.11
+North,AM,Other,garden_tools,5,1980.88,286.92
+North,PA,Other,pet_shop,11,1979.88,504.35
+South,RS,Other,market_place,21,1978.53,352.32
+Center-West,GO,Other,audio,7,1974.88,116.9
+Northeast,PE,Other,electronics,41,1971.04,939.11
+South,RS,Other,kitchen_dining_laundry_garden_furniture,13,1969.6,441.44
+Northeast,RN,Other,toys,25,1964.52,789.89
+North,AM,Other,computers_accessories,17,1960.74,636.54
+Southeast,MG,Other,drinks,26,1940.6,489.19
+Southeast,MG,Other,food_drink,26,1913.9,436.09
+Southeast,MG,Other,books_technical,29,1901.03,534.76
+Northeast,BA,Other,home_appliances_2,5,1894.78,387.48
+South,SC,Other,books_general_interest,23,1890.22,380.71
+North,TO,Other,toys,13,1864.15,423.96
+Northeast,PB,Other,fixed_telephony,5,1845.79,148.35
+Northeast,SE,Other,bed_bath_table,15,1812.17,597.53
+North,AM,Fashion & accessories,watches_gifts,11,1811.35,340.74
+North,TO,Other,perfumery,13,1804.93,409.55
+Center-West,DF,Other,home_appliances,15,1802.43,349.26
+Center-West,MS,Other,perfumery,25,1800.1,421.0
+Northeast,CE,Other,construction_tools_construction,10,1793.06,335.47
+Northeast,AL,Other,perfumery,12,1766.66,377.25
+South,PR,Other,books_technical,15,1764.45,278.25
+North,PA,Other,musical_instruments,10,1733.37,337.12
+North,RO,Other,bed_bath_table,15,1732.27,632.25
+Center-West,MS,Other,stationery,22,1728.0,424.83
+Southeast,MG,Other,costruction_tools_tools,18,1720.05,324.22
+South,SC,Other,fixed_telephony,6,1717.88,107.65
+Center-West,MS,Other,construction_tools_construction,14,1715.01,202.1
+Northeast,SE,Other,musical_instruments,3,1714.8,140.75
+South,PR,Other,food,29,1694.2,540.68
+Northeast,CE,Other,home_appliances,7,1680.9,416.35
+North,AC,Other,sports_leisure,9,1677.46,394.08
+Southeast,MG,Other,industry_commerce_and_business,17,1675.96,394.83
+Northeast,SE,Other,consoles_games,5,1673.99,169.12
+Northeast,PI,Other,consoles_games,9,1670.49,367.52
+Northeast,RN,Other,construction_tools_construction,8,1655.57,319.2
+Northeast,RN,Other,consoles_games,6,1654.96,210.22
+Northeast,AL,Other,garden_tools,14,1648.08,500.29
+North,AP,Fashion & accessories,watches_gifts,8,1639.8,207.12
+South,PR,Other,home_confort,13,1637.1,255.13
+Northeast,PE,Fashion & accessories,luggage_accessories,13,1635.26,740.54
+Center-West,GO,Fashion & accessories,luggage_accessories,12,1632.77,454.57
+South,SC,Other,home_confort,12,1626.19,237.39
+Southeast,RJ,Other,books_technical,29,1621.68,530.61
+Southeast,ES,Other,uncategorized,18,1614.27,290.46
+Northeast,MA,Other,uncategorized,11,1600.92,355.84
+Southeast,ES,Other,books_general_interest,11,1594.85,210.44
+South,SC,Other,audio,10,1592.57,179.1
+Southeast,SP,Other,party_supplies,18,1585.88,258.05
+Northeast,CE,Other,home_construction,10,1581.65,343.98
+Northeast,BA,Other,small_appliances_home_oven_and_coffee,3,1574.9,142.79
+Northeast,BA,Other,costruction_tools_garden,8,1569.39,198.42
+North,RO,Other,furniture_decor,13,1545.18,614.02
+Southeast,ES,Other,home_confort,12,1538.18,217.14
+Center-West,GO,Other,home_appliances_2,3,1537.9,153.74
+Southeast,MG,Fashion & accessories,fashion_male_clothing,20,1536.73,332.34
+Northeast,PE,Other,industry_commerce_and_business,4,1528.9,384.34
+Northeast,MA,Other,furniture_living_room,4,1519.9,761.97
+North,PA,Fashion & accessories,luggage_accessories,7,1515.63,381.1
+Northeast,PI,Other,furniture_decor,22,1515.42,893.73
+Center-West,MS,Other,electronics,22,1513.02,418.45
+South,SC,Other,construction_tools_lights,16,1499.16,350.58
+Northeast,SE,Other,small_appliances,3,1486.7,190.33
+Northeast,RN,Other,housewares,23,1482.75,761.82
+Northeast,AL,Other,agro_industry_and_commerce,1,1476.3,42.25
+Center-West,MS,Other,telephony,28,1475.69,466.79
+Center-West,GO,Other,musical_instruments,9,1472.84,229.4
+South,SC,Other,industry_commerce_and_business,16,1470.88,482.52
+Northeast,MA,Other,stationery,20,1455.89,606.34
+Northeast,RN,Fashion & accessories,fashion_bags_accessories,8,1455.79,302.79
+South,PR,Other,drinks,15,1449.32,299.87
+Southeast,SP,Fashion & accessories,fashio_female_clothing,28,1448.97,285.26
+South,SC,Other,market_place,14,1448.69,236.27
+Northeast,SE,Other,baby,8,1447.49,432.94
+Northeast,PI,Other,electronics,22,1446.84,727.63
+Northeast,RN,Other,home_appliances_2,2,1439.9,181.12
+North,AP,Other,computers,1,1437.0,45.42
+Northeast,RN,Other,books_general_interest,27,1432.6,293.03
+Northeast,BA,Other,audio,14,1430.69,264.9
+Center-West,GO,Other,industry_commerce_and_business,7,1428.14,278.51
+Center-West,MS,Other,home_construction,8,1408.0,234.14
+Center-West,DF,Other,furniture_living_room,7,1405.66,268.43
+Northeast,SE,Other,housewares,11,1397.48,329.74
+Northeast,PI,Other,pet_shop,7,1396.78,309.87
+South,RS,Other,signaling_and_security,17,1392.45,527.94
+North,TO,Other,fixed_telephony,2,1390.99,53.58
+North,AC,Fashion & accessories,watches_gifts,4,1389.6,184.12
+North,RO,Other,auto,10,1389.16,574.99
+North,AC,Other,health_beauty,7,1386.58,268.42
+Northeast,PI,Other,office_furniture,9,1382.6,572.51
+Northeast,PI,Other,musical_instruments,6,1381.6,225.57
+Center-West,GO,Other,furniture_living_room,10,1381.57,385.38
+North,AP,Other,health_beauty,10,1380.58,338.44
+North,RO,Other,construction_tools_construction,4,1374.5,191.06
+Southeast,MG,Other,art,18,1366.54,333.42
+Center-West,MS,Fashion & accessories,luggage_accessories,9,1365.63,243.23
+North,AM,Other,sports_leisure,12,1362.6,369.54
+Southeast,RJ,Fashion & accessories,fashion_underwear_beach,17,1359.47,261.93
+Northeast,CE,Other,books_general_interest,7,1353.05,417.69
+North,RR,Other,sports_leisure,8,1350.6,392.32
+South,RS,Other,air_conditioning,13,1344.39,398.65
+Northeast,PE,Other,home_construction,7,1341.65,410.2
+North,AM,Other,computers,1,1340.0,44.74
+Northeast,MA,Other,consoles_games,6,1331.53,200.36
+Center-West,MT,Other,consoles_games,9,1330.49,182.18
+Center-West,DF,Other,kitchen_dining_laundry_garden_furniture,5,1323.8,379.43
+North,AC,Other,furniture_decor,12,1316.44,430.26
+Southeast,ES,Other,furniture_living_room,13,1302.32,431.59
+Northeast,MA,Other,home_appliances,3,1297.8,286.25
+North,RO,Other,perfumery,6,1291.3,162.7
+North,AC,Other,computers_accessories,9,1290.48,290.07
+North,TO,Other,housewares,14,1275.75,484.74
+Center-West,DF,Other,industry_commerce_and_business,6,1272.0,180.53
+Southeast,MG,Other,christmas_supplies,19,1271.33,389.74
+North,TO,Other,telephony,21,1268.12,627.34
+Center-West,DF,Other,books_general_interest,18,1245.89,345.18
+Northeast,RN,Other,office_furniture,5,1244.72,497.43
+Southeast,MG,Other,fixed_telephony,17,1244.6,306.09
+Center-West,GO,Other,construction_tools_construction,11,1233.16,249.91
+North,TO,Other,office_furniture,6,1226.54,556.6
+Northeast,PE,Fashion & accessories,fashion_shoes,11,1221.42,337.99
+North,AP,Other,auto,3,1216.39,190.29
+South,PR,Other,industry_commerce_and_business,12,1207.87,373.87
+North,TO,Other,garden_tools,13,1206.3,442.06
+Northeast,MA,Fashion & accessories,luggage_accessories,9,1202.43,574.19
+North,AC,Other,computers,1,1200.0,51.7
+North,TO,Other,computers,1,1200.0,37.81
+Southeast,ES,Other,audio,14,1197.78,226.54
+Northeast,AL,Other,construction_tools_construction,2,1195.0,359.15
+Northeast,PB,Other,office_furniture,10,1191.33,595.54
+North,RO,Fashion & accessories,luggage_accessories,6,1181.6,417.11
+South,RS,Other,construction_tools_safety,8,1176.31,140.99
+Northeast,BA,Other,home_confort,11,1170.4,306.93
+Center-West,GO,Other,music,1,1165.97,78.15
+Center-West,GO,Other,books_general_interest,14,1162.69,271.87
+Northeast,PB,Fashion & accessories,fashion_bags_accessories,15,1151.07,589.93
+Southeast,ES,Other,home_appliances_2,3,1149.99,98.79
+Northeast,CE,Other,pet_shop,13,1141.04,352.82
+Center-West,MT,Fashion & accessories,luggage_accessories,8,1139.59,207.26
+Southeast,ES,Other,books_technical,14,1138.6,242.86
+Southeast,MG,Other,portateis_cozinha_e_preparadores_de_alimentos,2,1133.9,58.51
+Northeast,PI,Other,stationery,10,1129.6,377.84
+Southeast,ES,Other,home_appliances,15,1120.96,283.52
+South,RS,Other,costruction_tools_tools,8,1113.4,209.09
+Center-West,GO,Other,home_confort,8,1110.5,147.33
+North,PA,Other,agro_industry_and_commerce,2,1109.98,177.18
+South,SC,Other,cine_photo,4,1106.89,106.69
+Northeast,SE,Other,electronics,19,1105.84,597.65
+North,AC,Other,telephony,5,1103.96,167.47
+Southeast,MG,Other,party_supplies,5,1103.0,114.0
+Northeast,SE,Other,toys,11,1100.29,361.64
+North,RO,Other,office_furniture,6,1087.86,332.83
+Center-West,DF,Other,construction_tools_construction,11,1085.94,241.8
+Center-West,MT,Other,home_construction,7,1085.28,279.9
+South,RS,Other,drinks,18,1073.44,373.59
+Southeast,RJ,Other,costruction_tools_tools,9,1072.68,167.29
+Center-West,GO,Other,signaling_and_security,6,1071.34,140.03
+Southeast,MG,Fashion & accessories,fashion_underwear_beach,18,1070.8,275.91
+South,SC,Other,agro_industry_and_commerce,3,1069.98,81.73
+South,PR,Fashion & accessories,fashion_shoes,18,1067.02,249.83
+Northeast,PB,Fashion & accessories,luggage_accessories,7,1066.49,265.28
+Center-West,MT,Other,construction_tools_safety,4,1063.59,180.65
+South,PR,Fashion & accessories,fashion_male_clothing,12,1061.28,191.07
+Southeast,SP,Other,diapers_and_hygiene,30,1058.89,383.8
+Northeast,AL,Other,toys,12,1053.07,366.11
+Northeast,PE,Other,kitchen_dining_laundry_garden_furniture,4,1051.88,315.66
+Northeast,PB,Other,signaling_and_security,6,1050.0,1794.96
+Center-West,MT,Other,uncategorized,12,1042.4,208.65
+Center-West,MS,Fashion & accessories,fashion_bags_accessories,14,1030.58,246.5
+Southeast,ES,Other,tablets_printing_image,4,1026.79,67.25
+Center-West,GO,Fashion & accessories,fashion_shoes,7,1022.3,167.03
+Center-West,MT,Other,home_appliances,8,1022.29,165.56
+Northeast,AL,Other,housewares,10,1020.36,337.75
+Southeast,RJ,Other,furniture_mattress_and_upholstery,8,1019.99,348.36
+Southeast,RJ,Other,music,8,1017.85,135.72
+North,TO,Other,home_appliances_2,3,1016.98,223.48
+Northeast,PE,Other,construction_tools_safety,4,1016.18,184.53
+South,RS,Other,costruction_tools_garden,7,1012.98,158.76
+Southeast,ES,Other,construction_tools_lights,9,1012.3,250.66
+North,RR,Other,health_beauty,6,1010.91,224.43
+North,TO,Other,bed_bath_table,10,1010.83,405.53
+Northeast,AL,Other,office_furniture,7,1009.84,229.81
+Northeast,PB,Other,musical_instruments,4,1007.8,167.21
+Northeast,AL,Fashion & accessories,luggage_accessories,6,999.36,220.52
+Northeast,PE,Other,costruction_tools_garden,6,995.54,233.23
+Northeast,BA,Other,food,18,991.41,380.42
+North,RR,Other,baby,2,988.87,89.07
+Center-West,MT,Other,electronics,26,985.66,513.66
+Center-West,GO,Other,construction_tools_lights,5,985.0,192.11
+North,PA,Other,portateis_cozinha_e_preparadores_de_alimentos,1,979.0,49.3
+South,RS,Other,portateis_cozinha_e_preparadores_de_alimentos,1,979.0,39.11
+North,RO,Other,pet_shop,8,975.53,408.64
+South,SC,Other,books_technical,10,975.23,184.55
+Northeast,PE,Other,home_confort,8,970.4,229.53
+Southeast,RJ,Fashion & accessories,fashion_male_clothing,12,967.37,204.2
+Southeast,ES,Other,food,14,963.69,255.37
+Northeast,BA,Fashion & accessories,fashion_male_clothing,9,960.8,182.42
+Northeast,PE,Other,home_appliances_2,2,959.99,192.0
+Northeast,PB,Other,home_construction,5,959.25,276.26
+North,RR,Other,home_appliances,3,954.18,170.87
+Center-West,DF,Fashion & accessories,fashion_shoes,7,944.59,140.0
+Center-West,GO,Other,air_conditioning,7,940.89,219.39
+Southeast,SP,Fashion & accessories,fashion_sport,12,939.8,156.77
+South,RS,Other,books_technical,12,913.56,225.96
+Southeast,RJ,Other,tablets_printing_image,10,907.79,151.48
+Southeast,SP,Other,arts_and_craftmanship,16,906.25,184.52
+Center-West,MS,Other,construction_tools_lights,9,904.98,265.19
+Northeast,CE,Other,audio,5,902.89,177.82
+Northeast,BA,Other,books_general_interest,14,902.7,285.97
+Northeast,BA,Other,art,10,898.95,212.3
+Southeast,ES,Other,air_conditioning,6,898.8,127.66
+South,SC,Other,christmas_supplies,14,898.12,294.63
+South,SC,Other,drinks,14,891.91,249.71
+Northeast,SE,Other,home_construction,3,884.95,156.1
+Northeast,CE,Other,construction_tools_safety,5,882.63,113.53
+Northeast,PI,Other,industry_commerce_and_business,3,874.3,98.22
+Northeast,PB,Other,consoles_games,7,873.38,222.2
+Northeast,SE,Other,furniture_living_room,3,870.99,291.0
+Northeast,SE,Other,perfumery,7,868.72,183.33
+Southeast,ES,Other,signaling_and_security,6,859.9,353.99
+Center-West,GO,Other,electronics,33,854.75,577.78
+Southeast,MG,Other,tablets_printing_image,10,851.7,144.54
+Northeast,BA,Fashion & accessories,fashion_shoes,7,851.5,155.61
+Northeast,MA,Other,pet_shop,10,846.44,375.34
+South,PR,Other,market_place,14,833.95,229.0
+Northeast,BA,Other,air_conditioning,6,832.86,147.09
+Southeast,ES,Other,market_place,7,828.78,156.01
+South,RS,Other,cine_photo,12,821.58,218.54
+Northeast,PI,Other,home_construction,4,820.6,168.8
+Center-West,MT,Other,home_appliances_2,3,815.79,155.54
+North,AP,Other,sports_leisure,7,812.69,202.02
+South,SC,Other,furniture_bedroom,3,803.0,156.92
+Center-West,DF,Other,home_construction,7,793.64,161.2
+Center-West,DF,Other,construction_tools_lights,4,788.0,178.23
+Northeast,PE,Other,small_appliances,3,781.89,110.21
+Southeast,ES,Fashion & accessories,fashion_shoes,5,780.3,105.87
+Northeast,SE,Other,construction_tools_construction,1,779.9,67.48
+Center-West,MS,Other,home_appliances_2,4,769.69,197.56
+North,AM,Other,telephony,15,766.0,393.66
+Southeast,MG,Other,signaling_and_security,11,754.45,377.54
+North,AM,Other,home_construction,4,753.4,248.41
+South,SC,Fashion & accessories,fashion_shoes,7,750.1,124.07
+Center-West,DF,Other,small_appliances_home_oven_and_coffee,1,750.0,43.09
+Center-West,MS,Other,small_appliances_home_oven_and_coffee,1,750.0,68.4
+Center-West,MT,Other,small_appliances_home_oven_and_coffee,1,750.0,86.7
+Northeast,MA,Other,books_imported,1,749.0,55.96
+South,SC,Other,food,16,747.44,266.23
+Northeast,BA,Other,construction_tools_lights,6,744.06,220.5
+South,RS,Fashion & accessories,fashion_shoes,10,742.8,174.4
+Center-West,MS,Other,office_furniture,4,739.77,254.18
+Southeast,SP,Other,portateis_cozinha_e_preparadores_de_alimentos,8,736.31,104.42
+Center-West,MT,Other,food,7,734.4,221.43
+Northeast,MA,Other,audio,3,733.88,125.09
+Northeast,AL,Other,fixed_telephony,4,731.87,109.88
+Northeast,AL,Other,furniture_living_room,3,729.79,171.63
+Southeast,SP,Other,la_cuisine,6,729.0,143.48
+Northeast,AL,Other,baby,7,728.77,343.16
+South,RS,Other,food,13,727.82,261.71
+Northeast,BA,Other,signaling_and_security,6,725.84,142.98
+North,AM,Other,auto,6,723.9,153.03
+North,RO,Other,stationery,8,723.6,263.71
+North,AM,Other,toys,7,721.56,190.68
+Northeast,BA,Other,books_technical,10,720.52,189.03
+South,SC,Other,kitchen_dining_laundry_garden_furniture,7,714.48,281.85
+Center-West,GO,Other,home_appliances,14,714.28,249.37
+Northeast,MA,Other,home_construction,5,713.76,295.05
+South,PR,Other,art,9,710.82,177.13
+Northeast,BA,Other,christmas_supplies,10,703.21,304.04
+North,PA,Other,christmas_supplies,6,701.4,230.22
+North,AM,Fashion & accessories,fashion_bags_accessories,1,699.99,25.7
+North,AM,Other,stationery,6,698.99,170.02
+North,AC,Other,baby,3,697.84,174.13
+Center-West,MT,Other,home_confort,4,687.8,92.96
+Northeast,MA,Other,home_confort,2,685.9,124.03
+Southeast,MG,Other,music,6,683.33,103.28
+North,AM,Other,bed_bath_table,8,681.2,261.39
+Center-West,MT,Other,cine_photo,1,675.99,47.01
+Center-West,DF,Other,books_technical,5,672.8,89.32
+Northeast,PE,Other,food_drink,5,672.01,103.74
+Center-West,MT,Other,audio,4,671.8,86.77
+North,AP,Other,bed_bath_table,6,669.5,210.39
+Southeast,ES,Other,small_appliances,3,668.75,67.29
+North,RO,Other,telephony,19,668.07,641.76
+Northeast,BA,Other,furniture_bedroom,4,667.0,360.16
+Center-West,MT,Other,market_place,5,662.24,124.27
+Center-West,MT,Other,kitchen_dining_laundry_garden_furniture,3,660.0,300.26
+North,AM,Other,baby,5,657.69,139.28
+Northeast,PB,Other,pet_shop,7,656.49,233.43
+Northeast,AL,Other,stationery,8,655.01,224.23
+South,PR,Other,food_drink,16,653.48,282.17
+North,PA,Other,home_appliances,10,650.55,284.1
+Center-West,MT,Other,construction_tools_lights,3,649.99,166.22
+South,PR,Other,costruction_tools_garden,6,648.59,103.74
+Northeast,PE,Other,small_appliances_home_oven_and_coffee,1,640.99,32.48
+Northeast,PE,Other,books_general_interest,8,639.47,227.87
+North,AM,Other,cool_stuff,4,638.88,120.86
+South,RS,Fashion & accessories,fashion_male_clothing,9,638.79,143.3
+Northeast,BA,Fashion & accessories,fashion_underwear_beach,6,638.7,110.24
+Center-West,MS,Other,uncategorized,9,635.96,140.05
+North,AC,Other,books_general_interest,2,633.8,123.71
+North,RO,Fashion & accessories,fashion_bags_accessories,9,632.49,308.76
+Northeast,AL,Other,home_construction,3,630.75,190.65
+Northeast,PI,Fashion & accessories,luggage_accessories,5,630.59,234.68
+Center-West,MT,Fashion & accessories,fashion_bags_accessories,13,630.47,270.37
+North,AC,Other,garden_tools,2,629.0,78.2
+Center-West,DF,Other,signaling_and_security,4,626.03,112.66
+Center-West,GO,Other,construction_tools_safety,7,622.4,102.15
+South,SC,Other,signaling_and_security,10,612.5,167.8
+North,RR,Other,bed_bath_table,3,609.7,214.94
+North,AP,Other,electronics,4,607.55,130.45
+Northeast,PE,Other,food,8,603.55,153.91
+Northeast,CE,Other,furniture_living_room,2,602.98,82.98
+Southeast,RJ,Other,christmas_supplies,14,602.33,280.45
+Northeast,PB,Other,costruction_tools_garden,1,599.9,24.69
+Northeast,PI,Other,home_appliances_2,1,599.5,75.33
+Center-West,MS,Other,computers,1,599.0,91.68
+North,TO,Other,home_confort,1,599.0,96.61
+North,AP,Other,agro_industry_and_commerce,1,589.99,67.62
+Northeast,PB,Other,construction_tools_safety,8,589.9,225.94
+Northeast,BA,Other,costruction_tools_tools,5,589.7,131.75
+Center-West,MT,Other,air_conditioning,5,585.8,85.53
+North,RO,Other,uncategorized,6,579.66,235.6
+Northeast,PE,Other,furniture_living_room,4,578.79,139.73
+Northeast,RN,Other,uncategorized,6,578.54,183.7
+North,PA,Other,fixed_telephony,1,577.99,36.5
+South,RS,Other,art,8,576.44,144.12
+Northeast,AL,Other,uncategorized,4,574.98,115.46
+Northeast,PI,Other,uncategorized,7,574.17,265.02
+North,PA,Other,audio,1,568.0,40.67
+Southeast,SP,Other,pc_gamer,3,567.99,27.54
+North,AC,Other,bed_bath_table,4,567.7,157.51
+Center-West,DF,Other,art,6,565.79,118.88
+Southeast,MG,Other,furniture_mattress_and_upholstery,3,561.49,161.91
+Northeast,MA,Other,agro_industry_and_commerce,1,559.99,54.64
+South,PR,Other,music,7,558.6,103.21
+Northeast,CE,Other,market_place,4,558.35,128.5
+North,RO,Other,garden_tools,7,555.4,327.35
+Northeast,BA,Other,food_drink,8,550.42,124.7
+Northeast,AL,Other,audio,5,550.09,125.19
+Southeast,ES,Other,drinks,5,546.42,143.72
+Center-West,MS,Fashion & accessories,fashion_shoes,4,546.0,83.3
+North,PA,Fashion & accessories,fashion_shoes,4,542.4,117.93
+North,AM,Other,uncategorized,2,541.8,96.86
+North,AC,Other,auto,4,540.98,120.93
+North,AM,Other,home_appliances_2,1,540.0,52.49
+Northeast,AL,Other,air_conditioning,1,540.0,103.89
+Northeast,SE,Other,market_place,3,533.8,99.23
+Center-West,MT,Other,agro_industry_and_commerce,2,530.0,106.45
+Northeast,PB,Other,agro_industry_and_commerce,2,528.99,67.3
+North,AC,Other,stationery,2,528.9,117.86
+Southeast,RJ,Other,cine_photo,5,528.6,98.2
+Center-West,MS,Other,agro_industry_and_commerce,3,526.89,67.28
+North,RO,Other,housewares,5,525.97,187.99
+Center-West,DF,Other,home_confort,7,521.5,111.01
+Center-West,DF,Other,construction_tools_safety,3,520.18,68.23
+Center-West,MT,Other,furniture_living_room,3,519.88,114.82
+North,RR,Other,furniture_decor,4,518.1,154.43
+Southeast,ES,Other,costruction_tools_tools,4,513.99,85.04
+North,AC,Other,housewares,4,513.06,177.19
+North,TO,Other,uncategorized,5,511.99,110.24
+Center-West,DF,Other,food,9,511.08,166.8
+Center-West,DF,Other,furniture_bedroom,1,510.0,55.58
+Northeast,SE,Other,office_furniture,3,506.93,187.13
+Northeast,BA,Other,tablets_printing_image,6,505.8,112.19
+Northeast,PI,Other,home_confort,3,498.89,140.84
+South,SC,Other,costruction_tools_tools,5,495.6,117.47
+South,RS,Other,small_appliances_home_oven_and_coffee,3,494.9,70.44
+Southeast,MG,Other,cine_photo,6,494.89,137.1
+South,SC,Other,la_cuisine,2,494.0,52.3
+Northeast,BA,Other,drinks,11,491.23,214.77
+Southeast,RJ,Other,books_imported,6,490.78,104.26
+North,AP,Other,housewares,4,490.49,241.12
+Southeast,ES,Other,costruction_tools_garden,5,489.8,101.76
+Southeast,MG,Other,arts_and_craftmanship,6,488.78,138.57
+North,PA,Other,construction_tools_construction,2,487.89,68.13
+North,AC,Other,electronics,4,487.55,179.13
+North,PA,Other,market_place,5,485.16,131.44
+South,RS,Other,christmas_supplies,6,484.9,135.57
+Center-West,MT,Fashion & accessories,fashion_shoes,3,478.5,72.48
+Northeast,PB,Other,furniture_living_room,3,472.88,227.63
+Center-West,MT,Other,furniture_bedroom,2,469.8,157.86
+Northeast,PI,Other,air_conditioning,3,468.9,152.09
+Center-West,MS,Other,consoles_games,6,468.07,128.24
+North,RR,Other,computers_accessories,5,468.01,210.17
+Center-West,DF,Other,air_conditioning,3,468.0,66.61
+Northeast,SE,Fashion & accessories,fashion_bags_accessories,8,466.5,211.9
+Northeast,BA,Other,industry_commerce_and_business,5,465.0,154.59
+Center-West,GO,Fashion & accessories,fashion_underwear_beach,5,457.7,83.97
+Southeast,SP,Other,home_comfort_2,14,456.78,167.78
+Northeast,CE,Other,agro_industry_and_commerce,6,452.9,171.29
+Northeast,RN,Other,home_construction,1,452.6,76.02
+Center-West,MS,Other,dvds_blu_ray,3,448.8,49.74
+Northeast,CE,Other,air_conditioning,2,446.16,91.09
+Southeast,ES,Fashion & accessories,fashion_male_clothing,3,445.8,94.26
+Southeast,ES,Other,agro_industry_and_commerce,2,442.3,44.87
+Center-West,MS,Fashion & accessories,fashion_underwear_beach,3,441.9,50.47
+Northeast,PE,Other,audio,4,441.79,100.65
+North,AM,Other,musical_instruments,1,439.0,78.2
+Southeast,SP,Other,flowers,11,438.67,119.45
+South,RS,Other,furniture_bedroom,2,435.0,108.24
+Northeast,RN,Other,home_appliances,2,434.25,93.39
+South,RS,Other,la_cuisine,3,428.99,87.65
+North,AM,Other,consoles_games,2,423.3,77.95
+Northeast,PB,Other,market_place,3,422.8,56.24
+South,SC,Other,art,6,422.19,136.9
+Southeast,MG,Fashion & accessories,fashio_female_clothing,6,420.78,94.69
+Southeast,RJ,Other,dvds_blu_ray,13,419.06,242.33
+Center-West,MS,Other,furniture_living_room,3,418.8,166.31
+Center-West,DF,Other,costruction_tools_garden,5,410.7,132.0
+Northeast,RN,Other,musical_instruments,2,409.8,67.48
+Center-West,GO,Other,fixed_telephony,6,409.78,104.65
+Center-West,GO,Other,art,4,409.57,97.26
+Northeast,PB,Other,kitchen_dining_laundry_garden_furniture,1,409.0,251.39
+North,AM,Other,housewares,4,408.69,110.17
+Northeast,RN,Fashion & accessories,fashion_shoes,2,399.4,96.9
+Center-West,GO,Other,food,7,398.46,118.56
+South,RS,Fashion & accessories,fashion_underwear_beach,3,397.8,49.57
+North,AM,Fashion & accessories,luggage_accessories,3,390.8,170.61
+Center-West,GO,Other,drinks,7,385.57,132.41
+Northeast,PE,Other,construction_tools_lights,3,384.98,100.39
+Center-West,MS,Other,food,4,384.26,76.19
+Northeast,MA,Other,electronics,13,382.89,397.15
+North,AM,Other,pet_shop,4,374.79,166.26
+Northeast,PE,Other,christmas_supplies,4,372.45,157.75
+Northeast,CE,Other,fixed_telephony,4,369.79,136.45
+Northeast,RN,Other,electronics,14,368.42,501.29
+South,SC,Fashion & accessories,fashion_underwear_beach,8,367.2,136.74
+Northeast,AL,Other,musical_instruments,1,367.0,53.29
+Southeast,MG,Other,books_imported,7,364.87,108.36
+North,PA,Other,tablets_printing_image,4,361.79,93.57
+Center-West,GO,Other,christmas_supplies,3,361.7,111.75
+South,RS,Other,party_supplies,4,359.6,67.92
+Center-West,MS,Other,signaling_and_security,1,358.0,24.22
+Northeast,RN,Other,food_drink,4,356.05,109.03
+Southeast,SP,Other,cds_dvds_musicals,6,350.0,59.64
+North,TO,Fashion & accessories,luggage_accessories,2,349.8,109.42
+North,AC,Fashion & accessories,luggage_accessories,2,348.9,117.51
+Northeast,CE,Other,food,5,348.69,104.81
+Northeast,CE,Other,home_confort,4,346.6,112.74
+Northeast,AL,Fashion & accessories,fashion_shoes,3,346.42,90.64
+Northeast,AL,Other,electronics,14,344.56,408.12
+North,RO,Other,construction_tools_safety,1,339.9,62.44
+Northeast,RN,Other,kitchen_dining_laundry_garden_furniture,2,339.9,85.63
+Northeast,SE,Other,stationery,4,335.8,103.68
+North,TO,Other,pet_shop,4,332.3,103.49
+North,TO,Fashion & accessories,fashion_bags_accessories,8,331.39,266.68
+Center-West,GO,Other,costruction_tools_garden,5,330.7,139.49
+North,TO,Other,consoles_games,4,328.7,136.91
+Center-West,DF,Other,market_place,4,326.71,79.24
+Northeast,PI,Other,agro_industry_and_commerce,3,318.98,110.04
+South,PR,Other,party_supplies,2,317.6,38.89
+Northeast,BA,Other,cine_photo,3,314.85,69.14
+North,AP,Other,cool_stuff,2,314.0,49.19
+Northeast,PE,Other,books_technical,4,313.39,96.17
+Center-West,DF,Other,christmas_supplies,8,311.2,181.12
+Southeast,ES,Other,food_drink,7,311.0,128.58
+Center-West,DF,Other,food_drink,4,310.79,66.89
+Northeast,PI,Other,fixed_telephony,2,310.0,92.8
+Northeast,PB,Other,costruction_tools_tools,1,309.0,46.01
+Center-West,GO,Fashion & accessories,fashion_male_clothing,3,308.6,82.39
+Northeast,PI,Other,home_appliances,4,308.5,162.02
+Center-West,GO,Other,market_place,12,307.15,181.7
+Center-West,GO,Other,kitchen_dining_laundry_garden_furniture,4,305.76,186.3
+North,AP,Other,telephony,4,304.78,91.51
+North,AC,Other,perfumery,3,303.88,76.68
+Center-West,MT,Other,books_technical,5,301.29,115.2
+Northeast,PI,Other,costruction_tools_garden,4,300.3,234.95
+Northeast,RN,Fashion & accessories,luggage_accessories,1,299.9,170.11
+Northeast,MA,Other,books_general_interest,3,299.0,96.63
+South,RS,Other,music,1,299.0,23.17
+North,AP,Other,toys,3,297.84,91.88
+Northeast,PI,Other,construction_tools_lights,1,297.0,51.93
+Northeast,PI,Other,tablets_printing_image,3,297.0,84.85
+North,AC,Fashion & accessories,fashion_shoes,2,295.6,98.14
+North,AP,Other,musical_instruments,2,293.9,55.04
+South,PR,Other,cine_photo,2,293.6,42.52
+South,PR,Other,furniture_bedroom,9,293.28,90.98
+Center-West,DF,Other,drinks,5,292.37,90.2
+Northeast,CE,Other,food_drink,4,291.86,84.35
+Southeast,RJ,Other,party_supplies,6,291.5,93.03
+North,RR,Other,office_furniture,1,289.9,144.86
+Northeast,SE,Fashion & accessories,luggage_accessories,3,289.7,84.22
+South,SC,Other,arts_and_craftmanship,1,289.49,24.83
+Center-West,MT,Other,industry_commerce_and_business,3,281.0,107.06
+Center-West,MS,Other,small_appliances,6,280.31,107.32
+Southeast,SP,Fashion & accessories,fashion_childrens_clothes,4,279.97,40.7
+South,PR,Other,fixed_telephony,6,279.68,91.35
+Northeast,PI,Fashion & accessories,fashion_bags_accessories,5,277.8,129.83
+Northeast,PE,Other,air_conditioning,2,276.9,73.25
+North,TO,Other,stationery,3,276.8,73.8
+North,AC,Other,consoles_games,1,276.14,45.78
+Northeast,PE,Other,market_place,4,274.96,85.47
+North,TO,Other,construction_tools_lights,2,274.0,103.02
+South,PR,Other,signaling_and_security,3,271.79,116.28
+Northeast,CE,Other,books_technical,4,270.95,78.06
+North,AP,Other,furniture_decor,3,270.8,103.69
+Northeast,SE,Other,furniture_bedroom,2,269.98,143.57
+Southeast,MG,Other,dvds_blu_ray,4,268.78,69.92
+Northeast,RN,Other,small_appliances,3,266.98,98.87
+South,PR,Other,costruction_tools_tools,8,266.98,149.8
+Southeast,MG,Other,la_cuisine,2,266.0,50.01
+South,PR,Fashion & accessories,fashion_underwear_beach,6,265.58,88.28
+Southeast,MG,Fashion & accessories,fashion_sport,2,264.9,28.8
+Northeast,MA,Other,small_appliances,2,262.9,57.89
+North,RO,Other,home_appliances,2,261.58,103.27
+Southeast,RJ,Other,pc_gamer,2,259.98,34.71
+South,SC,Other,party_supplies,2,258.9,75.26
+North,PA,Fashion & accessories,fashion_male_clothing,2,256.89,89.01
+Southeast,RJ,Other,flowers,8,255.6,135.17
+Center-West,MS,Other,home_appliances,6,252.45,101.44
+Northeast,RN,Other,furniture_bedroom,3,252.0,132.32
+Northeast,SE,Other,industry_commerce_and_business,3,252.0,217.6
+Northeast,MA,Other,construction_tools_lights,1,250.0,81.2
+South,PR,Other,tablets_printing_image,3,250.0,48.54
+North,PA,Other,home_construction,2,249.8,56.8
+Northeast,CE,Fashion & accessories,fashion_shoes,3,249.7,101.66
+North,PA,Other,cine_photo,3,249.7,65.04
+Center-West,DF,Other,furniture_mattress_and_upholstery,1,249.0,9.33
+Northeast,RN,Other,furniture_mattress_and_upholstery,1,249.0,39.29
+South,RS,Other,food_drink,6,249.0,144.14
+Northeast,CE,Other,industry_commerce_and_business,2,248.0,52.06
+North,TO,Other,furniture_living_room,2,246.2,145.64
+North,RR,Other,uncategorized,2,245.98,55.84
+North,RO,Other,electronics,6,245.25,222.5
+North,RR,Other,perfumery,1,244.0,28.99
+North,AP,Other,garden_tools,2,239.99,60.21
+Northeast,PI,Other,audio,4,239.7,107.44
+Northeast,PE,Other,home_appliances,5,237.65,153.19
+North,AP,Other,stationery,2,234.9,100.14
+North,AC,Other,toys,3,234.79,83.26
+South,SC,Other,costruction_tools_garden,5,234.2,84.04
+North,AP,Other,fixed_telephony,6,232.94,149.04
+Center-West,DF,Other,party_supplies,1,231.2,38.53
+Northeast,PI,Other,party_supplies,1,231.2,61.68
+Center-West,MS,Other,books_general_interest,2,231.0,32.08
+Northeast,SE,Other,construction_tools_lights,1,230.0,80.11
+North,RO,Other,home_confort,1,229.0,28.37
+Northeast,AL,Fashion & accessories,fashion_bags_accessories,4,228.7,131.44
+Northeast,PB,Other,construction_tools_construction,1,226.9,53.94
+South,RS,Other,cds_dvds_musicals,5,225.0,80.55
+Northeast,PI,Other,art,2,221.98,86.38
+North,RR,Other,auto,1,219.9,37.31
+Northeast,AL,Other,market_place,3,219.9,71.32
+Northeast,CE,Other,construction_tools_lights,1,219.9,99.3
+Northeast,PI,Other,furniture_living_room,2,219.8,68.54
+North,RR,Fashion & accessories,watches_gifts,1,219.0,68.45
+Northeast,SE,Other,home_confort,1,219.0,75.8
+South,RS,Other,pc_gamer,1,219.0,19.63
+Northeast,PI,Other,food_drink,1,215.56,21.91
+North,AM,Other,furniture_decor,4,215.28,111.35
+North,RR,Other,garden_tools,2,210.0,78.35
+Northeast,PI,Other,construction_tools_construction,1,210.0,51.97
+Northeast,PB,Other,food,3,208.9,91.9
+Northeast,AL,Other,home_appliances,3,206.55,137.49
+Northeast,MA,Fashion & accessories,fashion_sport,1,205.9,108.47
+Northeast,MA,Other,market_place,3,204.88,94.95
+Center-West,GO,Fashion & accessories,fashio_female_clothing,2,204.8,30.94
+North,TO,Other,books_technical,2,204.6,53.25
+Northeast,BA,Other,kitchen_dining_laundry_garden_furniture,3,201.9,65.52
+Northeast,PE,Fashion & accessories,fashion_underwear_beach,2,201.9,51.97
+Center-West,MS,Other,drinks,4,199.96,64.49
+North,TO,Fashion & accessories,fashion_shoes,1,199.7,29.8
+Northeast,PI,Fashion & accessories,fashion_shoes,1,199.7,38.95
+Northeast,AL,Other,industry_commerce_and_business,1,199.0,73.76
+Northeast,MA,Other,air_conditioning,1,199.0,23.71
+Center-West,MS,Other,tablets_printing_image,2,198.0,32.78
+Northeast,PE,Other,tablets_printing_image,2,198.0,51.15
+Center-West,GO,Other,books_technical,3,196.65,48.19
+Center-West,MS,Other,audio,1,190.9,16.09
+North,AM,Other,home_appliances,2,190.8,96.03
+South,PR,Other,christmas_supplies,6,190.16,99.7
+Center-West,MT,Other,costruction_tools_tools,1,190.0,32.16
+Northeast,PE,Other,costruction_tools_tools,1,190.0,36.56
+Northeast,AL,Other,food,1,189.9,25.68
+Northeast,RN,Other,audio,1,189.0,35.12
+North,AM,Other,office_furniture,2,184.8,82.54
+Northeast,PB,Other,books_general_interest,5,184.69,126.27
+North,RO,Other,security_and_services,1,183.29,25.77
+North,PA,Fashion & accessories,fashion_underwear_beach,3,181.7,64.63
+Center-West,MS,Other,costruction_tools_garden,2,180.99,55.54
+North,AM,Other,market_place,1,180.0,22.06
+North,PA,Other,furniture_living_room,1,179.99,38.22
+Center-West,MS,Other,furniture_bedroom,1,179.0,45.71
+North,TO,Other,audio,1,175.0,37.92
+Northeast,SE,Other,uncategorized,2,173.75,49.29
+Northeast,SE,Other,pet_shop,3,172.54,97.4
+North,PA,Other,books_general_interest,5,171.69,88.92
+Center-West,MS,Other,books_technical,4,170.85,63.18
+Northeast,SE,Other,signaling_and_security,2,169.98,49.44
+North,PA,Other,art,2,169.89,80.43
+North,RO,Fashion & accessories,fashion_shoes,1,169.79,57.96
+South,SC,Fashion & accessories,fashion_sport,3,169.75,55.78
+Northeast,RN,Other,costruction_tools_garden,3,163.7,73.52
+Northeast,CE,Other,christmas_supplies,2,159.8,79.1
+North,PA,Fashion & accessories,fashion_sport,4,159.6,102.52
+Center-West,GO,Other,furniture_bedroom,1,159.0,59.62
+South,RS,Other,dvds_blu_ray,4,153.6,99.81
+Northeast,MA,Other,tablets_printing_image,1,152.99,25.56
+Northeast,PI,Fashion & accessories,fashion_underwear_beach,1,152.0,34.86
+Northeast,CE,Other,drinks,3,150.47,80.71
+Northeast,RN,Other,industry_commerce_and_business,1,150.0,44.97
+North,RO,Other,market_place,1,149.99,59.49
+North,AM,Other,food,1,149.9,38.01
+Northeast,CE,Other,music,1,149.9,19.74
+Northeast,PI,Other,food,1,149.9,23.59
+North,PA,Other,signaling_and_security,3,149.7,108.36
+North,PA,Other,books_technical,2,148.89,64.24
+North,RO,Other,art,2,148.64,104.13
+North,TO,Other,electronics,7,148.28,213.06
+Center-West,MT,Fashion & accessories,fashion_male_clothing,1,147.5,36.35
+Center-West,DF,Fashion & accessories,fashion_underwear_beach,2,146.15,31.07
+North,AP,Other,art,2,145.89,81.95
+Northeast,AL,Other,kitchen_dining_laundry_garden_furniture,2,144.0,52.88
+North,TO,Other,home_appliances,1,143.75,37.7
+Northeast,PB,Fashion & accessories,fashion_shoes,2,143.64,76.1
+Northeast,CE,Other,kitchen_dining_laundry_garden_furniture,1,140.0,81.8
+North,PA,Other,costruction_tools_garden,1,139.9,41.06
+North,RO,Other,furniture_living_room,1,139.9,72.83
+North,RO,Other,christmas_supplies,2,138.9,75.12
+Northeast,RN,Other,construction_tools_safety,1,138.9,51.69
+Center-West,GO,Other,la_cuisine,1,137.0,0.11
+South,RS,Other,books_imported,2,136.89,34.9
+Southeast,ES,Other,industry_commerce_and_business,2,136.0,87.61
+Northeast,SE,Other,books_general_interest,1,135.0,21.35
+Northeast,PI,Other,books_general_interest,1,133.9,25.49
+North,AM,Other,costruction_tools_garden,2,132.8,49.55
+Center-West,MS,Other,art,1,129.99,21.4
+Northeast,PE,Other,pc_gamer,1,129.99,26.19
+Southeast,MG,Other,pc_gamer,1,129.99,15.08
+North,PA,Other,books_imported,2,129.98,38.74
+North,RR,Other,cool_stuff,2,129.98,59.97
+Center-West,DF,Fashion & accessories,fashio_female_clothing,1,129.9,18.16
+Northeast,RN,Other,market_place,2,129.8,46.4
+Southeast,RJ,Fashion & accessories,fashion_sport,2,129.8,29.62
+Center-West,DF,Other,arts_and_craftmanship,1,129.49,22.21
+North,TO,Other,kitchen_dining_laundry_garden_furniture,1,129.0,85.61
+Northeast,PE,Other,furniture_bedroom,1,129.0,98.98
+Southeast,ES,Other,christmas_supplies,2,126.22,35.16
+Northeast,MA,Other,industry_commerce_and_business,1,125.0,32.79
+Northeast,BA,Fashion & accessories,fashion_sport,2,124.89,35.82
+South,PR,Other,books_imported,2,121.99,33.71
+Center-West,DF,Other,dvds_blu_ray,3,120.79,43.37
+Northeast,PI,Other,books_technical,2,120.0,29.49
+Northeast,SE,Other,home_appliances_2,1,119.99,62.86
+Northeast,SE,Other,food_drink,1,119.9,15.6
+South,SC,Other,furniture_mattress_and_upholstery,2,119.7,130.85
+Center-West,GO,Other,cine_photo,1,119.0,8.41
+Center-West,MS,Other,market_place,2,118.89,32.44
+Northeast,MA,Other,christmas_supplies,1,116.9,38.37
+Southeast,ES,Fashion & accessories,fashio_female_clothing,1,115.0,16.51
+Northeast,PB,Other,art,1,110.99,43.19
+Northeast,PE,Other,art,1,110.99,33.23
+Southeast,ES,Fashion & accessories,fashion_underwear_beach,1,110.0,15.52
+Southeast,RJ,Fashion & accessories,fashion_childrens_clothes,1,110.0,14.52
+South,RS,Other,home_comfort_2,1,109.99,19.36
+Northeast,PB,Fashion & accessories,fashio_female_clothing,2,109.8,42.36
+Northeast,PE,Other,flowers,2,109.8,35.32
+Southeast,RJ,Fashion & accessories,fashio_female_clothing,2,109.8,29.68
+Northeast,MA,Other,books_technical,3,105.79,132.29
+North,PA,Other,drinks,1,105.0,20.78
+South,PR,Other,dvds_blu_ray,5,104.5,170.55
+Northeast,MA,Other,food_drink,2,103.99,65.18
+Northeast,PI,Other,market_place,2,102.89,69.98
+North,RR,Other,telephony,4,100.43,108.7
+North,RO,Other,costruction_tools_garden,2,100.37,102.19
+Center-West,DF,Other,security_and_services,1,100.0,15.45
+North,AC,Other,cool_stuff,1,99.99,30.23
+Center-West,DF,Other,cine_photo,1,99.95,18.28
+North,RO,Other,small_appliances,1,99.9,25.25
+Southeast,ES,Other,furniture_bedroom,1,99.9,20.43
+Center-West,GO,Other,tablets_printing_image,1,99.0,18.12
+South,RS,Other,tablets_printing_image,1,99.0,16.39
+North,RO,Other,food,1,98.99,27.46
+South,PR,Other,diapers_and_hygiene,2,97.0,38.93
+Southeast,MG,Other,flowers,5,96.29,85.96
+Southeast,ES,Other,cine_photo,1,94.9,15.76
+North,AM,Other,perfumery,2,94.89,54.09
+Northeast,CE,Other,costruction_tools_tools,1,93.0,20.7
+South,SC,Other,food_drink,3,90.7,40.41
+Northeast,MA,Other,fixed_telephony,1,90.0,34.43
+Northeast,PI,Other,drinks,1,90.0,22.95
+Southeast,RJ,Other,cds_dvds_musicals,2,90.0,32.22
+Northeast,BA,Fashion & accessories,fashion_childrens_clothes,1,89.99,17.07
+Center-West,MS,Other,industry_commerce_and_business,1,89.9,23.5
+North,AC,Fashion & accessories,fashion_bags_accessories,1,89.9,31.3
+North,AM,Other,audio,1,89.9,24.63
+Northeast,AL,Other,home_confort,1,89.9,38.18
+Northeast,RN,Other,home_confort,1,89.9,25.12
+South,PR,Fashion & accessories,fashio_female_clothing,2,89.9,29.3
+South,SC,Fashion & accessories,fashion_childrens_clothes,2,89.89,23.22
+South,SC,Fashion & accessories,fashion_male_clothing,2,89.89,30.7
+Northeast,PE,Other,fixed_telephony,3,89.88,62.87
+North,AM,Other,air_conditioning,1,89.0,25.11
+North,RO,Other,agro_industry_and_commerce,4,88.0,136.6
+North,AM,Other,books_general_interest,1,87.0,27.67
+Center-West,MS,Other,home_confort,1,86.9,23.19
+Northeast,PB,Other,home_confort,1,86.9,53.16
+North,AP,Other,consoles_games,1,85.95,51.32
+Center-West,GO,Other,furniture_mattress_and_upholstery,1,85.0,62.41
+Southeast,RJ,Other,portateis_cozinha_e_preparadores_de_alimentos,1,83.9,19.78
+Northeast,SE,Other,home_appliances,1,80.0,48.0
+Northeast,RN,Other,art,1,79.99,57.11
+Center-West,MT,Fashion & accessories,fashion_underwear_beach,1,79.9,18.8
+Center-West,MT,Other,christmas_supplies,1,79.9,29.6
+North,AC,Other,furniture_living_room,1,79.9,52.92
+North,RO,Other,industry_commerce_and_business,1,79.9,48.0
+North,TO,Other,home_construction,1,79.9,38.83
+Northeast,PB,Other,audio,1,79.0,24.55
+Northeast,SE,Other,construction_tools_safety,1,77.9,67.47
+Southeast,ES,Other,flowers,2,77.89,32.4
+Northeast,PE,Other,signaling_and_security,2,77.8,76.8
+Northeast,BA,Other,books_imported,1,77.0,16.98
+South,RS,Other,flowers,3,75.6,49.36
+Northeast,RN,Other,signaling_and_security,1,75.0,25.02
+Center-West,DF,Other,fixed_telephony,3,72.98,47.62
+Center-West,MT,Other,art,1,69.99,27.44
+Northeast,SE,Other,fixed_telephony,2,69.98,41.6
+North,AC,Other,christmas_supplies,1,69.9,60.95
+Northeast,RN,Other,food,2,69.9,86.52
+North,TO,Other,industry_commerce_and_business,1,69.0,59.63
+North,AC,Other,uncategorized,2,66.9,60.44
+Northeast,MA,Other,cds_dvds_musicals,1,65.0,52.58
+Northeast,RN,Other,books_technical,1,65.0,35.77
+Northeast,BA,Fashion & accessories,fashio_female_clothing,1,64.9,22.84
+North,PA,Other,food_drink,1,64.6,21.25
+Center-West,GO,Other,home_comfort_2,5,64.5,79.72
+North,AC,Other,market_place,1,62.8,25.47
+North,TO,Other,market_place,1,62.8,17.72
+Southeast,ES,Other,party_supplies,2,62.5,36.49
+Northeast,AL,Other,books_general_interest,2,61.0,101.87
+Northeast,CE,Other,diapers_and_hygiene,1,60.0,20.69
+Southeast,RJ,Other,diapers_and_hygiene,1,60.0,19.61
+Northeast,MA,Fashion & accessories,fashion_male_clothing,1,59.9,35.74
+Northeast,SE,Other,books_imported,1,59.89,24.77
+North,AP,Other,pet_shop,2,59.8,28.0
+North,AM,Other,electronics,4,58.95,86.3
+North,AM,Other,art,1,58.35,32.33
+North,AC,Other,small_appliances,1,54.0,46.91
+Southeast,RJ,Other,home_comfort_2,4,51.6,60.4
+Center-West,MT,Other,tablets_printing_image,2,50.8,36.59
+Center-West,DF,Other,music,1,50.35,15.48
+North,AM,Other,tablets_printing_image,1,50.0,22.85
+Northeast,MA,Other,construction_tools_construction,1,49.99,21.15
+South,RS,Fashion & accessories,fashion_sport,2,49.98,31.15
+South,PR,Fashion & accessories,fashion_sport,1,49.9,15.1
+Southeast,ES,Other,art,1,49.9,26.89
+Northeast,MA,Other,cine_photo,1,49.8,22.85
+Northeast,PE,Other,cine_photo,1,49.8,19.04
+North,PA,Other,kitchen_dining_laundry_garden_furniture,1,48.9,37.9
+Southeast,ES,Other,kitchen_dining_laundry_garden_furniture,1,48.0,18.94
+North,AM,Other,drinks,1,47.49,35.67
+Northeast,PB,Other,diapers_and_hygiene,1,47.0,51.05
+North,RO,Other,books_general_interest,1,44.99,22.67
+South,SC,Other,dvds_blu_ray,2,44.8,42.3
+Center-West,MT,Other,books_general_interest,2,44.5,43.68
+Northeast,AL,Other,food_drink,1,44.06,24.48
+Center-West,GO,Other,party_supplies,2,43.8,44.12
+Southeast,MG,Other,diapers_and_hygiene,1,43.0,15.23
+North,RR,Other,stationery,1,39.99,25.38
+North,RO,Other,musical_instruments,1,39.9,22.67
+Southeast,MG,Other,home_comfort_2,3,38.7,36.06
+Northeast,BA,Other,diapers_and_hygiene,1,38.0,17.06
+North,AC,Other,musical_instruments,1,36.9,42.38
+North,TO,Other,musical_instruments,1,36.9,34.15
+Northeast,PB,Other,air_conditioning,1,35.9,50.85
+Center-West,MS,Other,christmas_supplies,2,35.6,32.89
+Center-West,MT,Fashion & accessories,fashio_female_clothing,1,34.99,22.18
+Northeast,PE,Other,dvds_blu_ray,2,34.8,41.95
+Center-West,MS,Other,fixed_telephony,1,32.99,16.05
+North,TO,Other,books_general_interest,1,32.9,15.1
+Center-West,MS,Other,flowers,1,31.2,15.1
+Northeast,CE,Fashion & accessories,fashion_male_clothing,1,29.99,25.63
+Northeast,CE,Other,tablets_printing_image,1,29.99,17.63
+North,PA,Other,construction_tools_lights,1,29.0,19.11
+Northeast,MA,Fashion & accessories,fashion_shoes,1,27.9,25.38
+North,RR,Other,electronics,2,27.3,52.79
+North,PA,Other,costruction_tools_tools,1,27.0,25.63
+Northeast,PI,Other,dvds_blu_ray,1,25.0,50.85
+Center-West,GO,Fashion & accessories,fashion_sport,1,24.99,14.1
+Center-West,GO,Other,flowers,1,24.99,16.11
+South,SC,Other,books_imported,1,24.95,15.23
+North,RO,Other,dvds_blu_ray,1,24.9,21.15
+Northeast,AL,Other,dvds_blu_ray,1,24.9,22.85
+Northeast,BA,Other,portateis_cozinha_e_preparadores_de_alimentos,1,21.52,23.3
+North,AM,Other,fixed_telephony,1,19.99,21.15
+Center-West,GO,Other,dvds_blu_ray,1,19.9,8.11
+North,RO,Other,consoles_games,1,19.9,34.15
+South,SC,Fashion & accessories,fashio_female_clothing,1,19.9,15.1
+Northeast,RN,Other,christmas_supplies,1,19.83,34.15
+Center-West,MT,Other,drinks,1,19.49,22.06
+Center-West,MS,Other,food_drink,1,18.6,15.1
+Northeast,SE,Other,food,1,18.45,18.89
+Northeast,RN,Other,dvds_blu_ray,1,16.9,25.38
+North,AM,Other,music,1,16.1,22.85
+Northeast,AL,Other,drinks,1,15.49,34.15
+Northeast,BA,Other,home_comfort_2,1,12.9,16.79
+South,PR,Other,home_comfort_2,1,12.9,15.1
+Southeast,ES,Other,home_comfort_2,1,12.9,15.1
+Center-West,MS,Other,costruction_tools_tools,1,6.8,19.32
