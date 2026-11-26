@@ -13,3 +13,7 @@ data/raw/
 data/*.db
 logs/
 scripts/_tmp/
+
+# Playwright working files (only the final screenshots/gif are committed)
+docs/screenshots/_video/
+docs/screenshots/_demo.webm
