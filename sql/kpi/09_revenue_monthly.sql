@@ -6,6 +6,8 @@ WITH monthly AS (
         SUM(b.net_revenue) AS net_revenue
     FROM ZC_BillingItem AS b
     JOIN ZI_CalendarDate AS d ON d.calendar_date = b.billing_date
+    -- only complete months: invoices after the last order date are just the run-off
+    WHERE b.billing_date <= (SELECT MAX(order_date) FROM ZC_SalesOrderItem)
     GROUP BY d.month_key
 )
 SELECT
