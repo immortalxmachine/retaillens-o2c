@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets - never commit
+.env
+
+# Generated data (fully reproducible from the seeded generator: python -m src.pipeline)
+data/raw/
+data/*.db
+logs/
+scripts/_tmp/
