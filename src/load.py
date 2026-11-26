@@ -37,6 +37,9 @@ def load_staging(engine: Engine, tables: dict[str, pd.DataFrame] | None = None) 
     for name in TABLES:
         df = tables[name] if tables is not None else read_raw(name)
         df = df.copy()
+        for col in DATE_COLUMNS:  # make sure dates are real datetimes (None -> NaT)
+            if col in df.columns:
+                df[col] = pd.to_datetime(df[col])
         df.columns = [c.lower() for c in df.columns]
         write_table(engine, df, f"stg_{name}")
         counts[name] = len(df)
