@@ -9,56 +9,69 @@ from src.db import render_sql
 from src.dq import run_dq
 from src.kpis import run_kpis
 from src.load import load_staging
+from src.sap_mapping import map_to_sap
 from src.star_schema import build_star_schema, drop_views
-from tests.conftest import tiny_tables
+from tests.conftest import olist_frames
 
 
 @pytest.fixture
 def kpis(engine):
     drop_views(engine)
-    load_staging(engine, tiny_tables())
+    load_staging(engine, map_to_sap(olist_frames()))
     run_dq(engine)
-    build_star_schema(engine, start="2023-12-01", end="2024-03-31")
+    build_star_schema(engine)
     return run_kpis(engine, write_csv=False)
 
 
 def test_headline_kpis(kpis):
     h = kpis["headline"].iloc[0]
-    assert h.sales_orders == 2
-    assert h.order_items == 3
-    assert h.total_revenue == pytest.approx(170.0)
-    assert h.otif_rate == pytest.approx(1 / 3)
+    assert h.sales_orders == 4          # o5 is outside the analysis window
+    assert h.order_items == 5
+    assert h.net_revenue == pytest.approx(380.0)
+    assert h.otif_rate == pytest.approx(2 / 4)
+    assert h.in_full_rate == pytest.approx(3 / 4)
     assert h.on_time_rate == pytest.approx(2 / 3)
-    assert h.in_full_rate == pytest.approx(2 / 3)
-    assert h.avg_lead_time_days == pytest.approx(14 / 3)
-    assert h.fill_rate == pytest.approx(17 / 19)
-    assert h.return_rate == pytest.approx(2 / 17)
-    assert h.avg_invoice_to_cash_days == pytest.approx(30)
-    assert h.open_receivables_share == pytest.approx(40 / 170)
+    assert h.cancellation_rate == pytest.approx(1 / 4)
+    assert h.avg_lead_time_days == pytest.approx(28 / 3)
+    assert h.avg_promised_days == pytest.approx(31 / 3)
+    assert h.avg_approval_hours == pytest.approx(28 / 4)
+    assert h.low_review_rate == pytest.approx(2 / 4)
+    assert h.seller_handover_on_time_rate == pytest.approx(2 / 3)
+    assert h.fashion_revenue_share == pytest.approx(300 / 380)
 
 
-def test_otif_by_country_ranks_worst_first(kpis):
-    df = kpis["otif_by_country"]
-    assert list(df.country) == ["IT", "DE"]
-    assert list(df.worst_otif_rank) == [1, 2]
-    assert df.otif_rate.tolist() == pytest.approx([0.0, 0.5])
+def test_otif_by_state(kpis):
+    df = kpis["otif_by_state"].set_index("state")
+    assert df.loc["SP", "otif_rate"] == pytest.approx(2 / 3)
+    assert df.loc["AL", "otif_rate"] == pytest.approx(0.0)
+    assert df.loc["AL", "macro_region"] == "Northeast"
 
 
-def test_return_rate_by_category_uses_rank(kpis):
-    df = kpis["return_rate_by_category"]
-    top = df.iloc[0]
-    assert top.category == "DRESSES" and top.return_rank == 1
-    assert top.return_rate == pytest.approx(2 / 14)
+def test_late_orders_drive_complaints(kpis):
+    df = kpis["review_vs_delivery"].set_index("delivery_outcome")
+    assert df.loc["late", "low_review_rate"] == pytest.approx(1.0)
+    assert df.loc["on time", "low_review_rate"] == pytest.approx(0.0)
 
 
-def test_top_materials_rank_within_category(kpis):
+def test_payment_types(kpis):
+    df = kpis["payment_types"].set_index("payment_type")
+    assert df.loc["credit_card", "avg_approval_hours"] == pytest.approx(1.5)
+    assert df.loc["credit_card", "avg_installments"] == pytest.approx(1.5)
+    assert df.loc["boleto", "avg_approval_hours"] == pytest.approx(24.0)
+    assert df.loc["credit_card", "amount_rank"] == 1
+
+
+def test_top_materials_rank_within_segment(kpis):
     df = kpis["top_materials"].set_index("material_id")
-    assert df.loc["M1", "rank_in_category"] == 1
-    assert df.loc["M1", "overall_rank"] == 1  # 140 EUR beats M2's 30 EUR
-    assert df.loc["M2", "overall_rank"] == 2
+    assert df.loc["p1", "segment"] == "Fashion & accessories"
+    assert df.loc["p1", "rank_in_segment"] == 1 and df.loc["p1", "overall_rank"] == 1
 
 
-def test_days_between_macro_per_dialect():
-    sql = "SELECT DAYS_BETWEEN(h.erdat, d.last_gi_date) FROM t"
-    assert "julianday(d.last_gi_date) - julianday(h.erdat)" in render_sql(sql, "sqlite")
-    assert "CAST(d.last_gi_date AS DATE) - CAST(h.erdat AS DATE)" in render_sql(sql, "postgresql")
+def test_date_macros_per_dialect():
+    sql = "SELECT DAYS_BETWEEN(h.erdat, d.pod_ts), HOURS_BETWEEN(a.x, b.y), DATE_KEY(h.erdat)"
+    lite = render_sql(sql, "sqlite")
+    assert "julianday(date(d.pod_ts)) - julianday(date(h.erdat))" in lite
+    assert "strftime('%Y-%m-%d', h.erdat)" in lite
+    pg = render_sql(sql, "postgresql")
+    assert "CAST(d.pod_ts AS DATE) - CAST(h.erdat AS DATE)" in pg
+    assert "EXTRACT(EPOCH FROM" in pg and "TO_CHAR(h.erdat, 'YYYY-MM-DD')" in pg
