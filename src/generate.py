@@ -209,17 +209,17 @@ def generate(seed: int = SEED, scale: float = 1.0) -> dict[str, pd.DataFrame]:
 
             # ---- LIKP/LIPS: deliveries (main shipment + optional backorder) --------------
             country_delay = COUNTRIES[c.LAND1][2]
-            lead = 2 + rng.gamma(2.0, 1.5) + country_delay + (3 if festive else 0)
+            lead = 1 + rng.gamma(2.0, 1.2) + country_delay + (2 if festive else 0)
             gi_main = day + pd.Timedelta(days=int(round(lead)))
             backorder = []  # (order item, material, qty, unit)
             shipments = [(gi_main, [])]
             for posnr, matnr, matkl, qty, unit in items:
                 r = rng.random()
-                if r < 0.10 and qty > 1:  # partial: ~60% now, rest in a backorder delivery
+                if r < 0.06 and qty > 1:  # partial: ~60% now, rest in a backorder delivery
                     first = max(1, int(qty * rng.uniform(0.4, 0.8)))
                     shipments[0][1].append((posnr, matnr, matkl, first, unit))
                     backorder.append((posnr, matnr, matkl, qty - first, unit))
-                elif r < 0.13 and qty > 1:  # short shipment: rest never delivered
+                elif r < 0.085 and qty > 1:  # short shipment: rest never delivered
                     shipments[0][1].append((posnr, matnr, matkl, max(1, int(qty * 0.7)), unit))
                 else:
                     shipments[0][1].append((posnr, matnr, matkl, qty, unit))
