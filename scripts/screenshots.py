@@ -21,12 +21,15 @@ VIEW = {"width": 1440, "height": 1200}
 def wait_ready(page) -> None:
     """Wait until Streamlit has finished running the script and charts are drawn."""
     page.wait_for_selector("h1:has-text('SYNTHETIC DATA')", timeout=90000)
-    # while the script runs Streamlit shows a "Stop" button in the header - wait for it to go
-    page.wait_for_function(
-        "() => ![...document.querySelectorAll('header button')]"
-        ".some(b => b.innerText.trim() === 'Stop')",
-        timeout=90000,
-    )
+    # while the script runs Streamlit shows a "Stop" button in the header: wait until it has
+    # been gone for 3 checks in a row, then give the charts a moment to draw
+    calm = 0
+    for _ in range(120):
+        running = page.get_by_text("Stop", exact=True).count() > 0
+        calm = 0 if running else calm + 1
+        if calm >= 3:
+            break
+        page.wait_for_timeout(500)
     page.wait_for_timeout(2500)
     if page.locator("[data-testid='stException']").count():
         sys.exit("Streamlit shows an exception - fix the app first")
@@ -66,17 +69,20 @@ def demo_video(pw) -> None:
                               record_video_dir=str(OUT / "_video"),
                               record_video_size={"width": 1280, "height": 760})
     page = ctx.new_page()
+    page.set_default_timeout(60000)  # fail loudly instead of hanging
     page.goto(URL)
     wait_ready(page)
     page.wait_for_timeout(1500)
     page.mouse.wheel(0, 500)
     page.wait_for_timeout(1500)
+    print("video: overview done", flush=True)
     page.get_by_text("Drill-down", exact=True).click()
     wait_ready(page)
     pick(page, "Country (LAND1)", ["IT"])
     wait_ready(page)
     page.mouse.wheel(0, 400)
     page.wait_for_timeout(1500)
+    print("video: drill-down done", flush=True)
     page.get_by_text("Data quality", exact=True).click()
     wait_ready(page)
     page.wait_for_timeout(1500)
@@ -90,6 +96,7 @@ def demo_video(pw) -> None:
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
-        screenshots(p)
-        if "--video" in sys.argv:
+        if "--video-only" not in sys.argv:
+            screenshots(p)
+        if "--video" in sys.argv or "--video-only" in sys.argv:
             demo_video(p)
