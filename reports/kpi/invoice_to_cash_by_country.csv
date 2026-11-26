@@ -1,6 +1,0 @@
-country,invoices,avg_invoice_to_cash_days,share_paid_after_45d,open_receivables_value,slowest_rank
-IT,2668,44.266,0.3375,145060.99,1
-ES,2251,40.0418,0.2717,72982.34,2
-FR,2985,37.5879,0.1992,96273.62,3
-NL,1749,36.5549,0.2084,58681.77,4
-DE,5052,34.814,0.1844,155727.13,5
