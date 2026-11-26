@@ -20,7 +20,7 @@ VIEW = {"width": 1440, "height": 1200}
 
 def wait_ready(page) -> None:
     """Wait until Streamlit has finished running the script and charts are drawn."""
-    page.wait_for_selector("h1:has-text('SYNTHETIC DATA')", timeout=90000)
+    page.wait_for_selector("h1", timeout=90000)
     # while the script runs Streamlit shows a "Stop" button in the header: wait until it has
     # been gone for 3 checks in a row, then give the charts a moment to draw
     calm = 0
@@ -43,9 +43,9 @@ def screenshots(pw) -> None:
         page.goto(f"{URL}/?page={page_param.replace(' ', '+')}")
         wait_ready(page)
         if name == "02-drilldown":
-            # show a real filter selection: one country, two categories
-            pick(page, "Country (LAND1)", ["IT"])
-            pick(page, "Category (MATKL)", ["DRESSES", "FOOTWEAR"])
+            # show a real filter selection: Northeast Brazil, fashion segment only
+            pick(page, "Macro-region (from KNA1.REGIO)", ["Northeast"])
+            pick(page, "Segment", ["Fashion & accessories"])
             wait_ready(page)
         page.screenshot(path=str(OUT / f"{name}.png"), full_page=True)
         print("saved", name)
@@ -78,7 +78,7 @@ def demo_video(pw) -> None:
     print("video: overview done", flush=True)
     page.get_by_text("Drill-down", exact=True).click()
     wait_ready(page)
-    pick(page, "Country (LAND1)", ["IT"])
+    pick(page, "Macro-region (from KNA1.REGIO)", ["Northeast"])
     wait_ready(page)
     page.mouse.wheel(0, 400)
     page.wait_for_timeout(1500)
