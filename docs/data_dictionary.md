@@ -1,127 +1,120 @@
-# Data dictionary - RetailLens (SYNTHETIC DATA)
+# Data dictionary - RetailLens (case study on real Olist data)
 
-All data is **synthetic**, produced by the seeded generator `src/generate.py` (seed 42 by default).
-Tables and fields follow SAP S/4HANA Sales & Distribution (SD) naming so the SQL reads like it
-would on a real system. Exact row counts of the latest run are in `metrics.json`
-(`raw_row_counts`, `star_schema_row_counts`).
+Source: Olist Brazilian E-Commerce Public Dataset (Kaggle `olistbr/brazilian-ecommerce`,
+CC BY-NC-SA 4.0, non-commercial use). The mapping from Olist files to SAP tables, and its
+assumptions, are described in [`sap_mapping.md`](sap_mapping.md). Exact row counts of the latest
+run are in `metrics.json` (`source_row_counts`, `sap_row_counts`, `star_schema_row_counts`).
 
-Business story: a European fashion wholesaler selling to ~400 retail stores (B2B) in DE, FR, IT,
-ES and NL, orders from 2023-01-01 to 2024-12-31, extract date 2025-02-15.
-
-## Source tables (raw extracts in `data/raw/*.csv`, staging tables `stg_*`)
+## SAP-structured tables (staging `stg_*`, clean `cln_*`)
 
 ### KNA1 - customer master
 | Field | Meaning |
 |---|---|
-| KUNNR | Customer number (10 digits, zero-padded) |
-| NAME1 | Customer name |
-| LAND1 | Country key (DE, FR, IT, ES, NL) |
-| REGIO | Region within the country (e.g. BY, LOM, IDF) |
+| KUNNR | Customer number (Olist `customer_unique_id`, 32-char hash) |
+| LAND1 | Country key (BR) |
+| REGIO | Region = Brazilian state (SP, RJ, MG, ...) |
+| ORT01 | City |
+| PSTLZ | Postal code (first 5 digits = Olist zip prefix) |
 
-### MARA - material master / MAKT - material descriptions
+### LFA1 - vendor master (marketplace sellers)
 | Field | Meaning |
 |---|---|
-| MATNR | Material number |
-| MATKL | Material group = product category (TOPS, DRESSES, DENIM, KNITWEAR, OUTERWEAR, FOOTWEAR, ACCESSORIES, ACTIVEWEAR) |
-| SAISO | Season indicator (SS spring/summer, AW autumn/winter, CORE all year) - as in SAP Fashion Management |
-| MTART | Material type (FERT = finished product) |
-| MAKTX (MAKT) | Material description |
-| SPRAS (MAKT) | Language key (E = English) |
+| LIFNR | Vendor (seller) number |
+| LAND1 / REGIO / ORT01 / PSTLZ | Country, state, city, zip prefix |
+
+### MARA - material master / T023T - material group texts
+| Field | Meaning |
+|---|---|
+| MATNR | Material number (Olist `product_id`) |
+| MATKL | Material group = product category code (Portuguese). Missing for some products in the source (count in `metrics.json`) |
+| MTART | Material type (HAWA = trading goods) |
+| BRGEW / GEWEI | Gross weight / unit (G) |
+| LAENG / BREIT / HOEHE / MEABM | Length / width / height / unit (CM) |
+| T023T.WGBEZ | English category text (`SPRAS` = E) |
 
 ### VBAK - sales order header / VBAP - sales order item
 | Field | Meaning |
 |---|---|
-| VBELN | Sales document number |
-| AUART | Order type (OR = standard order) |
-| ERDAT | Created on (order date) |
-| VDATU | Requested delivery date (basis for "on time") |
+| VBELN | Sales document number (Olist `order_id`) |
+| AUART | Order type (OR) |
+| ERDAT | Created on = purchase timestamp |
+| VDATU | Requested delivery date = estimated (promised) delivery date |
 | KUNNR | Sold-to customer |
-| VKORG | Sales organisation |
-| NETWR / WAERK | Net value / currency (EUR) |
-| POSNR (VBAP) | Item number (10, 20, 30 ...) |
+| ZZSTATUS | Order status from Olist (Z-field) |
+| NETWR / WAERK | Net value / currency (BRL) |
+| POSNR (VBAP) | Item number |
 | MATNR (VBAP) | Material |
-| KWMENG (VBAP) | Order quantity |
-| VRKME (VBAP) | Sales unit (PC) |
+| ZZLIFNR (VBAP) | Seller of the item (Z-field) |
+| KWMENG / VRKME (VBAP) | Quantity (1 per Olist item row) / unit |
+| NETWR (VBAP) | Item price |
+| ZZFREIGHT (VBAP) | Freight charged for the item (Z-field) |
 
 ### LIKP - delivery header / LIPS - delivery item
 | Field | Meaning |
 |---|---|
-| VBELN | Delivery number |
-| ERDAT | Delivery created on |
-| LFDAT | Planned delivery date (= requested date) |
-| WADAT_IST | **Actual goods-issue date** - when the goods left the warehouse |
+| VBELN | Delivery number (= order number, one consignment per order) |
+| KUNNR | Ship-to customer |
+| LFDAT | Planned delivery date (= promised date) |
+| WADAT_IST | **Actual goods issue** = carrier hand-off |
+| PODAT | **Proof of delivery** = received by the customer |
 | POSNR / MATNR (LIPS) | Delivery item / material |
 | LFIMG (LIPS) | Delivered quantity |
-| VGBEL / VGPOS (LIPS) | Reference sales order / order item (document flow) |
-
-### VBRK - billing header / VBRP - billing item
-| Field | Meaning |
-|---|---|
-| VBELN | Billing document (invoice) number |
-| FKART | Billing type (F2 = invoice) |
-| FKDAT | Billing date |
-| KUNAG | Sold-to party |
-| NETWR | Net value = **revenue** |
-| FKIMG (VBRP) | Billed quantity |
-| VGBEL / VGPOS (VBRP) | Reference delivery / delivery item |
-| AUBEL / AUPOS (VBRP) | Reference sales order / order item |
+| VGBEL / VGPOS (LIPS) | Reference sales order / item (document flow) |
+| WADAT (LIPS) | Seller ship-by date (planned goods issue per item) |
+| ZZLIFNR (LIPS) | Seller |
 
 ### BSAD - cleared customer items (payments)
 | Field | Meaning |
 |---|---|
-| BELNR | Accounting (payment) document |
+| BELNR | Payment document (`order_id` + payment sequence) |
+| VBELN | Sales order that was paid |
 | KUNNR | Customer |
-| VBELN | Billing document that was paid |
-| AUGDT | **Clearing date** = date the invoice was paid |
-| DMBTR / WAERS | Amount / currency |
+| ZLSCH | Payment method (credit_card, boleto, voucher, debit_card, not_defined) |
+| ZZINSTALLMENTS | Number of instalments (Z-field) |
+| DMBTR / WAERS | Amount / currency (BRL) |
+| AUGDT | Clearing date = payment approval timestamp |
 
-Invoices without a BSAD row are still open (unpaid) at extract date.
-
-### RETURNS - return order items (modelled on VBAK/VBAP with AUART = 'RE')
+### ZREVIEW - customer reviews (custom) / ZGEO - zip geolocation (custom)
 | Field | Meaning |
 |---|---|
-| VBELN / POSNR | Return order / item |
-| AUART | RE = return order |
-| ERDAT | Return created on |
-| MATNR / KWMENG / NETWR | Material / returned quantity / returned value |
-| AUGRU | Order reason: R01 size/fit, R02 quality defect, R03 not as described, R04 delivered too late |
-| VGBEL / VGPOS | Reference billing document / item |
+| REVIEW_ID / VBELN | Review id / order |
+| SCORE | 1-5 stars |
+| CREATED / ANSWERED | Survey sent / answered |
+| HAS_COMMENT | 1 if the customer wrote a comment (the text itself is not used) |
+| ZGEO.PSTLZ / LAT / LNG / REGIO | Zip prefix, mean coordinates, state |
 
-## Simulated business patterns
-- **Seasons**: SS collections dominate Feb-Jul orders, AW collections Aug-Jan.
-- **Festive peak**: order intake x2.2 from 10 Nov to 20 Dec; launch peaks in March and September; summer lull in August; ~12% yearly growth.
-- **Partial deliveries**: ~6% of items ship in two deliveries (backorder 5-15 days later), ~2.5% are short-shipped; footwear (x2.2) and denim (x1.6) run out of sizes more often.
-- **Late deliveries**: transit time differs by country (IT +3 days, ES +2, FR +1) and grows by 2 days in the festive peak.
-- **Returns**: probability per billed line depends on category (dresses 20%, footwear 16%, accessories 3% ...) and rises by 5 points after a late delivery.
-- **Payments**: terms 30 or 60 days; each customer has a payment habit; IT/ES customers pay later; ~2% of invoices stay open.
+## Real data-quality issues found by `src/dq.py`
 
-## Injected data-quality issues (documented, `DQ_INJECTION` in `src/generate.py`)
-| Issue | Table | Count | Caught by rule |
-|---|---|---|---|
-| Missing creation date ERDAT | VBAK | 12 | mandatory |
-| Negative order quantity KWMENG | VBAP | 25 | non_negative |
-| Orphan items (VBELN not in VBAK) | VBAP | 20 | reference |
-| Missing goods-issue date WADAT_IST | LIKP | 10 | mandatory |
-| Orphan delivery items (VBELN not in LIKP) | LIPS | 15 | reference |
+Errors are **quarantined** (kept out of `cln_*`). Warnings are **logged**, and the row is kept.
+The counts from the latest full run are listed in `metrics.json > dq.issues_by_reason`:
 
-Because parents are cleaned before children, items belonging to a quarantined header are also
-quarantined (e.g. VBAP items of the 12 orders without ERDAT). That is why the quarantine count is
-larger than the 82 injected issues - see `dq` in `metrics.json`.
+| Severity | Issue |
+|---|---|
+| error | Delivery handed to the carrier before the order was placed (WADAT_IST < ERDAT) |
+| error | Delivered to the customer before carrier hand-off (PODAT < WADAT_IST) |
+| error | Status "delivered" but no delivery date / no carrier date |
+| error | Delivery items of a quarantined delivery (orphans of LIKP) |
+| warning | Products without category, without English category text, or without weight/dimensions |
+| warning | Customer / seller zip prefixes missing from the geolocation table |
+| warning | Orders without items, orders without payment, payments of zero value |
+| warning | The same review id used for more than one order |
 
 ## Star schema (views in `sql/`, exported to `powerbi/data/`)
 | Logical name | View | Grain | Key measures / flags |
 |---|---|---|---|
-| dim_customer | ZI_Customer | customer | country, region |
-| dim_material | ZI_Material | material | category, season, name |
-| dim_date | ZI_CalendarDate | day | month_key, season_half, is_festive |
-| fact_order_item | ZC_SalesOrderItem | order item | ordered/delivered qty, lead_time_days, on_time_flag, in_full_flag, otif_flag |
-| fact_delivery | ZC_DeliveryItem | delivery item | delivered_qty, days_late, late_flag |
-| fact_billing | ZC_BillingItem | billing item | net_revenue, days_to_cash, returned_qty |
+| dim_customer | ZI_Customer | customer | state, macro_region, city |
+| dim_seller | ZI_Seller | seller | state, city |
+| dim_material | ZI_Material | material | category (English), segment (Fashion & accessories / Other), weight, volume |
+| dim_date | ZI_CalendarDate | day | date_key, month_key, is_festive, in_analysis_window |
+| fact_order_item | ZC_SalesOrderItem | order item | item_value, freight, otif/on-time/in-full flags, lead-time stages, review score |
+| fact_delivery | ZC_DeliveryItem | delivery item | handover delay vs ship-by date, transit days, days vs promise |
+| fact_payment | ZC_Payment | payment line | payment type, instalments, amount, approval hours |
 
 ## KPI definitions (`sql/kpi/*.sql`)
-- **Lead time** = days from order creation (VBAK.ERDAT) to the last goods issue of the item (LIKP.WADAT_IST).
-- **On time** = last goods issue <= requested delivery date (VBAK.VDATU). **In full** = delivered qty >= ordered qty. **OTIF** = both. Measured on order items with at least one delivery.
-- **Fill rate** = delivered qty / ordered qty.
-- **Invoice-to-cash days** = clearing date (BSAD.AUGDT) - billing date (VBRK.FKDAT), per paid invoice (DSO-style).
-- **Return rate** = returned qty / billed qty.
-- **Revenue** = VBRP.NETWR; **MoM / YoY growth** via LAG over monthly revenue.
+- **OTIF** = item delivered (in full) **and** received on or before VDATU, over items with a final outcome.
+- **Lead time** = purchase -> customer delivery in calendar days. It is split into approval
+  (hours), approval -> goods issue, and transit.
+- **Cancellation rate** = items in cancelled/unavailable orders. **Complaint rate** = reviewed orders with 1-2 stars.
+- **Payment approval time** = purchase -> `AUGDT` in hours, by payment type.
+- **Revenue** = item price of non-cancelled orders (freight reported separately). **MoM / YoY** via LAG.
+- Details and limitations: [`sap_mapping.md`](sap_mapping.md).
