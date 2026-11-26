@@ -1,6 +1,6 @@
-"""Stage 6 - write reports/insights.md, a one-page consultant-style report.
+"""Stage 6 - write reports/insights.md, a one-page consultant-style case-study report.
 
-Every number is read from the KPI tables of this run, and the "which country / which category"
+Every number is read from the KPI tables of this run, and the "which state / which category"
 choices are made by the code (worst rank, highest rate), so the report can never drift away
 from the data. The wording around the numbers is the consultant's judgement.
 """
@@ -9,15 +9,11 @@ from __future__ import annotations
 
 import pandas as pd
 
-from src.config import REPORTS_DIR
+from src.config import REPORTS_DIR, SOURCE_NOTICE
 
 
 def _pct(x: float) -> str:
     return f"{x:.1%}"
-
-
-def _weighted(df: pd.DataFrame, value: str, weight: str) -> float:
-    return float((df[value] * df[weight]).sum() / df[weight].sum())
 
 
 def build_findings(k: dict[str, pd.DataFrame], metrics: dict) -> list[dict]:
@@ -25,101 +21,111 @@ def build_findings(k: dict[str, pd.DataFrame], metrics: dict) -> list[dict]:
     h = k["headline"].iloc[0]
     findings = []
 
-    # 1) OTIF: worst vs best country, and whether timing or completeness is the problem
-    otif = k["otif_by_country"].sort_values("otif_rate")
-    worst, best = otif.iloc[0], otif.iloc[-1]
-    driver = "late shipments" if worst.on_time_rate < worst.in_full_rate else "short shipments"
+    # 1) OTIF by state: worst ranked state vs. the best ranked one, and the transit time
+    states = k["otif_by_state"].dropna(subset=["worst_otif_rank"]).sort_values("otif_rate")
+    worst, best = states.iloc[0], states.iloc[-1]
+    stages = k["lead_time_stages"].set_index("macro_region")
+    region = stages.loc[worst.macro_region]
     findings.append({
-        "title": f"{worst.country} misses OTIF far more often than any other market",
+        "title": f"Customers in {worst.state} ({worst.macro_region}) get the worst OTIF",
         "evidence": (
-            f"OTIF in {worst.country} is {_pct(worst.otif_rate)} vs {_pct(best.otif_rate)} in "
-            f"{best.country} (overall {_pct(h.otif_rate)}). In-full is {_pct(worst.in_full_rate)}"
-            f" but on-time only {_pct(worst.on_time_rate)}, so the gap is {driver}; average lead "
-            f"time is {worst.avg_lead_time_days:.1f} days vs {best.avg_lead_time_days:.1f}."
+            f"OTIF in {worst.state} is {_pct(worst.otif_rate)} vs {_pct(best.otif_rate)} in "
+            f"{best.state} (overall {_pct(h.otif_rate)}). Orders there take "
+            f"{worst.avg_lead_time_days:.1f} days, of which {worst.avg_transit_days:.1f} are "
+            f"carrier transit. Across the {worst.macro_region}, transit is "
+            f"{_pct(region.transit_share)} of the lead time, while seller hand-off "
+            f"(approval -> goods issue) takes only {region.avg_approval_to_gi_days:.1f} days."
         ),
         "recommendation": (
-            f"Review the outbound route and carrier SLA for {worst.country}, and align the "
-            f"requested delivery dates (VDATU) with the real transit time - or serve "
-            f"{worst.country} from a closer stock point."
+            f"The bottleneck is the carrier leg, not the warehouse: renegotiate carrier SLAs "
+            f"for the {worst.macro_region}, test a regional carrier or a stock point in the "
+            f"region, and keep the promised date (VDATU) realistic per state."
         ),
     })
 
-    # 2) Returns: highest-return category and its dominant reason
-    ret = k["return_rate_by_category"].sort_values("return_rate", ascending=False)
-    top = ret.iloc[0]
-    reasons = k["return_reasons"]
-    top_reason = reasons[reasons.category == top.category].sort_values(
-        "returned_qty", ascending=False).iloc[0]
+    # 2) Late delivery drives complaints
+    rv = k["review_vs_delivery"].set_index("delivery_outcome")
+    late, on_time = rv.loc["late"], rv.loc["on time"]
+    late_complaints = late.orders * late.low_review_rate
+    complaint_share = late_complaints / (late_complaints + on_time.orders * on_time.low_review_rate)
     findings.append({
-        "title": f"{top.category.title()} drive returns - mostly a size/fit question",
+        "title": "A late delivery is the strongest predictor of a complaint",
         "evidence": (
-            f"{top.category.title()} return {_pct(top.return_rate)} of billed units "
-            f"(company average {_pct(h.return_rate)}), worth EUR {top.returned_value:,.0f} in "
-            f"returned value. '{top_reason.reason_text}' explains "
-            f"{_pct(top_reason.share_in_category)} of the returned units in this category. "
-            f"{ret.iloc[1].category.title()} follow at {_pct(ret.iloc[1].return_rate)}."
+            f"{_pct(late.low_review_rate)} of late orders get a 1-2 star review vs "
+            f"{_pct(on_time.low_review_rate)} of on-time orders (average score "
+            f"{late.avg_review_score:.2f} vs {on_time.avg_review_score:.2f}). Late orders are "
+            f"only {_pct(late.share_of_orders)} of delivered, reviewed orders but cause "
+            f"{_pct(complaint_share)} of their complaints."
         ),
         "recommendation": (
-            f"Investigate {top.category.lower()} returns first: audit size charts and grading of "
-            f"the top-returned styles, add fit notes to the B2B catalogue, and track return "
-            f"rate per style as a buying KPI."
+            "Treat OTIF as a customer-experience KPI: trigger a proactive message and a small "
+            "voucher when an order passes its promised date, and report OTIF and complaint rate "
+            "side by side."
         ),
     })
 
-    # 3) Cash: slowest-paying country
-    cash = k["invoice_to_cash_by_country"].sort_values("avg_invoice_to_cash_days",
-                                                       ascending=False)
-    slow, fast = cash.iloc[0], cash.iloc[-1]
+    # 3) Category with the most complaints (min. volume)
+    cats = k["category_service"].dropna(subset=["complaint_rank"]).sort_values("complaint_rank")
+    top = cats.iloc[0]
+    uncategorized = cats[cats.category == "uncategorized"]
+    extra = ""
+    if not uncategorized.empty:
+        u = uncategorized.iloc[0]
+        extra = (f" Products with no category in the master data rank "
+                 f"#{int(u.complaint_rank)} ({_pct(u.low_review_rate)}) - a data-quality "
+                 f"issue that also hurts customers.")
     findings.append({
-        "title": f"Customers in {slow.country} pay {slow.avg_invoice_to_cash_days - fast.avg_invoice_to_cash_days:.0f} days slower",  # noqa: E501
+        "title": f"{top.category.replace('_', ' ').title()} has the highest complaint rate",
         "evidence": (
-            f"Invoice-to-cash averages {slow.avg_invoice_to_cash_days:.1f} days in {slow.country}"
-            f" vs {fast.avg_invoice_to_cash_days:.1f} in {fast.country} (overall "
-            f"{h.avg_invoice_to_cash_days:.1f}); {_pct(slow.share_paid_after_45d)} of its paid "
-            f"invoices took more than 45 days. Open receivables there: "
-            f"EUR {slow.open_receivables_value:,.0f}."
+            f"{_pct(top.low_review_rate)} of {top.category} orders get a 1-2 star review "
+            f"(company {_pct(h.low_review_rate)}), although its OTIF is {_pct(top.otif_rate)} "
+            f"- so it is not only a delivery problem. Freight is {_pct(top.freight_to_price)} "
+            f"of the item price.{extra}"
         ),
         "recommendation": (
-            f"Tighten dunning for {slow.country} (reminder at due date + 7), review credit limits"
-            f" of the slowest payers, and consider an early-payment discount."
+            f"Investigate {top.category} complaints by seller and product (assembly, damage in "
+            f"transit, description quality); there is no returns table in the source, so start "
+            f"capturing return reasons (order reason AUGRU on return orders)."
         ),
     })
 
-    # 4) Festive peak: revenue share and OTIF dip
-    monthly = k["otif_monthly"]
-    fest, normal = monthly[monthly.festive_month == 1], monthly[monthly.festive_month == 0]
-    otif_fest = _weighted(fest, "otif_rate", "order_items")
-    otif_norm = _weighted(normal, "otif_rate", "order_items")
-    rev = k["revenue_monthly"]
-    fest_share = rev[rev.festive_month == 1].net_revenue.sum() / rev.net_revenue.sum()
+    # 4) Fashion & accessories segment (the case-study client's focus)
+    seg = k["segment_summary"].set_index("segment")
+    fa, other = seg.loc["Fashion & accessories"], seg.loc["Other"]
     findings.append({
-        "title": "The festive peak brings the revenue - and the service problems",
+        "title": "Fashion & accessories: small share, but better economics",
         "evidence": (
-            f"November-December generate {_pct(fest_share)} of net revenue in 2 of 12 months, "
-            f"but OTIF falls to {_pct(otif_fest)} in those months vs {_pct(otif_norm)} the rest "
-            f"of the year. Revenue grew {_pct(metrics['yoy_revenue_growth'])} year over year."
+            f"The fashion segment is {_pct(fa.revenue_share)} of net revenue with an average "
+            f"item price of BRL {fa.avg_item_price:.0f} (rest BRL {other.avg_item_price:.0f}). "
+            f"Freight is {_pct(fa.freight_to_price)} of the price vs "
+            f"{_pct(other.freight_to_price)}, complaints {_pct(fa.low_review_rate)} vs "
+            f"{_pct(other.low_review_rate)}, OTIF {_pct(fa.otif_rate)} vs {_pct(other.otif_rate)}."
         ),
         "recommendation": (
-            "Plan warehouse and carrier capacity for the peak from October (temporary staff, "
-            "pre-picking of bestsellers) and pull festive pre-orders forward with an "
-            "early-order incentive."
+            "For a fashion-retail roll-out, the segment is a good pilot: light parcels keep "
+            "freight low. Focus the pilot on watches and bags (the top fashion sellers) and add "
+            "size/fit return reasons before scaling clothing."
         ),
     })
 
-    # 5) Fill rate: category with the lowest fill rate / most split deliveries
-    fill = k["fill_rate_by_category"].sort_values("fill_rate")
-    low, high = fill.iloc[0], fill.iloc[-1]
+    # 5) Cash side: payment approval by payment type
+    pay = k["payment_types"].set_index("payment_type")
+    card, boleto = pay.loc["credit_card"], pay.loc["boleto"]
     findings.append({
-        "title": f"{low.category.title()} availability causes the most split deliveries",
+        "title": "Boleto payments slow down the start of fulfilment",
         "evidence": (
-            f"Fill rate for {low.category.lower()} is {_pct(low.fill_rate)} vs "
-            f"{_pct(high.fill_rate)} for {high.category.lower()}, and "
-            f"{_pct(low.split_delivery_share)} of its order items need more than one delivery "
-            f"(each extra delivery = extra picking, freight and an extra invoice)."
+            f"Credit cards carry {_pct(card.amount_share)} of the paid value and are approved "
+            f"after {card.avg_approval_hours:.1f} hours on average "
+            f"({_pct(card.share_in_installments)} paid in instalments, "
+            f"{card.avg_installments:.1f} on average). Boleto "
+            f"({_pct(boleto.amount_share)} of value) takes {boleto.avg_approval_hours:.1f} hours "
+            f"and {_pct(boleto.share_approved_after_24h)} need more than a day - the order "
+            f"cannot ship before the payment is cleared."
         ),
         "recommendation": (
-            f"Buy {low.category.lower()} by size curve per store cluster and hold safety stock "
-            f"on core sizes; use the split-delivery share as an allocation KPI."
+            "Nudge boleto customers to instant payment methods (e.g. PIX, launched in Brazil after "
+            "this data period) and promise delivery dates from payment approval, not from "
+            "purchase, for boleto orders."
         ),
     })
     return findings
@@ -128,20 +134,20 @@ def build_findings(k: dict[str, pd.DataFrame], metrics: dict) -> list[dict]:
 def write_insights(k: dict[str, pd.DataFrame], metrics: dict) -> str:
     h = k["headline"].iloc[0]
     lines = [
-        "# RetailLens - Order-to-Cash Insights (SYNTHETIC DATA)",
+        "# RetailLens - Order-to-Cash Insights (case study, real Olist data)",
         "",
-        "> Generated by `src/insights.py` from the KPI tables of the latest pipeline run. "
-        "The data is synthetic (seeded generator), so the findings demonstrate the method, "
-        "not a real company.",
+        f"> {SOURCE_NOTICE}. Olist is a multi-category marketplace, not a fashion brand; the "
+        "fashion & accessories segment is analysed separately for the case-study client. "
+        "Generated by `src/insights.py` from the KPI tables of the latest pipeline run.",
         "",
-        f"**Scope:** {metrics['headline']['sales_orders']:,} sales orders, "
+        f"**Scope:** {metrics['headline']['sales_orders']:,} orders, "
         f"{metrics['headline']['order_items']:,} order items, "
-        f"EUR {h.total_revenue / 1e6:.2f}M net revenue, {metrics['date_range']['first_order']}"
-        f" to {metrics['date_range']['last_order']}. "
+        f"BRL {h.net_revenue / 1e6:.2f}M net revenue, orders placed "
+        f"{metrics['analysis_window']['start']} to {metrics['analysis_window']['end']}. "
         f"**Headline:** OTIF {_pct(h.otif_rate)}, average lead time "
-        f"{h.avg_lead_time_days:.1f} days, fill rate {_pct(h.fill_rate)}, "
-        f"return rate {_pct(h.return_rate)}, invoice-to-cash {h.avg_invoice_to_cash_days:.1f}"
-        " days.",
+        f"{h.avg_lead_time_days:.1f} days (promised {h.avg_promised_days:.1f}), cancellation "
+        f"rate {_pct(h.cancellation_rate)}, complaint rate {_pct(h.low_review_rate)}, payment "
+        f"approval {h.avg_approval_hours:.1f} hours.",
         "",
     ]
     for i, f in enumerate(build_findings(k, metrics), start=1):
@@ -154,8 +160,8 @@ def write_insights(k: dict[str, pd.DataFrame], metrics: dict) -> str:
         ]
     lines += [
         "---",
-        "*Method: SQL KPI queries in `sql/kpi/` over the star schema in `sql/0*.sql`; "
-        "definitions in `docs/data_dictionary.md`.*",
+        "*Method: SQL KPI queries in `sql/kpi/` over the star schema in `sql/0*.sql`; field "
+        "mapping in `docs/sap_mapping.md`; definitions in `docs/data_dictionary.md`.*",
         "",
     ]
     text = "\n".join(lines)

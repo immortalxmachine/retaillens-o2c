@@ -19,50 +19,52 @@ START, END = "<!-- METRICS:START -->", "<!-- METRICS:END -->"
 
 def metrics_table(m: dict) -> str:
     h, dq = m["headline"], m["dq"]
-    raw = m["raw_row_counts"]
+    raw = m["source_row_counts"]
+    w = m["analysis_window"]
     rows = [
-        ("Customers (KNA1)", f"{raw['kna1']:,}"),
-        ("Materials (MARA)", f"{raw['mara']:,}"),
-        ("Sales orders / order items (clean)", f"{h['sales_orders']:,} / {h['order_items']:,}"),
-        ("Delivery items (LIPS) / billing items (VBRP)",
-         f"{raw['lips']:,} / {raw['vbrp']:,}"),
-        ("Rows checked by DQ / quarantined", f"{dq['rows_in']:,} / {dq['rows_quarantined']:,}"),
-        ("Net revenue", f"EUR {h['total_revenue'] / 1e6:.2f}M"),
-        ("Revenue growth 2024 vs 2023", f"{m['yoy_revenue_growth']:.1%}"),
+        ("Source rows (9 Olist CSVs)", f"{sum(raw.values()):,}"),
+        ("Orders / order items in analysis window",
+         f"{h['sales_orders']:,} / {h['order_items']:,} ({w['start']} to {w['end']})"),
+        ("Customers / sellers", f"{h['customers']:,} / {h['sellers']:,}"),
+        ("Rows checked by DQ / quarantined / warnings",
+         f"{dq['rows_in']:,} / {dq['rows_quarantined']:,} / {dq['warnings']:,}"),
+        ("Net revenue (non-cancelled items)", f"BRL {h['net_revenue'] / 1e6:.2f}M"),
+        (f"Revenue growth {m['yoy']['label']}", f"{m['yoy']['growth']:.1%}"),
         ("OTIF (on-time in-full)", f"{h['otif_rate']:.1%}"),
-        ("Avg order-to-delivery lead time", f"{h['avg_lead_time_days']:.1f} days"),
-        ("Fill rate", f"{h['fill_rate']:.1%}"),
-        ("Return rate (units)", f"{h['return_rate']:.1%}"),
-        ("Avg invoice-to-cash", f"{h['avg_invoice_to_cash_days']:.1f} days"),
+        ("Avg order-to-delivery lead time (promised)",
+         f"{h['avg_lead_time_days']:.1f} days ({h['avg_promised_days']:.1f})"),
+        ("Cancellation rate (items)", f"{h['cancellation_rate']:.2%}"),
+        ("Complaint rate (review 1-2 stars)", f"{h['low_review_rate']:.1%}"),
+        ("Avg purchase-to-payment-approval", f"{h['avg_approval_hours']:.1f} hours"),
+        ("Fashion & accessories share of revenue", f"{h['fashion_revenue_share']:.1%}"),
     ]
     body = "\n".join(f"| {k} | {v} |" for k, v in rows)
     return (
-        f"_From `metrics.json` (run on {m['database']}, seed {m['seed']}) - SYNTHETIC DATA._\n\n"
-        f"| Metric | Value |\n|---|---|\n{body}"
+        f"_From `metrics.json` (run on {m['database']}, {m['dataset']}) - real Olist data, "
+        f"CC BY-NC-SA 4.0._\n\n| Metric | Value |\n|---|---|\n{body}"
     )
 
 
 def resume_bullets(m: dict) -> str:
     h, dq = m["headline"], m["dq"]
-    worst = m["kpis"]["otif_by_country"][0]
-    top_ret = m["kpis"]["return_rate_by_category"][0]
+    worst = next(s for s in m["kpis"]["otif_by_state"] if s["worst_otif_rank"] == 1)
+    rv = {r["delivery_outcome"]: r for r in m["kpis"]["review_vs_delivery"]}
     bullets = [
-        f"Built SAP S/4HANA order-to-cash analytics on {h['order_items']:,} synthetic SD order "
-        f"items (VBAK/VBAP/LIKP/VBRK) with a star schema of CDS-style SQL views on PostgreSQL.",
-        f"Engineered data-quality gates checking {dq['rows_in']:,} rows for referential "
-        f"integrity, mandatory fields and negatives, quarantining {dq['rows_quarantined']} with "
-        f"reasons.",
-        f"Wrote SQL KPIs (CTEs, RANK, LAG) for OTIF {h['otif_rate']:.1%}, lead time "
-        f"{h['avg_lead_time_days']:.1f} days, invoice-to-cash "
-        f"{h['avg_invoice_to_cash_days']:.0f} days, fill and return rates.",
-        f"Built Streamlit dashboard, Power BI DAX model and consultant insights: "
-        f"{worst['country']} OTIF "
-        f"{worst['otif_rate']:.0%}, {top_ret['category'].lower()} returns "
-        f"{top_ret['return_rate']:.1%}, with recommendations.",
+        f"Mapped {h['sales_orders']:,} real Olist e-commerce orders into SAP S/4HANA SD tables "
+        f"(VBAK/VBAP/LIKP/LIPS/BSAD) and a star schema of CDS-style SQL views.",
+        f"Built data-quality gates over {dq['rows_in']:,} rows, quarantining "
+        f"{dq['rows_quarantined']} inconsistent records and logging {dq['warnings']:,} "
+        f"warnings with reasons.",
+        f"Wrote SQL KPIs (CTEs, RANK, LAG): OTIF {h['otif_rate']:.1%}, lead time "
+        f"{h['avg_lead_time_days']:.1f} days, payment approval "
+        f"{h['avg_approval_hours']:.0f} hours, complaint rate {h['low_review_rate']:.1%}.",
+        f"Showed late orders draw {rv['late']['low_review_rate']:.0%} complaints vs "
+        f"{rv['on time']['low_review_rate']:.0%} on time and {worst['state']} has worst OTIF "
+        f"({worst['otif_rate']:.0%}); built Streamlit dashboard and Power BI model.",
     ]
     lines = ["# Resume bullets - RetailLens", "",
-             "_Numbers generated from `metrics.json` by `src/render_docs.py` "
-             "(dataset is SYNTHETIC)._", ""]
+             "_Numbers generated from `metrics.json` by `src/render_docs.py` (real Olist data, "
+             "Kaggle, CC BY-NC-SA 4.0)._", ""]
     lines += [f"- {b}" for b in bullets]
     for b in bullets:  # guard the <=25 words rule
         assert len(b.split()) <= 25, f"bullet too long ({len(b.split())} words): {b}"
