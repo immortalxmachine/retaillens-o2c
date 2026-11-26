@@ -62,8 +62,12 @@ NOUNS = {
     "ACCESSORIES": ["Scarf", "Belt", "Tote Bag", "Cap"],
     "ACTIVEWEAR": ["Leggings", "Sports Bra", "Track Jacket", "Running Shorts"],
 }
-STORE_WORDS = ["Moda", "Stil", "Urban", "Nord", "Bella", "Chic", "Atelier", "Linea", "Trend", "Loft"]
+STORE_WORDS = ["Moda", "Stil", "Urban", "Nord", "Bella", "Chic", "Atelier", "Linea", "Trend",
+               "Loft"]
 LEGAL_FORM = {"DE": "GmbH", "FR": "SARL", "IT": "S.r.l.", "ES": "S.L.", "NL": "B.V."}
+
+# Size-curve categories run out of single sizes more often -> more partial / short deliveries
+STOCKOUT_FACTOR = {"FOOTWEAR": 2.2, "DENIM": 1.6}
 
 # Return reasons (SAP order reason AUGRU on a return order)
 RETURN_REASONS = {"R01": "Size / fit", "R02": "Quality defect", "R03": "Not as described"}
@@ -214,7 +218,7 @@ def generate(seed: int = SEED, scale: float = 1.0) -> dict[str, pd.DataFrame]:
             backorder = []  # (order item, material, qty, unit)
             shipments = [(gi_main, [])]
             for posnr, matnr, matkl, qty, unit in items:
-                r = rng.random()
+                r = rng.random() / STOCKOUT_FACTOR.get(matkl, 1.0)
                 if r < 0.06 and qty > 1:  # partial: ~60% now, rest in a backorder delivery
                     first = max(1, int(qty * rng.uniform(0.4, 0.8)))
                     shipments[0][1].append((posnr, matnr, matkl, first, unit))
