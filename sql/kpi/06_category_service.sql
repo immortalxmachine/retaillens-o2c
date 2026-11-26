@@ -30,4 +30,4 @@ SELECT
                            ORDER BY low_review_rate DESC)
     END AS complaint_rank                            -- 1 = most complaints (min. 500 items)
 FROM by_category
-ORDER BY CASE WHEN complaint_rank IS NULL THEN 1 ELSE 0 END, complaint_rank, order_items DESC
+ORDER BY complaint_rank NULLS LAST, order_items DESC   -- unranked (small) categories last
