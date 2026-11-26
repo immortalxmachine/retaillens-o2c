@@ -1,125 +1,160 @@
-# Interview notes - RetailLens (SYNTHETIC DATA)
+# Interview notes - RetailLens (case study on real Olist data)
 
-20 questions an interviewer may ask, each answered with a pointer to the code. Numbers quoted in
-an interview should be read from `metrics.json` (they are regenerated on every run).
+20 questions an interviewer may ask. Each answer points to the code. Numbers quoted in an interview
+should be read from `metrics.json`, which is regenerated on every run.
 
-### 1. Walk me through the order-to-cash process.
-Customer places a **sales order** (VBAK/VBAP) -> warehouse creates an **outbound delivery**
-(LIKP/LIPS), picks and posts **goods issue** (WADAT_IST) -> **billing document** / invoice
-(VBRK/VBRP) creates a receivable in FI -> customer **pays**, the open item is **cleared** (BSAD,
-clearing date AUGDT). Returns come back as return orders (AUART 'RE'). The document flow is kept
-through reference fields: LIPS.VGBEL -> order, VBRP.VGBEL -> delivery, VBRP.AUBEL -> order.
-Code: the same chain is simulated in `src/generate.py::generate`.
+### 1. What is the dataset and why did you choose it?
+The Olist Brazilian E-Commerce Public Dataset (Kaggle `olistbr/brazilian-ecommerce`). It holds
+about 100K real, anonymised marketplace orders from 2016-2018. Unlike most public retail data it
+has the full O2C timestamp chain: purchase, payment approval, carrier hand-off, customer delivery
+and the promised (estimated) date. It also has payments, reviews, products and sellers. The licence
+is CC BY-NC-SA 4.0, so the project is non-commercial and gives attribution. Download:
+`src/download.py`.
 
-### 2. What do VBAK and VBAP hold?
-VBAK = sales document **header**: number VBELN, order type AUART, created on ERDAT, requested
-delivery date VDATU, sold-to KUNNR, sales org VKORG, net value NETWR, currency WAERK.
-VBAP = **items**: POSNR, material MATNR, quantity KWMENG, item net value NETWR.
-Header/item is a 1:n relationship on VBELN. See `docs/data_dictionary.md`.
+### 2. Walk me through the order-to-cash process.
+The customer places a **sales order** (VBAK/VBAP). It is paid and approved (here the cleared
+payment item is BSAD, with clearing date AUGDT). The warehouse or seller creates an **outbound
+delivery** (LIKP/LIPS) and posts **goods issue** (WADAT_IST). The carrier delivers (proof of
+delivery, PODAT). In a classic B2B flow, billing (VBRK/VBRP) and clearing of the receivable would
+follow. Olist customers pay at checkout, so cash comes *before* shipment. That is why the cash KPI
+here is approval time, not DSO.
 
-### 3. What do LIKP/LIPS and VBRK/VBRP hold?
-LIKP = delivery header (planned date LFDAT, **actual goods issue WADAT_IST**), LIPS = delivery
-items (delivered quantity LFIMG, reference to order item VGBEL/VGPOS). VBRK = billing header
-(billing date FKDAT, payer, NETWR), VBRP = billing items (FKIMG, NETWR, references to delivery and
-order). Revenue in this project = VBRP.NETWR (`sql/06_ZC_BillingItem.sql`).
+### 3. How did you map Olist to SAP tables?
+`src/sap_mapping.py` and `docs/sap_mapping.md`:
+- customers -> KNA1, with `KUNNR` = `customer_unique_id`
+- sellers -> LFA1
+- products -> MARA, with the category as MATKL and the English texts in T023T
+- orders -> VBAK, with ERDAT = purchase and VDATU = estimated delivery
+- items -> VBAP
+- carrier and delivery dates -> LIKP/LIPS (WADAT_IST, PODAT)
+- payments -> BSAD
+- reviews -> custom Z-table ZREVIEW
 
-### 4. How do you define OTIF?
-On-time **and** in-full per order item: last goods-issue date <= requested delivery date VDATU
-**and** delivered quantity >= ordered quantity. Computed once as `otif_flag` in
-`sql/04_ZC_SalesOrderItem.sql`, aggregated in `sql/kpi/01_headline.sql` and
-`02_otif_by_country.sql`. Splitting it into on-time and in-full shows *why* OTIF is missed - for the
-worst country it is timing, not completeness (`reports/insights.md` finding 1).
+Fields that SAP does not have are `ZZ` append fields.
 
-### 5. Why measure OTIF at item level and use goods issue instead of proof of delivery?
-Item level matches how customers experience shortages (one missing SKU spoils the order line).
-WADAT_IST is the reliable timestamp in SD; proof-of-delivery dates need extra (often missing) data.
-The trade-off is stated in the data dictionary.
+### 4. Why is KUNNR the customer_unique_id and not customer_id?
+Olist creates a new `customer_id` for every order. Using it would count every order as a new
+customer. `customer_unique_id` identifies the person, which is what KNA1 represents. The mapping
+translates `customer_id` to the person when it fills the sold-to field (`map_to_sap`, `sold_to`).
 
-### 6. How is lead time calculated?
-Order creation ERDAT -> last goods issue of the item, in days, via the `DAYS_BETWEEN` macro
-(`src/db.py::render_sql`), which becomes `julianday()` arithmetic on SQLite and `DATE - DATE` on
-PostgreSQL.
+### 5. What do VBAK, VBAP, LIKP and LIPS hold?
+- **VBAK**, the order header: document number, type, created on, requested delivery date, sold-to, value.
+- **VBAP**, the items: item number, material, quantity, net value.
+- **LIKP**, the delivery header: planned date LFDAT, actual goods issue WADAT_IST, proof of delivery PODAT.
+- **LIPS**, the delivery items: quantity LFIMG, plus a reference to the order item (VGBEL/VGPOS),
+  which is the document flow.
 
-### 7. What is invoice-to-cash and how does it relate to DSO?
-Days from billing date FKDAT to clearing date AUGDT per paid invoice
-(`sql/kpi/04_invoice_to_cash_by_country.sql`). DSO = receivables / revenue x days is the balance-sheet
-version; invoice-to-cash is the transactional version and can be sliced by customer or country.
-Unpaid invoices are reported separately as open receivables.
+### 6. How do you define OTIF here, and what are the limits?
+`sql/05_ZC_SalesOrderItem.sql`:
+- **on time** = PODAT on or before VDATU (by calendar day)
+- **in full** = the order was delivered and has a delivery date
+- the population is items with a final outcome: delivered, or cancelled/unavailable
 
-### 8. Star schema vs. a normalized model - why a star here?
-SAP tables are normalized for transactions (header/item, many joins). Analytics wants few joins and
-clear grain: facts (order item, delivery item, billing item) with measures, dimensions (customer,
-material, date) to slice by. Power BI's VertiPaq engine and DAX filter propagation are designed for
-star schemas. Views in `sql/0*.sql`; relationships in `powerbi/BUILD_STEPS.md`.
+Limits:
+- Olist has no partial quantities, so in-full is effectively "not cancelled", and fill rate equals
+  in-full at item level.
+- Olist's promised dates are generous, so on-time is high. A real SAP setup would measure against
+  the confirmed schedule-line date (VBEP).
 
-### 9. Why three fact tables instead of one?
-Each process step has its own grain: one order item can have several deliveries (partial
-deliveries) and several invoices. Forcing them into one table would duplicate quantities. The
-order-item fact pre-aggregates deliveries in a CTE so OTIF stays one row per item.
+### 7. How is lead time broken down?
+`sql/kpi/04_lead_time_stages.sql` splits purchase -> customer into three stages: purchase ->
+payment approval (hours), approval -> carrier hand-off (seller/warehouse) and carrier transit. It
+shows that the North and Northeast lose their time in transit, not at the seller. That changes the
+recommendation from "warehouse" to "carrier".
 
-### 10. Where do you use window functions and why?
-`RANK()` for worst-country / top-material rankings (`02`, `04`, `06`, `10`), `RANK() OVER
-(PARTITION BY category ...)` for top-3 per category, `LAG(net_revenue, 1/12)` for MoM and YoY growth
-(`09`), a moving `AVG() OVER (ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)` for 3-month OTIF (`03`),
-and `SUM() OVER (PARTITION BY category)` for return-reason shares (`07`). They compute per-row values
-against a group without collapsing rows like GROUP BY does.
+### 8. Olist has no returns. What did you do?
+I did not invent returns. I used two clearly named proxies: the **cancellation rate**
+(cancelled/unavailable items) and the **complaint rate** (orders reviewed with 1-2 stars)
+(`sql/kpi/06_category_service.sql`). On a real S/4HANA system I would use return orders
+(AUART RE) with order reasons (AUGRU).
 
-### 11. RANK vs DENSE_RANK vs ROW_NUMBER?
-RANK leaves gaps after ties (1,1,3), DENSE_RANK does not (1,1,2), ROW_NUMBER always unique. For
-"top 3 per category" RANK keeps ties honest (two materials with equal revenue both stay).
+### 9. Why is there no invoice-to-cash / DSO metric?
+DSO measures how long receivables stay open after invoicing, under payment terms. Olist customers
+pay at checkout (card, boleto, voucher), so there are no open receivables to measure. I replaced
+DSO with **purchase -> payment approval** hours and the payment mix (`05_payment_types.sql`).
+Boleto, a Brazilian bank slip, takes far longer to clear than cards, and that delays shipping.
 
-### 12. DAX vs SQL - when do you use which?
-SQL computes fixed result sets in the database (good for pipelines, tests, reuse in any tool).
-DAX measures are evaluated in the **filter context** of each visual, so one `OTIF %` measure works
-per country, month or category without new queries; time intelligence (`SAMEPERIODLASTYEAR`)
-replaces the SQL LAG. `powerbi/DAX_measures.md` mirrors `sql/kpi/01_headline.sql` so both agree.
+### 10. Which real data-quality issues did you find?
+From `src/dq.py`, run on the full data (counts are in `metrics.json > dq`):
+- carrier hand-off *before* the purchase
+- delivery to the customer *before* carrier hand-off
+- "delivered" orders without delivery dates
+- products without category, English text or dimensions
+- zip prefixes missing from geolocation
+- orders without items or payment
+- zero-value payments
+- review ids reused across orders
 
-### 13. How did you design the data-quality stage?
-Rules are data, not code: `MANDATORY`, `NON_NEGATIVE`, `REFERENCES` dicts in `src/dq.py`; one
-generic `check_table` applies them. Failing rows go to `dq_quarantine` with table, key, rule, reason
-and the raw record as JSON (nothing silently dropped); counts per table go to `dq_run_log` (append,
-so there is history). Parents are checked before children, so items of a quarantined header become
-orphans too.
+### 11. How did you design the DQ stage?
+Each rule is one entry in `RULES`, with a type, a severity and a reason. A generic `check_table`
+applies them:
+- **Errors** are quarantined: the row is kept out of `cln_*` and goes to `dq_quarantine` with its
+  raw JSON.
+- **Warnings** are logged, and the row is kept.
 
-### 14. How do you know the DQ checks work?
-The generator injects a documented set of issues (`DQ_INJECTION`), `tests/test_generate.py`
-asserts they are present, `tests/test_dq.py` asserts each rule catches its case and the cascade
-works, and the pipeline log prints violations per rule.
+Parents are checked before children, so the items of a quarantined delivery become orphans and are
+quarantined too. `dq_run_log` is appended on every run, which gives a history of runs.
 
-### 15. What are CDS views?
-Core Data Services: SAP's way to define semantic data models as views on the HANA database, with
-annotations for analytics, OData, authorisations. Naming: `I_` interface views (reusable basic /
-composite), `C_` consumption views (for a specific app/report); customer views start with Z. This
-project mirrors that with `ZI_Customer`, `ZI_Material`, `ZI_CalendarDate` and `ZC_SalesOrderItem`,
-`ZC_DeliveryItem`, `ZC_BillingItem`.
+### 12. Why warnings instead of quarantining everything?
+Quarantining a product because its category is missing would also drop its sales from revenue. That
+would distort the business numbers more than the DQ issue itself. Severity separates "cannot be
+trusted" (impossible dates) from "incomplete but usable" (missing category). The latter shows up as
+`uncategorized`, and its complaint rate is visible in the report.
 
-### 16. How would this connect to a real S/4HANA system?
-Replace `src/generate.py` + CSVs with extraction of released CDS views (e.g. `I_SalesDocumentItem`,
-`I_DeliveryDocumentItem`, `I_BillingDocumentItem`, `I_OperationalAcctgDocItem` for clearing) via
-ODP/OData, SAP Datasphere replication flows or SLT into PostgreSQL / a warehouse; keep staging, DQ,
-star schema and KPIs unchanged. In S/4HANA, BSAD is a compatibility view; the line items live in
-BSEG / the Universal Journal ACDOCA.
-Add delta loads (change timestamps), currency conversion (TCURR) and authorisations.
+### 13. Star schema vs. normalized model - why a star here?
+SAP tables are normalized for transactions. Analytics needs a clear grain and few joins:
+- three facts: order item, delivery item, payment line
+- four dimensions: customer, seller, material, date
 
-### 17. Why both PostgreSQL and SQLite?
-PostgreSQL is the target (Docker, CI service container). SQLite lets anyone run it with zero setup.
-Same SQL on both thanks to lower-case columns, `stg_` prefixes instead of schemas and one date macro.
-CI runs the tests and the full pipeline on PostgreSQL (`.github/workflows/ci.yml`) and produces the
-same headline numbers as the local SQLite run.
+Power BI's engine and DAX filter propagation are built for star schemas. The views are in
+`sql/0*.sql`, and the relationships are in `powerbi/BUILD_STEPS.md`.
 
-### 18. How do you make sure README numbers are not made up?
-`src/pipeline.py::build_metrics` writes `metrics.json`; `src/render_docs.py` writes the README
-metrics block and `RESUME_BULLETS.md` from it; `src/insights.py` writes the report from the KPI
-tables and picks worst country/category by code.
+### 14. What are CDS views and how does your naming follow them?
+Core Data Services are SAP's semantic views on HANA, with annotations for analytics, OData and
+authorisations. `I_` views are interface (reusable) views, `C_` views are consumption views, and
+customer objects start with Z. This project mirrors that: `ZI_Customer`, `ZI_Seller`, `ZI_Material`
+and `ZI_CalendarDate`, plus `ZC_SalesOrderItem`, `ZC_DeliveryItem` and `ZC_Payment`.
 
-### 19. How are the KPI queries tested?
-`tests/conftest.py` holds a 2-order fixture whose answers are worked out by hand (OTIF 1/3, fill
-rate 17/19, return rate 2/17 ...). `tests/test_kpi_sql.py` runs the full load -> DQ -> views -> KPI
-chain on it, on SQLite and (in CI) PostgreSQL.
+### 15. Where do you use window functions?
+- `RANK()` for the worst state and the most-complained category, partitioned to rank only
+  categories or states with enough volume (`02`, `06`)
+- `RANK() OVER (PARTITION BY segment ...)` for top-10 materials (`10`)
+- `LAG(..., 1/12)` for MoM and YoY (`09`)
+- a 3-month moving average (`03`)
+- `SUM() OVER ()` for shares (`05`, `07`, `11`)
 
-### 20. What are the limitations of synthetic data?
-Patterns were designed in (slower transit to IT, high dress returns), so the analysis "discovers"
-what the generator planted - it proves the method, not a business fact. Real data has messier
-issues: changed documents, cancellations, credit memos, multiple currencies, pricing conditions,
-intercompany sales and incomplete document flow. Distributions (lognormal, gamma, Pareto) are
-plausible but not calibrated to a real retailer.
+### 16. DAX vs SQL - when do you use which?
+SQL computes fixed result sets in the database, which is reproducible and testable.
+DAX measures (`powerbi/DAX_measures.md`) are evaluated in the filter context of each visual, so one
+`OTIF %` measure works for any slicer combination. `SAMEPERIODLASTYEAR` replaces the SQL LAG.
+
+### 17. How does CI work without Kaggle credentials?
+`data/sample/` is a committed, deterministic slice of the real data: every order whose id starts
+with "0", plus all its related rows (`src/make_sample.py`). `tests/test_mapping.py` checks that the
+sampler reproduces it byte for byte. CI runs the tests on SQLite and on a PostgreSQL service
+container, then runs the pipeline on the sample in PostgreSQL.
+
+### 18. Why both PostgreSQL and SQLite?
+PostgreSQL is the target (Docker and CI). SQLite lets anyone run the project with zero setup. The
+same SQL runs on both thanks to three things: lower-case columns, a `stg_` prefix instead of
+schemas, and three date macros (`DAYS_BETWEEN`, `HOURS_BETWEEN`, `DATE_KEY`) that `src/db.py`
+translates per dialect.
+
+### 19. How would this connect to a real S/4HANA system?
+Replace `download.py` and `sap_mapping.py` with extraction of released CDS views via ODP/OData,
+SAP Datasphere replication flows or SLT. Examples are `I_SalesDocumentItem`,
+`I_OutboundDeliveryItem` and `I_OperationalAcctgDocItem` (for clearing). Then:
+- use VBEP schedule lines for the confirmed date
+- use return orders for returns, and VBRK/VBRP for billing
+- keep staging, DQ, the star schema and the KPIs unchanged
+- add delta loads, currency conversion and authorisations
+
+### 20. What are the limitations of this case study?
+- The SAP documents are *derived* from a marketplace dataset: one delivery per order, payments as
+  cleared items, and no billing documents, schedule lines, credit memos or returns.
+- The data is Brazil-only, in BRL, from 2016-2018. The fashion segment is a small part of a
+  multi-category marketplace, not a fashion brand.
+- Promised dates are generous.
+- The licence is non-commercial.
+
+The method transfers to a real system. The specific numbers describe Olist's marketplace.
