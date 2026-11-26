@@ -1,8 +1,8 @@
 # Resume bullets - RetailLens
 
-_Numbers generated from `metrics.json` by `src/render_docs.py` (dataset is SYNTHETIC)._
+_Numbers generated from `metrics.json` by `src/render_docs.py` (real Olist data, Kaggle, CC BY-NC-SA 4.0)._
 
-- Built SAP S/4HANA order-to-cash analytics on 32,122 synthetic SD order items (VBAK/VBAP/LIKP/VBRK) with a star schema of CDS-style SQL views on PostgreSQL.
-- Engineered data-quality gates checking 164,797 rows for referential integrity, mandatory fields and negatives, quarantining 136 with reasons.
-- Wrote SQL KPIs (CTEs, RANK, LAG) for OTIF 74.0%, lead time 5.6 days, invoice-to-cash 38 days, fill and return rates.
-- Built Streamlit dashboard, Power BI DAX model and consultant insights: IT OTIF 58%, dresses returns 9.5%, with recommendations.
+- Mapped 98,353 real Olist e-commerce orders into SAP S/4HANA SD tables (VBAK/VBAP/LIKP/LIPS/BSAD) and a star schema of CDS-style SQL views.
+- Built data-quality gates over 775,547 rows, quarantining 444 inconsistent records and logging 3,288 warnings with reasons.
+- Wrote SQL KPIs (CTEs, RANK, LAG): OTIF 92.9%, lead time 12.4 days, payment approval 10 hours, complaint rate 14.2%.
+- Showed late orders draw 62% complaints vs 9% on time and AL has worst OTIF (79%); built Streamlit dashboard and Power BI model.
