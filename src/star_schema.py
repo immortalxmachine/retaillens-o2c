@@ -49,8 +49,8 @@ def build_calendar(start: str, end: str) -> pd.DataFrame:
     d["quarter_num"] = dt.quarter
     d["month_num"] = dt.month
     d["month_key"] = dt.strftime("%Y-%m")
-    d["weekday_num"] = dt.weekday
-    d["is_weekend"] = (dt.weekday >= 5).astype(int)
+    d["weekday_num"] = dt.day_of_week
+    d["is_weekend"] = (dt.day_of_week >= 5).astype(int)
     d["season_half"] = d["month_num"].between(2, 7).map({True: "SS", False: "AW"})
     d["is_festive"] = (
         ((d["month_num"] == 11) & (dt.day >= 10)) | (d["month_num"] == 12)
