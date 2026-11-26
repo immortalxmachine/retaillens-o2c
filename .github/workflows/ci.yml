@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: retaillens
+          POSTGRES_PASSWORD: ci_only_password
+          POSTGRES_DB: retaillens
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U retaillens"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PG_URL: postgresql+psycopg2://retaillens:ci_only_password@localhost:5432/retaillens
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Lint (ruff)
+        run: ruff check .
+      - name: Tests on SQLite and PostgreSQL
+        env:
+          TEST_DATABASE_URL: ${{ env.PG_URL }}
+        run: pytest -v
+      - name: Full pipeline on PostgreSQL (SYNTHETIC DATA)
+        env:
+          DATABASE_URL: ${{ env.PG_URL }}
+        run: |
+          python -m src.pipeline
+          python -c "import json; m = json.load(open('metrics.json')); assert m['database'] == 'postgresql'; print(json.dumps(m['headline'], indent=2))"
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t retaillens:ci .
