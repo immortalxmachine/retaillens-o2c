@@ -55,7 +55,8 @@ def resume_bullets(m: dict) -> str:
         f"Wrote SQL KPIs (CTEs, RANK, LAG) for OTIF {h['otif_rate']:.1%}, lead time "
         f"{h['avg_lead_time_days']:.1f} days, invoice-to-cash "
         f"{h['avg_invoice_to_cash_days']:.0f} days, fill and return rates.",
-        f"Delivered Power BI/Streamlit dashboards and insights: {worst['country']} OTIF "
+        f"Built Streamlit dashboard, Power BI DAX model and consultant insights: "
+        f"{worst['country']} OTIF "
         f"{worst['otif_rate']:.0%}, {top_ret['category'].lower()} returns "
         f"{top_ret['return_rate']:.1%}, with recommendations.",
     ]
