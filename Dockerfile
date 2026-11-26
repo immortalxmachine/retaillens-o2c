@@ -1,4 +1,4 @@
-# RetailLens image: runs the pipeline and/or the Streamlit dashboard (SYNTHETIC DATA)
+# RetailLens image: runs the pipeline and/or the Streamlit dashboard (Olist case study)
 FROM python:3.11-slim
 
 WORKDIR /app

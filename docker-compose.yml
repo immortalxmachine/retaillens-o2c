@@ -1,6 +1,8 @@
 # docker compose up --build
 #   db        PostgreSQL 16 on host port 5440
-#   pipeline  one-off: generate SYNTHETIC data -> staging -> DQ -> star schema -> KPIs
+#   pipeline  one-off: Olist data -> SAP mapping -> staging -> DQ -> star schema -> KPIs
+#             (committed real sample by default; set RETAILLENS_RAW_DIR=data/raw in .env
+#              after `python -m src.download` to use the full dataset)
 #   dashboard Streamlit on http://localhost:8530
 name: retaillens
 
@@ -25,7 +27,9 @@ services:
     command: ["python", "-m", "src.pipeline"]
     environment:
       DATABASE_URL: postgresql+psycopg2://${POSTGRES_USER:-retaillens}:${POSTGRES_PASSWORD:-change_me}@db:5432/${POSTGRES_DB:-retaillens}
+      RETAILLENS_RAW_DIR: ${RETAILLENS_RAW_DIR:-data/sample}
     volumes:
+      - ./data:/app/data
       - ./reports:/app/reports
       - ./powerbi:/app/powerbi
     depends_on:
