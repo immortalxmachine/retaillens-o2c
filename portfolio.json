@@ -1,11 +1,11 @@
 {
   "name": "RetailLens",
-  "title": "RetailLens - SAP S/4HANA Order-to-Cash Analytics for Fashion Retail",
-  "summary": "Order-to-cash analytics on SYNTHETIC SAP S/4HANA SD data (VBAK/VBAP, LIKP/LIPS, VBRK/VBRP): staging, data-quality quarantine, CDS-style star schema, SQL KPIs (OTIF, lead time, invoice-to-cash, returns), Power BI DAX model, Streamlit dashboard and a consultant insights report.",
+  "title": "RetailLens - SAP S/4HANA Order-to-Cash Case Study on Real Retail Orders",
+  "summary": "Case study: about 100K real Olist e-commerce orders (Kaggle, CC BY-NC-SA 4.0) mapped into SAP S/4HANA SD tables (KNA1, MARA, VBAK/VBAP, LIKP/LIPS, BSAD); data-quality gates on real issues, CDS-style star schema, SQL KPIs (OTIF, lead-time stages, payment approval, complaint and cancellation rates), Power BI DAX model, Streamlit dashboard and a consultant insights report.",
   "repo": "https://github.com/immortalxmachine/retaillens-o2c",
-  "data": "Synthetic (seeded generator) - see metrics.json for exact row counts and KPI values",
-  "tech": ["Python", "pandas", "SQL", "PostgreSQL", "SQLite", "SQLAlchemy", "Power BI", "DAX", "Streamlit", "Plotly", "matplotlib", "pytest", "ruff", "Docker", "GitHub Actions", "Playwright"],
-  "topics": ["sap", "s4hana", "order-to-cash", "data-analytics", "sql", "power-bi", "dax", "postgresql", "streamlit", "retail-analytics"],
+  "data": "Real: Olist Brazilian E-Commerce Public Dataset (Kaggle olistbr/brazilian-ecommerce), CC BY-NC-SA 4.0, non-commercial. Exact counts and KPI values in metrics.json",
+  "tech": ["Python", "pandas", "SQL", "PostgreSQL", "SQLite", "SQLAlchemy", "Power BI", "DAX", "Streamlit", "Plotly", "matplotlib", "pytest", "ruff", "Docker", "GitHub Actions", "Playwright", "Kaggle API"],
+  "topics": ["sap", "s4hana", "order-to-cash", "data-analytics", "sql", "power-bi", "dax", "postgresql", "streamlit", "retail-analytics", "kaggle"],
   "metrics_file": "metrics.json",
   "images": [
     "docs/screenshots/demo.gif",
@@ -14,9 +14,10 @@
     "docs/screenshots/03-data-quality.png",
     "docs/screenshots/05-pipeline-run.png",
     "docs/screenshots/06-ci-passing.png",
-    "reports/charts/otif_by_country.png",
-    "reports/charts/return_rate_by_category.png",
-    "reports/charts/invoice_to_cash_by_country.png",
+    "reports/charts/otif_by_state.png",
+    "reports/charts/complaints_late_vs_on_time.png",
+    "reports/charts/lead_time_stages.png",
+    "reports/charts/complaints_by_category.png",
     "reports/charts/revenue_monthly.png"
   ],
   "pending_images": ["docs/screenshots/04-powerbi.png"]
