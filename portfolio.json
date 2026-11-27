@@ -1,24 +1,18 @@
 {
-  "name": "RetailLens",
-  "title": "RetailLens - SAP S/4HANA Order-to-Cash Case Study on Real Retail Orders",
-  "summary": "Case study: about 100K real Olist e-commerce orders (Kaggle, CC BY-NC-SA 4.0) mapped into SAP S/4HANA SD tables (KNA1, MARA, VBAK/VBAP, LIKP/LIPS, BSAD); data-quality gates on real issues, CDS-style star schema, SQL KPIs (OTIF, lead-time stages, payment approval, complaint and cancellation rates), Power BI DAX model, Streamlit dashboard and a consultant insights report.",
-  "repo": "https://github.com/immortalxmachine/retaillens-o2c",
-  "data": "Real: Olist Brazilian E-Commerce Public Dataset (Kaggle olistbr/brazilian-ecommerce), CC BY-NC-SA 4.0, non-commercial. Exact counts and KPI values in metrics.json",
-  "tech": ["Python", "pandas", "SQL", "PostgreSQL", "SQLite", "SQLAlchemy", "Power BI", "DAX", "Streamlit", "Plotly", "matplotlib", "pytest", "ruff", "Docker", "GitHub Actions", "Playwright", "Kaggle API"],
-  "topics": ["sap", "s4hana", "order-to-cash", "data-analytics", "sql", "power-bi", "dax", "postgresql", "streamlit", "retail-analytics", "kaggle"],
-  "metrics_file": "metrics.json",
-  "images": [
-    "docs/screenshots/demo.gif",
-    "docs/screenshots/01-overview.png",
-    "docs/screenshots/02-drilldown.png",
-    "docs/screenshots/03-data-quality.png",
-    "docs/screenshots/05-pipeline-run.png",
-    "docs/screenshots/06-ci-passing.png",
-    "reports/charts/otif_by_state.png",
-    "reports/charts/complaints_late_vs_on_time.png",
-    "reports/charts/lead_time_stages.png",
-    "reports/charts/complaints_by_category.png",
-    "reports/charts/revenue_monthly.png"
+  "title": "RetailLens O2C",
+  "tagline": "SAP S/4HANA order-to-cash analytics on 100K Olist orders",
+  "category": "Data",
+  "highlights": [
+    "Mapped 98,353 real Olist e-commerce orders into SAP S/4HANA SD tables (VBAK/VBAP/LIKP/LIPS/BSAD) and a star schema of CDS-style SQL views.",
+    "Data-quality gates over 775,547 rows, quarantining 444 inconsistent records and logging 3,288 warnings with reasons.",
+    "SQL KPIs (CTEs, RANK, LAG): OTIF 92.9%, lead time 12.4 days, payment approval 10 hours, complaint rate 14.2%."
   ],
-  "pending_images": ["docs/screenshots/04-powerbi.png"]
+  "metrics": [
+    { "label": "Orders mapped", "value": "98K" },
+    { "label": "OTIF", "value": "92.9%" },
+    { "label": "Rows gated", "value": "776K" }
+  ],
+  "demo": null,
+  "featured": true,
+  "order": 11
 }
